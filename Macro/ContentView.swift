@@ -11,14 +11,11 @@ import Foundation
 // Sumayah Testing Commit
 
 struct ContentView: View {
+    @State var fullName: String = ""
+    @State var phoneNumber: Int
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack{
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
