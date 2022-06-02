@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-class FormViewModel:ObservedObject{
-    @Published private var username = ""
-//    @Published private var phoneNumber = ""
-//    @Published private var email = ""
-}
 
 struct SignUp: View {
     var body: some View {
