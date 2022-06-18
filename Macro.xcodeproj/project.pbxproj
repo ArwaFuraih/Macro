@@ -19,6 +19,7 @@
 		E0AE50B1285B6FE700312D29 /* OffersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50B0285B6FE700312D29 /* OffersProvider.swift */; };
 		E0AE50B3285BCDAF00312D29 /* offersCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50B2285BCDAF00312D29 /* offersCustomer.swift */; };
 		E0AE50B8285CF59C00312D29 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50B7285CF59C00312D29 /* test.swift */; };
+		E0AE50BC285E550900312D29 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50BB285E550900312D29 /* Settings.swift */; };
 		E0B4564E285B12CC00ED1B37 /* AuthManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B4564D285B12CC00ED1B37 /* AuthManger.swift */; };
 		E0B45650285B242600ED1B37 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B4564F285B242600ED1B37 /* Countries.swift */; };
 		E0B45652285B5B9600ED1B37 /* SwiftUI_OTPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B45651285B5B9600ED1B37 /* SwiftUI_OTPApp.swift */; };
@@ -48,6 +49,7 @@
 		E0AE50B0285B6FE700312D29 /* OffersProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersProvider.swift; sourceTree = "<group>"; };
 		E0AE50B2285BCDAF00312D29 /* offersCustomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = offersCustomer.swift; sourceTree = "<group>"; };
 		E0AE50B7285CF59C00312D29 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		E0AE50BB285E550900312D29 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E0B4564D285B12CC00ED1B37 /* AuthManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManger.swift; sourceTree = "<group>"; };
 		E0B4564F285B242600ED1B37 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		E0B45651285B5B9600ED1B37 /* SwiftUI_OTPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_OTPApp.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				E02D6F67285A05B0000A6638 /* MyTab.swift */,
+				E0AE50BB285E550900312D29 /* Settings.swift */,
 				E0E4621C28491A870044E19D /* HomeView.swift */,
 				E0AE50B7285CF59C00312D29 /* test.swift */,
 				E0AE50B6285C909300312D29 /* customer */,
@@ -276,6 +279,7 @@
 				E02D6F68285A05B0000A6638 /* MyTab.swift in Sources */,
 				E0B45652285B5B9600ED1B37 /* SwiftUI_OTPApp.swift in Sources */,
 				E0B45654285B5CDA00ED1B37 /* PersistenceController.swift in Sources */,
+				E0AE50BC285E550900312D29 /* Settings.swift in Sources */,
 				E0B45650285B242600ED1B37 /* Countries.swift in Sources */,
 				E02D6F40285628D6000A6638 /* NoFlyZone.swift in Sources */,
 			);

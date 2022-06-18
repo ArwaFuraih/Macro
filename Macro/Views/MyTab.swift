@@ -37,7 +37,7 @@ struct MyTab: View{
                         Image(systemName: "list.bullet.rectangle.portrait")
                            Text("orders")
                        }
-             Text("setting")
+             Settings()
             .tabItem {
                            Image(systemName: "gear")
                            Text("Settings")

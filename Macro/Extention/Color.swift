@@ -14,11 +14,11 @@ extension Color{
 }
 
 struct Them{
-    let white = Color("white")
+    let white =   Color("white")
     let myColor2 = Color("myColor2")
     let myColor1 = Color("myColor1")
     let btnColor = Color("btnColor")
-    let mygray = Color("mygray")
+    let mygray =   Color("mygray")
 
     
 

@@ -227,7 +227,7 @@ struct HomeView: View {
                                                     secondaryButton: .cancel()
                                                 )}
                                 }            .fullScreenCover(isPresented: $showSheet, content: {
-                                    Account()})
+                                    Settings()})
                         
                         
                         
