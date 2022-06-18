@@ -14,17 +14,6 @@
 		E02D6F3C285626EE000A6638 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F3B285626EE000A6638 /* Order.swift */; };
 		E02D6F40285628D6000A6638 /* NoFlyZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F3F285628D6000A6638 /* NoFlyZone.swift */; };
 		E02D6F422856292F000A6638 /* Permit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F412856292F000A6638 /* Permit.swift */; };
-		E02D6F4E28595EDA000A6638 /* MyOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F4D28595EDA000A6638 /* MyOrder.swift */; };
-		E02D6F5028595EEB000A6638 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F4F28595EEB000A6638 /* Settings.swift */; };
-		E02D6F5228595F09000A6638 /* Agree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F5128595F09000A6638 /* Agree.swift */; };
-		E02D6F5428595F21000A6638 /* Account .swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F5328595F21000A6638 /* Account .swift */; };
-		E02D6F5628595F65000A6638 /* Photography.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F5528595F65000A6638 /* Photography.swift */; };
-		E02D6F582859600D000A6638 /*  Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F572859600D000A6638 /*  Verification.swift */; };
-		E02D6F5A2859602C000A6638 /* NewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F592859602C000A6638 /* NewRequest.swift */; };
-		E02D6F5C28596048000A6638 /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F5B28596048000A6638 /* PrivacyPolicy.swift */; };
-		E02D6F5E2859606E000A6638 /* AboutUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F5D2859606E000A6638 /* AboutUs.swift */; };
-		E02D6F60285960A4000A6638 /* CreateOwnerAccount .swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F5F285960A4000A6638 /* CreateOwnerAccount .swift */; };
-		E02D6F62285960D8000A6638 /* orderDetailsOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F61285960D8000A6638 /* orderDetailsOwner.swift */; };
 		E02D6F6428596117000A6638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E02D6F6328596116000A6638 /* Assets.xcassets */; };
 		E02D6F68285A05B0000A6638 /* MyTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F67285A05B0000A6638 /* MyTab.swift */; };
 		E0AE50B1285B6FE700312D29 /* OffersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50B0285B6FE700312D29 /* OffersProvider.swift */; };
@@ -54,17 +43,6 @@
 		E02D6F3B285626EE000A6638 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		E02D6F3F285628D6000A6638 /* NoFlyZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFlyZone.swift; sourceTree = "<group>"; };
 		E02D6F412856292F000A6638 /* Permit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permit.swift; sourceTree = "<group>"; };
-		E02D6F4D28595EDA000A6638 /* MyOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrder.swift; sourceTree = "<group>"; };
-		E02D6F4F28595EEB000A6638 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		E02D6F5128595F09000A6638 /* Agree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agree.swift; sourceTree = "<group>"; };
-		E02D6F5328595F21000A6638 /* Account .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account .swift"; sourceTree = "<group>"; };
-		E02D6F5528595F65000A6638 /* Photography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photography.swift; sourceTree = "<group>"; };
-		E02D6F572859600D000A6638 /*  Verification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = " Verification.swift"; sourceTree = "<group>"; };
-		E02D6F592859602C000A6638 /* NewRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRequest.swift; sourceTree = "<group>"; };
-		E02D6F5B28596048000A6638 /* PrivacyPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
-		E02D6F5D2859606E000A6638 /* AboutUs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUs.swift; sourceTree = "<group>"; };
-		E02D6F5F285960A4000A6638 /* CreateOwnerAccount .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CreateOwnerAccount .swift"; sourceTree = "<group>"; };
-		E02D6F61285960D8000A6638 /* orderDetailsOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = orderDetailsOwner.swift; sourceTree = "<group>"; };
 		E02D6F6328596116000A6638 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Views/Assets.xcassets; sourceTree = "<group>"; };
 		E02D6F67285A05B0000A6638 /* MyTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTab.swift; sourceTree = "<group>"; };
 		E0AE50B0285B6FE700312D29 /* OffersProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersProvider.swift; sourceTree = "<group>"; };
@@ -163,19 +141,8 @@
 				E0E4621C28491A870044E19D /* HomeView.swift */,
 				E0AE50B7285CF59C00312D29 /* test.swift */,
 				E0AE50B6285C909300312D29 /* customer */,
-				E02D6F5128595F09000A6638 /* Agree.swift */,
 				E0AE50B2285BCDAF00312D29 /* offersCustomer.swift */,
-				E02D6F4D28595EDA000A6638 /* MyOrder.swift */,
 				E0AE50B0285B6FE700312D29 /* OffersProvider.swift */,
-				E02D6F4F28595EEB000A6638 /* Settings.swift */,
-				E02D6F5328595F21000A6638 /* Account .swift */,
-				E02D6F572859600D000A6638 /*  Verification.swift */,
-				E02D6F5528595F65000A6638 /* Photography.swift */,
-				E02D6F592859602C000A6638 /* NewRequest.swift */,
-				E02D6F5B28596048000A6638 /* PrivacyPolicy.swift */,
-				E02D6F5F285960A4000A6638 /* CreateOwnerAccount .swift */,
-				E02D6F61285960D8000A6638 /* orderDetailsOwner.swift */,
-				E02D6F5D2859606E000A6638 /* AboutUs.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,32 +260,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E02D6F62285960D8000A6638 /* orderDetailsOwner.swift in Sources */,
-				E02D6F5E2859606E000A6638 /* AboutUs.swift in Sources */,
 				E0E4621D28491A870044E19D /* HomeView.swift in Sources */,
-				E02D6F5228595F09000A6638 /* Agree.swift in Sources */,
 				7AA91E9B28466B5F006B6BF9 /* MacroApp.swift in Sources */,
 				E02D6F3C285626EE000A6638 /* Order.swift in Sources */,
 				E0AE50B1285B6FE700312D29 /* OffersProvider.swift in Sources */,
-				E02D6F5028595EEB000A6638 /* Settings.swift in Sources */,
-				E02D6F582859600D000A6638 /*  Verification.swift in Sources */,
-				E02D6F5628595F65000A6638 /* Photography.swift in Sources */,
 				E0AE50B8285CF59C00312D29 /* test.swift in Sources */,
-				E02D6F5428595F21000A6638 /* Account .swift in Sources */,
-				E02D6F5A2859602C000A6638 /* NewRequest.swift in Sources */,
 				E0B45657285B663F00ED1B37 /* SwiftUI_OTP.xcdatamodeld in Sources */,
 				E0E46218284847B40044E19D /* VerificationViewModel.swift in Sources */,
 				E0AE50B3285BCDAF00312D29 /* offersCustomer.swift in Sources */,
-				E02D6F4E28595EDA000A6638 /* MyOrder.swift in Sources */,
 				E02D6F3A2856267A000A6638 /* User.swift in Sources */,
 				E0B4564E285B12CC00ED1B37 /* AuthManger.swift in Sources */,
 				E0E4621B284917F20044E19D /* Color.swift in Sources */,
 				E02D6F422856292F000A6638 /* Permit.swift in Sources */,
-				E02D6F60285960A4000A6638 /* CreateOwnerAccount .swift in Sources */,
 				E0E46216284847AC0044E19D /* LoginViewModel.swift in Sources */,
 				E02D6F68285A05B0000A6638 /* MyTab.swift in Sources */,
 				E0B45652285B5B9600ED1B37 /* SwiftUI_OTPApp.swift in Sources */,
-				E02D6F5C28596048000A6638 /* PrivacyPolicy.swift in Sources */,
 				E0B45654285B5CDA00ED1B37 /* PersistenceController.swift in Sources */,
 				E0B45650285B242600ED1B37 /* Countries.swift in Sources */,
 				E02D6F40285628D6000A6638 /* NoFlyZone.swift in Sources */,
@@ -460,6 +416,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -489,6 +446,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

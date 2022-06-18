@@ -39,7 +39,7 @@ struct offersCustomer: View {
                         .padding()
                         .pickerStyle(SegmentedPickerStyle())
                     
-                    ForEach(0..<100) { index in
+                    ForEach(0..<5) { index in
                                     
                                
 
@@ -112,7 +112,7 @@ struct offersCustomer: View {
                                                                      Image("chevron order.right.2").padding(.leading,260).padding(.top, 10)
                    //
                                                       
-                                                                 }).fullScreenCover(isPresented: $showSheet, content: { Settings()
+                                                                 }).fullScreenCover(isPresented: $showSheet, content: { HomeView()
                                                                   
                                                                                  })
                                                       

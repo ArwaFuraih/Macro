@@ -8,6 +8,7 @@
 import SwiftUI
 import FirebaseAuth
 
+@available(iOS 15.0, *)
 struct HomeView: View {
     @State var selectedTab: Int = 0
     @State var showingAlert = false
@@ -21,6 +22,7 @@ struct HomeView: View {
     ]
   
     
+    @available(iOS 15.0, *)
     var body: some View {
         
         NavigationView{
@@ -52,7 +54,7 @@ struct HomeView: View {
                     
                     VStack(alignment: .center, spacing: 0){
                         NavigationLink(
-                            destination: NewRequest(),
+                            destination: offersCustomer(),
                             label: {
                                 
                                 ZStack{
@@ -77,7 +79,7 @@ struct HomeView: View {
                         
                         
                         NavigationLink(
-                            destination: CreateOwnerAccount(),
+                            destination: offersCustomer(),
                             label: {
                                 ZStack{
                                     Text("Become a Drone Owner".uppercased())
@@ -102,8 +104,7 @@ struct HomeView: View {
                     }
                     
                     Text("Request  Services").font(.headline)
-                        .fontWeight(.bold).padding(.trailing,210).padding()
-                    //..................
+                        .fontWeight(.bold).padding(.trailing,172)                    //..................
                     
 //                    VStack {
                     
@@ -111,17 +112,101 @@ struct HomeView: View {
                   
                     
                         HStack{
-                           
-                                
+                                            
                                 Button {
 //                                    Auth.auth().currentUser != nil
 
                                     showingAlert.toggle()
-                                    showSheet.toggle()
-                                        
-                                    
-                                    
+//                                    showSheet.toggle()
                                 } label: {
+                                    ZStack{
+                                       
+                                        Image("le1").clipShape(
+                                            RoundedRectangle(cornerRadius: 8))
+                                            .frame(width: 162, height:109)
+                                        Image("mle")
+                                            .frame(width: 162, height: 109)
+                                        Text("Photography").foregroundColor(Color.white).padding(.top,84)
+                                    }
+                                    
+                                  
+                                }
+                            
+                            
+                            //
+                            Button {
+//                                    Auth.auth().currentUser != nil
+
+                                showingAlert.toggle()
+//                                    showSheet.toggle()
+                            } label: {
+                                ZStack{
+                                    Image("imlei")
+                                        .clipShape(
+                                    RoundedRectangle(cornerRadius: 8))
+                                    .frame(width: 162, height:109)
+                                    Image("imle")
+                                        .clipShape(
+                                    RoundedRectangle(cornerRadius: 8))
+                                    .frame(width: 162, height:109)
+                                          Text("Argiculture").foregroundColor(Color.white).padding(.top,84)
+                                }
+                                
+                              
+                            }
+                            
+                                
+                                
+                            }
+                    
+                    
+                    
+                    
+                    HStack{
+                        
+                        
+                        
+                        Button {
+//                                    Auth.auth().currentUser != nil
+
+//                            showingAlert.toggle()
+                                    showSheet.toggle()
+                        } label: {
+                            ZStack{
+                                Image("le2").clipShape(
+                                    RoundedRectangle(cornerRadius: 8))
+                                    .frame(width: 162, height:109)
+                                Image("mle")
+                                    .clipShape(
+                                        RoundedRectangle(cornerRadius: 8))
+                                        .frame(width: 162, height:109)
+                                Text("Oil & Gas Mining").foregroundColor(Color.white).padding(.top,84)
+                            }.fullScreenCover(isPresented: $showSheet, content: {
+                                                offersCustomer()
+                                            })
+
+                            
+                          
+                        }
+                    
+                        
+                        
+                        //
+                        
+                        
+                        Button {
+                        
+//                            if userIsLogin {
+//                                fetchView()}
+//                                    else{
+                                        
+                                         showingAlert.toggle()
+                            
+//                        }
+                                    
+                                }
+                        
+                            label: {
                                     ZStack{
                                         Image("photogra")
                                             .frame(width: .infinity, height:109)
@@ -129,93 +214,50 @@ struct HomeView: View {
                                             .frame(width: .infinity, height: 117)
                                         Text("Photography").foregroundColor(Color.white).padding(.top,84)
                                     }
-                                    
-                                    .alert("Important message", isPresented: $showingAlert) {
-                                        Button("reg") {
-//                                            NavigationLink(destination: Settings(), label:"")
-                                          
-
-
-                                        } .fullScreenCover(isPresented: $showSheet, content: {
-                                                            Settings()
-                                                        })
-                                        Button("Second") { }
-                                                Button("Third") { }
-                                            }
-                                    
-                                }
-                                
-                                
-                            }
                         
-
-                       
-                            
-                            ZStack{
-                                Image("Argi")
-                                    .frame(width: .infinity, height: 109)
-                                Image("ma").resizable().frame(width: .infinity, height: 117).padding(.top)
-                                Text("Argiculture").foregroundColor(Color.white).padding(.top,84)
-                                
-                            }
-                            
-                            
-                        }.padding([.leading, .trailing], 20)
                         
-                        HStack{
-                            ZStack{
-                                
-                                Image("oil-1")
-                                    .frame(width: .infinity, height: 109)
-                                Image("rightm").resizable().frame(width: .infinity, height: 109)
-                                Text("Oil & Gas Mining").foregroundColor(Color.white).padding(.top,84)
-                                
-                            }.onTapGesture {
-                                //  if Auth.auth().currentUser =! nil ? nav.togele : showalet.toggele
-                            }
+                                    .alert(isPresented:$showingAlert) {
+                                                Alert(
+                                                    title: Text("not logged it"),
+                                                    message: Text("you have to log in to use this service"),
+                                                    primaryButton: .destructive(Text("login")) {
+                                                        showSheet.toggle()
+                                                        print("logging in...")
+                                                    },
+                                                    secondaryButton: .cancel()
+                                                )}
+                                }            .fullScreenCover(isPresented: $showSheet, content: {
+                                    Account()})
+                        
+                        
+                        
+                        
+                        
+                        //
+                      
+                        
+                        
+                        
+                        
+                        
+//                        .onTapGesture {
+                            //  if Auth.auth().currentUser =! nil ? nav.togele : showalet.toggele
+                        }
 //                            NavigationLink(
 //                                                destination: MyOtherScreen(),
 //                                                label: {
 //                                                    Image(systemName: "gear")
 //                                                })
-                            
-                            
-                            Button {
-//                                if Auth.auth().currentUser == nil{
-//                                    Button("Show Alert") {
-//                                               showingAlert = true
-//                                           }
-//                                           .alert("Important message", isPresented: $showingAlert) {
-//                                               Button("OK") { }
-//                                           }
-//                                    }
-//                                    else{
-//                                        NavigationLink("Hello, world!",
-//                                                                     destination: Settings())
-////                                        Settings().toggle()
-//                                        
-//                                    }
-                                  
-
-                                       
-                                   } label: {
-                                       
-                                       ZStack{
-                                           
-                                           Image("energyph")
-                                               .frame(width: .infinity, height: 109)
-                                           Image("ma").resizable().frame(width: .infinity, height: 109)
-                                           Text("Energy").foregroundColor(Color.white).padding(.top,84)
-                                           
-                                       }
-                                   }
-                            
-                            
-                            
-                            
-                            
-                            
-                            
+                        
+               
+                    
+                    
+                    
+                        
+                        
+                        
+                        
+                        
 //                            Button(action: {
 //                                Alert(
 //                                    title: Text("An important title!"),
@@ -238,10 +280,17 @@ struct HomeView: View {
 ////                                    if Auth.auth().currentUser =! nil ? Settings.toggle() : .alear
 //                                }
 //                            }
-                       
-                            
-                        }.padding()
+                   
                         
+                }.padding(.bottom,100)
+                    
+                        
+
+            
+                            
+                        }.padding([.leading, .trailing], 20)
+                        
+     
 //                        .padding([.leading, .trailing], 20)
 //                    }.padding()
                     
@@ -273,7 +322,7 @@ struct HomeView: View {
 //                })
 //            )
 //        }
-    }
+    
    
                 
                 
@@ -303,7 +352,7 @@ struct HomeView_Previews: PreviewProvider {
 //
 //                .preferredColorScheme(.light)
             HomeView().navigationBarHidden(true)
-                .preferredColorScheme(.dark)
+//                .preferredColorScheme(.dark)
         }
     }
 }

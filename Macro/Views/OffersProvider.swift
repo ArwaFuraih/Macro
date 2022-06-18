@@ -11,6 +11,20 @@
 import SwiftUI
 
 struct OffersProvider: View {
+    var phoneNumber = "718-555-5555"
+    @State var serviceName : String = "Photography Service"
+    @State var serviceTime : String = "12:00"
+    @State var serviceDate : String = "10-8-2022"
+    @State var serviceLoc : String = "Riyadh"
+    @State var serviceStatus : String = "completed"
+    @State var userImage : String = "ORDER1"
+    @State var fullName : String = "Fahad Alrogay"
+    @State var Piolt : String = "1"
+    @State var hours : String = "4"
+    
+
+
+
     
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: 4, alignment: nil)]
@@ -41,38 +55,51 @@ struct OffersProvider: View {
                                                         .cornerRadius(8)
                     //                                    .frame(width: 300, height: 00)
                     //                                    .padding()
+                                        
+                                        
+                                        
+                                        
+                                        
                                         Button(action: {
+                                                       let phone = "tel://"
+                                                       let phoneNumberformatted = phone + phoneNumber
+                                                       guard let url = URL(string: phoneNumberformatted) else { return }
+                                                       UIApplication.shared.open(url)
                                             print("g")
-                                                   }, label: {
-                                                       Image(systemName: "phone.fill").padding(.bottom,100).padding(.leading,270).foregroundColor(.white)
-
-     //
+                                                      }) {
+                                                          Image(systemName: "phone.fill.arrow.up.right").padding(.bottom,100).padding(.leading,270).foregroundColor(.white)
+                                                   }
                                         
-                                                   })
-                                        
+//
                                       
                                             
                                    
                                         HStack{
-                                                        VStack{
-                                                        Image("ORDER1")
+                                            VStack(alignment: .center){
+                                                            Button(action: {
+                                                                print("g")
+                                                                       }, label: {
+                                                                           Image("\(userImage)").clipShape(Circle()).padding(.bottom)
+                                                            
+                                                                       })
+                                                            
                                                         Image("ORDER2")
-                                                            Text("Fahad Alrogay").foregroundColor(.white)
+                                                            Text("\(fullName)").foregroundColor(.white).padding(.trailing)
                                 
                                 
                                                             }
-                                                        VStack{
+                                            VStack(alignment: .leading){
 
-                                                        Text("Pilots : 1").foregroundColor(.white)
+                                                        Text("Pilots : \(Piolt)").foregroundColor(.white)
 
-                                                        Text("Hours :4").foregroundColor(.white)
+                                                        Text("Hours :\(hours)").foregroundColor(.white)
 
-                                                        Text("           Date :1 -1-2022").foregroundColor(.white)
+                                                        Text("Date :\(serviceDate)").foregroundColor(.white)
 
-                                                        Text("      Photography").foregroundColor(.white)
+                                                        Text("\(serviceName)").foregroundColor(.white)
 
 
-                                                            }.padding(.trailing,16)
+                                                            }.padding(.trailing,19)
                                             
                                                 }
                                     }
@@ -114,7 +141,7 @@ struct myOffers :View {
         GridItem(.flexible(), spacing: 4, alignment: nil)]
     
     var body: some View {
-        List(0..<10)  { item in
+        ForEach(0..<5)  { item in
 
         LazyVGrid(columns: columns){
             ZStack{

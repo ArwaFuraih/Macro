@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import Firebase
 
-struct MyTab: View {
+struct MyTab: View{
+    
+//    let user = UserKind.self
     var body: some View {
         TabView{
                 HomeView()
@@ -22,13 +25,19 @@ struct MyTab: View {
                            Text("AirMap")
                        }
             
+//            if Auth.auth().currentUser =  {
+//                offersCustomer()
+//            }else{
+//                OffersProvider()
+//            }
+            
             
             offersCustomer()
             .tabItem {
                         Image(systemName: "list.bullet.rectangle.portrait")
                            Text("orders")
                        }
-              Settings()
+             Text("setting")
             .tabItem {
                            Image(systemName: "gear")
                            Text("Settings")
