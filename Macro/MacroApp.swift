@@ -15,8 +15,8 @@ struct MacroApp: App {
         WindowGroup {
             NavigationView{
 //                HomeView()
-                offersCustomer()
-//                OffersProvider()
+//                offersCustomer()
+                OffersProvider()
 
 //                offersCustomer().navigationBarHidden(true)
                 

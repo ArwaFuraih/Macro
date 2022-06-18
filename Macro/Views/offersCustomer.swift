@@ -51,6 +51,7 @@ struct offersCustomer: View {
                                                           .fill(Color.them.myColor2)
                                                           .frame(width: 342, height: 121)
                                                           .cornerRadius(8)
+                                                          
                               //                          .frame(width: 300, height: 00)
                               //                                    .padding()
                                          
@@ -161,103 +162,90 @@ let columns: [GridItem] = [
     GridItem(.flexible(), spacing: 4, alignment: nil)]
 
 var body: some View {
-    ForEach(0..<100) { index in
-    
-    LazyVGrid(columns: columns){
-        ZStack{
-            RoundedRectangle(cornerRadius: 8)
-                            .fill(Color.them.myColor2)
-                            .frame(width: .infinity, height: 170)
-                            .cornerRadius(8)
-                            .padding()
+   
+    ZStack{
+        RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.them.myColor2)
+                        .frame(width: 342, height: 187)
+                        .cornerRadius(8)
+//                        .padding()
+        VStack{
             VStack{
-                VStack(alignment: .leading, spacing: 4){
-                    Group{
+                VStack(alignment: .leading, spacing:2){
+                    Button(action: {
+                        print("g")
+                               }, label: {
+                                   Image("ORDER1").clipShape(Circle()).padding(.bottom)
+                    
+                               }).padding(.leading,7)
+                   
+                        Text("Fahad Alrogay").foregroundColor(.white)
+                            .font(.system(size: 16, weight: .regular, design: .rounded))
+
+                        Text("Price: 200 RS").foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
+
+                        Text("Hours: 4").foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
+                   
+                    
+                }.padding(.trailing,195)
+                  
+                
+               
+//                Spacer()
+                
+                HStack{
                         Button(action: {
                             print("g")
                                    }, label: {
-                                       Image("ORDER1").clipShape(Circle())
+                                       Text("Accept".uppercased())
+                                           .font(.system(size: 16, weight: .regular, design: .rounded))
+                                           .fontWeight(.semibold)
+                                           .foregroundColor(.white)
+                                           .frame(width: 108, height: 28)
+        //                                                       .padding()
+        //                                                       .padding(.horizontal, 20)
+                                           .background(
+                                            Color.them.btnColor
+                                                   .cornerRadius(8)
+                                                   .shadow(radius: 8)
+                                           )
+                                   }).padding(.trailing,40)
+                      
+
                         
-                                   })
+                        Button(action: {
+                            print("Reject")
+                                   }, label: {
+                                       Text("Reject".uppercased())
+                                           .font(.system(size: 16, weight: .regular, design: .rounded))
+                                           .fontWeight(.semibold)
+                                           .foregroundColor(.white)
+                                           .frame(width: 101, height: 28)
+        //                                                       .padding()
+        //                                                       .padding(.horizontal, 20)
+                                           .background(
+                                            Color.them.btnColor
+                                                   .cornerRadius(8)
+                                                   .shadow(radius: 8)
+                                           )
+                                   }).padding(.leading,50)
+                        
+                        
+    
                    
-                                   
-                       
-                        Group{
-                            Text("Fahad Alrogay").foregroundColor(.white)
-                                .font(.system(size: 16, weight: .regular, design: .default))
-
-                            Text("Price: 200 RS").foregroundColor(.white).font(.system(size: 14, weight: .regular, design: .default))
-
-                            Text("Hours: 4").foregroundColor(.white).font(.system(size: 14, weight: .regular, design: .default))
-
-                            
-                        }
-                       
-                    }
-                    .padding(.trailing, 170)
-    //                    .padding(.top,70)
-                    
-                    HStack{
-                        Group(){
-                            Button(action: {
-                                print("g")
-                                       }, label: {
-                                           Text("Reject".uppercased())
-                                               .font(.headline)
-                                               .fontWeight(.semibold)
-                                               .foregroundColor(.white)
-                                               .frame(width: 89, height: 30)
-
-            //                                                       .padding()
-            //                                                       .padding(.horizontal, 8)
-                                               .background(
-                                                Color.them.btnColor
-                                                       .cornerRadius(10)
-                                                       .shadow(radius: 10)
-                                               )
-                                       }).padding(.trailing,40)
-                          
-
-                            
-                            Button(action: {
-                                print("Accept")
-                                       }, label: {
-                                           Text("Accept".uppercased())
-                                               .font(.headline)
-                                               .fontWeight(.semibold)
-                                               .foregroundColor(.white)
-                                               .frame(width: 90, height: 32)
-            //                                                       .padding()
-            //                                                       .padding(.horizontal, 20)
-                                               .background(
-                                                Color.them.btnColor
-                                                       .cornerRadius(10)
-                                                       .shadow(radius: 10)
-                                               )
-                                       }).padding(.leading,50)
-                            
-                            
-                        }
-                       
-    //    Spacer()
-                        }
-                       
-                
-            }
-           
-           
-
-
+//    Spacer()
                 }
-                
-            }.padding()
+                   
+            
+            }
+       
+       
 
 
-
+            }
+            
         }
 
-        
-    }
 }
 
 }
@@ -271,7 +259,7 @@ var body: some View {
 
 struct myOffersCu_Previews: PreviewProvider {
 static var previews: some View {
-    myOffersCu()
+    myOffersCu().navigationBarHidden(true)
         .preferredColorScheme(.dark)
 
 }
@@ -283,3 +271,13 @@ static var previews: some View {
          
    
  
+
+
+//LazyVGrid(columns: columns){
+   
+
+
+
+
+    
+

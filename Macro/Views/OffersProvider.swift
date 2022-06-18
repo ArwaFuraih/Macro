@@ -30,7 +30,7 @@ struct OffersProvider: View {
                 .pickerStyle(SegmentedPickerStyle())
 
          if selected == 1 {
-             List(0..<5)  {item in
+             ForEach(0..<5)  {item in
                                 LazyVGrid(columns: columns){
                                     
                                     ZStack{
