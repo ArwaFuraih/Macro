@@ -18,6 +18,8 @@ struct Them{
     let myColor2 = Color("myColor2")
     let myColor1 = Color("myColor1")
     let btnColor = Color("btnColor")
+    let mygray = Color("mygray")
+
     
 
 }

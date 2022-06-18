@@ -14,8 +14,11 @@ struct MacroApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView{
-                HomeView()
+//                HomeView()
+                offersCustomer()
+//                OffersProvider()
 
+//                offersCustomer().navigationBarHidden(true)
                 
             }
         }

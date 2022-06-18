@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum status: Int, Codable {
+    case customer = 0, provider = 1
+    
+}
+
 struct Order: Codable {
     let orderID: String
     let userID: User
