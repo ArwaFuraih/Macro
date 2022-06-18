@@ -54,7 +54,7 @@ struct HomeView: View {
                     
                     VStack(alignment: .center, spacing: 0){
                         NavigationLink(
-                            destination: offersCustomer(),
+                            destination: information(),
                             label: {
                                 
                                 ZStack{

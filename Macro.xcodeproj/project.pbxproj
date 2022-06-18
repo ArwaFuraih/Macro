@@ -20,6 +20,20 @@
 		E0AE50B3285BCDAF00312D29 /* offersCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50B2285BCDAF00312D29 /* offersCustomer.swift */; };
 		E0AE50B8285CF59C00312D29 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50B7285CF59C00312D29 /* test.swift */; };
 		E0AE50BC285E550900312D29 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50BB285E550900312D29 /* Settings.swift */; };
+		E0AE50BE285E589400312D29 /* faq.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50BD285E589400312D29 /* faq.swift */; };
+		E0AE50C1285E5AFE00312D29 /* share.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50C0285E5AFD00312D29 /* share.swift */; };
+		E0AE50C3285E5B2E00312D29 /* Privacy Policy .swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50C2285E5B2E00312D29 /* Privacy Policy .swift */; };
+		E0AE50C5285E5C6800312D29 /* AboutUs .swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50C4285E5C6800312D29 /* AboutUs .swift */; };
+		E0AE50C7285E68D500312D29 /* information.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50C6285E68D500312D29 /* information.swift */; };
+		E0AE50C9285E69FB00312D29 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50C8285E69FB00312D29 /* DocumentPicker.swift */; };
+		E0AE50CB285E6A0B00312D29 /* PDFCompont.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50CA285E6A0B00312D29 /* PDFCompont.swift */; };
+		E0AE50CE285E6E1900312D29 /* Agree .swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50CD285E6E1900312D29 /* Agree .swift */; };
+		E0AE50D2285E7E7200312D29 /* DetailsOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50D1285E7E7200312D29 /* DetailsOrder.swift */; };
+		E0AE50D4285E826D00312D29 /* successpremit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50D3285E826D00312D29 /* successpremit.swift */; };
+		E0AE50D8285E837300312D29 /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = E0AE50D7285E837300312D29 /* RiveRuntime */; };
+		E0AE50DA285E845D00312D29 /* View permit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50D9285E845D00312D29 /* View permit.swift */; };
+		E0AE50DE285E8BA700312D29 /* file.riv in Resources */ = {isa = PBXBuildFile; fileRef = E0AE50DD285E8BA700312D29 /* file.riv */; };
+		E0AE50E0285E8EC300312D29 /* file2.riv in Resources */ = {isa = PBXBuildFile; fileRef = E0AE50DF285E8EC300312D29 /* file2.riv */; };
 		E0B4564E285B12CC00ED1B37 /* AuthManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B4564D285B12CC00ED1B37 /* AuthManger.swift */; };
 		E0B45650285B242600ED1B37 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B4564F285B242600ED1B37 /* Countries.swift */; };
 		E0B45652285B5B9600ED1B37 /* SwiftUI_OTPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B45651285B5B9600ED1B37 /* SwiftUI_OTPApp.swift */; };
@@ -50,6 +64,19 @@
 		E0AE50B2285BCDAF00312D29 /* offersCustomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = offersCustomer.swift; sourceTree = "<group>"; };
 		E0AE50B7285CF59C00312D29 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		E0AE50BB285E550900312D29 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		E0AE50BD285E589400312D29 /* faq.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = faq.swift; sourceTree = "<group>"; };
+		E0AE50C0285E5AFD00312D29 /* share.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = share.swift; sourceTree = "<group>"; };
+		E0AE50C2285E5B2E00312D29 /* Privacy Policy .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Privacy Policy .swift"; sourceTree = "<group>"; };
+		E0AE50C4285E5C6800312D29 /* AboutUs .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AboutUs .swift"; sourceTree = "<group>"; };
+		E0AE50C6285E68D500312D29 /* information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = information.swift; sourceTree = "<group>"; };
+		E0AE50C8285E69FB00312D29 /* DocumentPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
+		E0AE50CA285E6A0B00312D29 /* PDFCompont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFCompont.swift; sourceTree = "<group>"; };
+		E0AE50CD285E6E1900312D29 /* Agree .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Agree .swift"; sourceTree = "<group>"; };
+		E0AE50D1285E7E7200312D29 /* DetailsOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsOrder.swift; sourceTree = "<group>"; };
+		E0AE50D3285E826D00312D29 /* successpremit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = successpremit.swift; sourceTree = "<group>"; };
+		E0AE50D9285E845D00312D29 /* View permit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View permit.swift"; sourceTree = "<group>"; };
+		E0AE50DD285E8BA700312D29 /* file.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = file.riv; sourceTree = "<group>"; };
+		E0AE50DF285E8EC300312D29 /* file2.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = file2.riv; sourceTree = "<group>"; };
 		E0B4564D285B12CC00ED1B37 /* AuthManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManger.swift; sourceTree = "<group>"; };
 		E0B4564F285B242600ED1B37 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		E0B45651285B5B9600ED1B37 /* SwiftUI_OTPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_OTPApp.swift; sourceTree = "<group>"; };
@@ -73,6 +100,7 @@
 				E0E461E22846DFEC0044E19D /* FirebaseDatabase in Frameworks */,
 				E0E461E42846DFEC0044E19D /* FirebaseStorage in Frameworks */,
 				E007999228466E7E005F7252 /* Algorithms in Frameworks */,
+				E0AE50D8285E837300312D29 /* RiveRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +127,10 @@
 		7AA91E9928466B5F006B6BF9 /* Macro */ = {
 			isa = PBXGroup;
 			children = (
+				E0AE50DF285E8EC300312D29 /* file2.riv */,
+				E0AE50DD285E8BA700312D29 /* file.riv */,
 				7AA91E9A28466B5F006B6BF9 /* MacroApp.swift */,
+				E0AE50D3285E826D00312D29 /* successpremit.swift */,
 				E0B4564C285B12A700ED1B37 /* Auth */,
 				E0E461EA2847788E0044E19D /* Models */,
 				E0E461EF28477AEB0044E19D /* ViewModel */,
@@ -108,6 +139,8 @@
 				E0E46219284917F20044E19D /* Extention */,
 				E0E461DA2846D4010044E19D /* GoogleService-Info.plist */,
 				E0B45655285B663F00ED1B37 /* SwiftUI_OTP.xcdatamodeld */,
+				E0AE50C8285E69FB00312D29 /* DocumentPicker.swift */,
+				E0AE50CA285E6A0B00312D29 /* PDFCompont.swift */,
 				7AA91EA028466B60006B6BF9 /* Preview Content */,
 			);
 			path = Macro;
@@ -128,6 +161,29 @@
 			path = customer;
 			sourceTree = "<group>";
 		};
+		E0AE50BF285E58A400312D29 /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				E0AE50BB285E550900312D29 /* Settings.swift */,
+				E0AE50C2285E5B2E00312D29 /* Privacy Policy .swift */,
+				E0AE50C0285E5AFD00312D29 /* share.swift */,
+				E0AE50BD285E589400312D29 /* faq.swift */,
+				E0AE50C4285E5C6800312D29 /* AboutUs .swift */,
+			);
+			path = setting;
+			sourceTree = "<group>";
+		};
+		E0AE50CC285E6DE600312D29 /* permit */ = {
+			isa = PBXGroup;
+			children = (
+				E0AE50D9285E845D00312D29 /* View permit.swift */,
+				E0AE50D1285E7E7200312D29 /* DetailsOrder.swift */,
+				E0AE50CD285E6E1900312D29 /* Agree .swift */,
+				E0AE50C6285E68D500312D29 /* information.swift */,
+			);
+			path = permit;
+			sourceTree = "<group>";
+		};
 		E0B4564C285B12A700ED1B37 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,8 +196,9 @@
 			isa = PBXGroup;
 			children = (
 				E02D6F67285A05B0000A6638 /* MyTab.swift */,
-				E0AE50BB285E550900312D29 /* Settings.swift */,
+				E0AE50BF285E58A400312D29 /* setting */,
 				E0E4621C28491A870044E19D /* HomeView.swift */,
+				E0AE50CC285E6DE600312D29 /* permit */,
 				E0AE50B7285CF59C00312D29 /* test.swift */,
 				E0AE50B6285C909300312D29 /* customer */,
 				E0AE50B2285BCDAF00312D29 /* offersCustomer.swift */,
@@ -203,6 +260,7 @@
 				E0E461DF2846DFEC0044E19D /* FirebaseAuth */,
 				E0E461E12846DFEC0044E19D /* FirebaseDatabase */,
 				E0E461E32846DFEC0044E19D /* FirebaseStorage */,
+				E0AE50D7285E837300312D29 /* RiveRuntime */,
 			);
 			productName = Macro;
 			productReference = 7AA91E9728466B5F006B6BF9 /* Macro.app */;
@@ -235,6 +293,7 @@
 			packageReferences = (
 				E007999028466E7E005F7252 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				E0E461DC2846DFEC0044E19D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E0AE50D6285E837300312D29 /* XCRemoteSwiftPackageReference "rive-ios" */,
 			);
 			productRefGroup = 7AA91E9828466B5F006B6BF9 /* Products */;
 			projectDirPath = "";
@@ -250,9 +309,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0AE50E0285E8EC300312D29 /* file2.riv in Resources */,
 				7AA91EA228466B60006B6BF9 /* Preview Assets.xcassets in Resources */,
 				E0E462142848471B0044E19D /* GoogleService-Info.plist in Resources */,
 				E02D6F6428596117000A6638 /* Assets.xcassets in Resources */,
+				E0AE50DE285E8BA700312D29 /* file.riv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,15 +324,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0AE50BE285E589400312D29 /* faq.swift in Sources */,
+				E0AE50C3285E5B2E00312D29 /* Privacy Policy .swift in Sources */,
 				E0E4621D28491A870044E19D /* HomeView.swift in Sources */,
+				E0AE50C9285E69FB00312D29 /* DocumentPicker.swift in Sources */,
 				7AA91E9B28466B5F006B6BF9 /* MacroApp.swift in Sources */,
 				E02D6F3C285626EE000A6638 /* Order.swift in Sources */,
 				E0AE50B1285B6FE700312D29 /* OffersProvider.swift in Sources */,
+				E0AE50D4285E826D00312D29 /* successpremit.swift in Sources */,
 				E0AE50B8285CF59C00312D29 /* test.swift in Sources */,
+				E0AE50C5285E5C6800312D29 /* AboutUs .swift in Sources */,
 				E0B45657285B663F00ED1B37 /* SwiftUI_OTP.xcdatamodeld in Sources */,
 				E0E46218284847B40044E19D /* VerificationViewModel.swift in Sources */,
+				E0AE50C7285E68D500312D29 /* information.swift in Sources */,
 				E0AE50B3285BCDAF00312D29 /* offersCustomer.swift in Sources */,
 				E02D6F3A2856267A000A6638 /* User.swift in Sources */,
+				E0AE50D2285E7E7200312D29 /* DetailsOrder.swift in Sources */,
+				E0AE50DA285E845D00312D29 /* View permit.swift in Sources */,
 				E0B4564E285B12CC00ED1B37 /* AuthManger.swift in Sources */,
 				E0E4621B284917F20044E19D /* Color.swift in Sources */,
 				E02D6F422856292F000A6638 /* Permit.swift in Sources */,
@@ -281,7 +350,10 @@
 				E0B45654285B5CDA00ED1B37 /* PersistenceController.swift in Sources */,
 				E0AE50BC285E550900312D29 /* Settings.swift in Sources */,
 				E0B45650285B242600ED1B37 /* Countries.swift in Sources */,
+				E0AE50C1285E5AFE00312D29 /* share.swift in Sources */,
+				E0AE50CE285E6E1900312D29 /* Agree .swift in Sources */,
 				E02D6F40285628D6000A6638 /* NoFlyZone.swift in Sources */,
+				E0AE50CB285E6A0B00312D29 /* PDFCompont.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +484,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Macro/Preview Content\"";
-				DEVELOPMENT_TEAM = FT758GL74V;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -442,7 +514,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Macro/Preview Content\"";
-				DEVELOPMENT_TEAM = FT758GL74V;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -496,6 +568,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		E0AE50D6285E837300312D29 /* XCRemoteSwiftPackageReference "rive-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rive-app/rive-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		E0E461DC2846DFEC0044E19D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -511,6 +591,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E007999028466E7E005F7252 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
 			productName = Algorithms;
+		};
+		E0AE50D7285E837300312D29 /* RiveRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0AE50D6285E837300312D29 /* XCRemoteSwiftPackageReference "rive-ios" */;
+			productName = RiveRuntime;
 		};
 		E0E461DD2846DFEC0044E19D /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
