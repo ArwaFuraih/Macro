@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 
 struct offersCustomer: View {
-    @ObservedObject var customerOrder = custumerOrdr()
+//    @ObservedObject var customerOrder = custumerOrdr()
      
         let columns: [GridItem] = [
             GridItem(.flexible(), spacing: 4, alignment:nil)]
@@ -40,7 +40,8 @@ struct offersCustomer: View {
                         .padding()
                         .pickerStyle(SegmentedPickerStyle())
                     
-                    ForEach(customerOrder.list,id:\.self) { index in
+                    
+                    ForEach(0..<5)  { index in
                                     
                                
 
@@ -113,7 +114,7 @@ struct offersCustomer: View {
                                                                      Image("chevron order.right.2").padding(.leading,260).padding(.top, 10)
                    //
                                                       
-                                                                 }).fullScreenCover(isPresented: $showSheet, content: { HomeView()
+                                                                 }).fullScreenCover(isPresented: $showSheet, content: { Viewpermit()
                                                                   
                                                                                  })
                                                       
@@ -159,6 +160,11 @@ struct offersCustomer_Previews: PreviewProvider {
 
 
 struct myOffersCu :View {
+    
+    @State var showSheet = false
+    @State var showSheet1 = false
+
+
 let columns: [GridItem] = [
     GridItem(.flexible(), spacing: 4, alignment: nil)]
 
@@ -173,12 +179,18 @@ var body: some View {
         VStack{
             VStack{
                 VStack(alignment: .leading, spacing:2){
-                    Button(action: {
-                        print("g")
-                               }, label: {
-                                   Image("ORDER1").clipShape(Circle()).padding(.bottom)
-                    
-                               }).padding(.leading,7)
+                    NavigationLink {
+                        HomeView()                    }
+                label: {
+                    Image("ORDER1").clipShape(Circle()).padding(.bottom)
+                    }
+
+//                    Button(action: {
+//                        print("g")
+//                               }, label: {
+//                                   Image("ORDER1").clipShape(Circle()).padding(.bottom)
+//
+//                               }).padding(.leading,7)
                    
                         Text("Fahad Alrogay").foregroundColor(.white)
                             .font(.system(size: 16, weight: .regular, design: .rounded))
@@ -194,23 +206,26 @@ var body: some View {
                
 //                Spacer()
                 
+                NavigationLink {
+                    DetailsOrder()
+
+                } label: {
+                    Text("Accept".uppercased())
+                        .font(.system(size: 16, weight: .regular, design: .rounded))
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .frame(width: 108, height: 28)
+//                                                       .padding()
+//                                                       .padding(.horizontal, 20)
+                        .background(
+                         Color.them.btnColor
+                                .cornerRadius(8)
+                                .shadow(radius: 8)
+                        )                }
+
+                
                 HStack{
-                        Button(action: {
-                            print("g")
-                                   }, label: {
-                                       Text("Accept".uppercased())
-                                           .font(.system(size: 16, weight: .regular, design: .rounded))
-                                           .fontWeight(.semibold)
-                                           .foregroundColor(.white)
-                                           .frame(width: 108, height: 28)
-        //                                                       .padding()
-        //                                                       .padding(.horizontal, 20)
-                                           .background(
-                                            Color.them.btnColor
-                                                   .cornerRadius(8)
-                                                   .shadow(radius: 8)
-                                           )
-                                   }).padding(.trailing,40)
+//                        Button(action: , label: ).padding(.trailing,40)
                       
 
                         

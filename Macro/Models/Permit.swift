@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct Permit: Codable {
+struct Permit: Identifiable {
+    var id: ObjectIdentifier
+    
     let userID: User
     let locationName : String
     let numberofPilot: Int

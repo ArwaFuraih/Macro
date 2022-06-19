@@ -21,6 +21,16 @@ struct Order: Identifiable{
     let status: Int
     let providerID: User
     let request: Request
+   // let request: [String]
+    
+    
+//    init(_ data: [String:Any] ){
+//        self.id = data["id"] as? String ??  ""
+//        self.Price = data["Price"] as? Double ??  0.0
+////         self.providerID = User(data["providerID"]]
+//
+//
+//    }
 }
 
 
@@ -33,4 +43,5 @@ struct Request: Identifiable {
     let pilot: Int
     let status: String
     let Hours: Int
+    //orderId : String
 }

@@ -18,13 +18,24 @@ struct MacroApp: App {
             NavigationView{
 //                test()
 //                OffersProvider()
-                HomeView()
+//                HomeView()
 //                offersCustomer()
 //                OffersProvider()
-//MyTab()
+MyTab()
 //                offersCustomer().navigationBarHidden(true)
                 
             }
         }
+    }
+}
+
+struct MacroApp_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+     
+            MyTab()
+
+                       .preferredColorScheme(.dark)
+               }
     }
 }

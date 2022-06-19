@@ -198,7 +198,7 @@ Text("  Total price :                                   700 RS")
 .frame(maxWidth:.maximum(10,136),alignment:.center)
                     .padding(.top,20)
                     }.fullScreenCover(isPresented: $showSheet, content: {
-                        successpremit()})
+                        success()})
                          
                      }
                     

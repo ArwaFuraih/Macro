@@ -46,6 +46,14 @@
 		E0BAC1C2285F0B9F001D1E85 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E0BAC1C1285F0B9F001D1E85 /* FirebaseDatabase */; };
 		E0BAC1C4285F0B9F001D1E85 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E0BAC1C3285F0B9F001D1E85 /* FirebaseFirestore */; };
 		E0BAC1C6285F0B9F001D1E85 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E0BAC1C5285F0B9F001D1E85 /* FirebaseStorage */; };
+		E0BAC1C8285F5BEC001D1E85 /* orderdetailsowner .swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1C7285F5BEC001D1E85 /* orderdetailsowner .swift */; };
+		E0BAC1CA285F6472001D1E85 /* success.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1C9285F6472001D1E85 /* success.swift */; };
+		E0BAC1CC285F6686001D1E85 /* Photography .swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1CB285F6686001D1E85 /* Photography .swift */; };
+		E0BAC1CE285F6994001D1E85 /* New Request .swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1CD285F6994001D1E85 /* New Request .swift */; };
+		E0BAC1D0285F6ADA001D1E85 /* loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1CF285F6ADA001D1E85 /* loading.swift */; };
+		E0BAC1D2285F6DA7001D1E85 /* Argiculture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1D1285F6DA7001D1E85 /* Argiculture.swift */; };
+		E0BAC1D4285F6F04001D1E85 /*  Mining .swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1D3285F6F04001D1E85 /*  Mining .swift */; };
+		E0BAC1D6285F6FB0001D1E85 /* eng.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1D5285F6FB0001D1E85 /* eng.swift */; };
 		E0E461DE2846DFEC0044E19D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E0E461DD2846DFEC0044E19D /* FirebaseAnalytics */; };
 		E0E461E02846DFEC0044E19D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E0E461DF2846DFEC0044E19D /* FirebaseAuth */; };
 		E0E461E22846DFEC0044E19D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E0E461E12846DFEC0044E19D /* FirebaseDatabase */; };
@@ -92,6 +100,14 @@
 		E0BAC1B8285E9C4F001D1E85 /* CreateOwnerAccount .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CreateOwnerAccount .swift"; sourceTree = "<group>"; };
 		E0BAC1BA285EA4BE001D1E85 /* Account .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account .swift"; sourceTree = "<group>"; };
 		E0BAC1BC285F0314001D1E85 /* custumerOrdr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = custumerOrdr.swift; sourceTree = "<group>"; };
+		E0BAC1C7285F5BEC001D1E85 /* orderdetailsowner .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "orderdetailsowner .swift"; sourceTree = "<group>"; };
+		E0BAC1C9285F6472001D1E85 /* success.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = success.swift; sourceTree = "<group>"; };
+		E0BAC1CB285F6686001D1E85 /* Photography .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photography .swift"; sourceTree = "<group>"; };
+		E0BAC1CD285F6994001D1E85 /* New Request .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "New Request .swift"; sourceTree = "<group>"; };
+		E0BAC1CF285F6ADA001D1E85 /* loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loading.swift; sourceTree = "<group>"; };
+		E0BAC1D1285F6DA7001D1E85 /* Argiculture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Argiculture.swift; sourceTree = "<group>"; };
+		E0BAC1D3285F6F04001D1E85 /*  Mining .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = " Mining .swift"; sourceTree = "<group>"; };
+		E0BAC1D5285F6FB0001D1E85 /* eng.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eng.swift; sourceTree = "<group>"; };
 		E0E461DA2846D4010044E19D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E0E462132848471B0044E19D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E0E46215284847AC0044E19D /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -144,7 +160,6 @@
 				E0AE50DF285E8EC300312D29 /* file2.riv */,
 				E0AE50DD285E8BA700312D29 /* file.riv */,
 				7AA91E9A28466B5F006B6BF9 /* MacroApp.swift */,
-				E0AE50D3285E826D00312D29 /* successpremit.swift */,
 				E0B4564C285B12A700ED1B37 /* Auth */,
 				E0E461EA2847788E0044E19D /* Models */,
 				E0E461EF28477AEB0044E19D /* ViewModel */,
@@ -171,6 +186,7 @@
 		E0AE50B6285C909300312D29 /* customer */ = {
 			isa = PBXGroup;
 			children = (
+				E0AE50B2285BCDAF00312D29 /* offersCustomer.swift */,
 			);
 			path = customer;
 			sourceTree = "<group>";
@@ -209,16 +225,24 @@
 		E0E461E728476DDA0044E19D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E0AE50B6285C909300312D29 /* customer */,
 				E02D6F67285A05B0000A6638 /* MyTab.swift */,
+				E0E4621C28491A870044E19D /* HomeView.swift */,
+				E0BAC1CB285F6686001D1E85 /* Photography .swift */,
+				E0BAC1D1285F6DA7001D1E85 /* Argiculture.swift */,
+				E0BAC1D5285F6FB0001D1E85 /* eng.swift */,
+				E0BAC1D3285F6F04001D1E85 /*  Mining .swift */,
 				E0BAC1B8285E9C4F001D1E85 /* CreateOwnerAccount .swift */,
 				E0BAC1BA285EA4BE001D1E85 /* Account .swift */,
+				E0BAC1CF285F6ADA001D1E85 /* loading.swift */,
 				E0AE50BF285E58A400312D29 /* setting */,
-				E0E4621C28491A870044E19D /* HomeView.swift */,
 				E0AE50CC285E6DE600312D29 /* permit */,
+				E0AE50D3285E826D00312D29 /* successpremit.swift */,
 				E0AE50B7285CF59C00312D29 /* test.swift */,
-				E0AE50B6285C909300312D29 /* customer */,
-				E0AE50B2285BCDAF00312D29 /* offersCustomer.swift */,
+				E0BAC1C9285F6472001D1E85 /* success.swift */,
 				E0AE50B0285B6FE700312D29 /* OffersProvider.swift */,
+				E0BAC1CD285F6994001D1E85 /* New Request .swift */,
+				E0BAC1C7285F5BEC001D1E85 /* orderdetailsowner .swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -354,29 +378,37 @@
 				E02D6F3C285626EE000A6638 /* Order.swift in Sources */,
 				E0BAC1B9285E9C4F001D1E85 /* CreateOwnerAccount .swift in Sources */,
 				E0AE50B1285B6FE700312D29 /* OffersProvider.swift in Sources */,
+				E0BAC1CE285F6994001D1E85 /* New Request .swift in Sources */,
 				E0AE50D4285E826D00312D29 /* successpremit.swift in Sources */,
 				E0AE50B8285CF59C00312D29 /* test.swift in Sources */,
 				E0AE50C5285E5C6800312D29 /* AboutUs .swift in Sources */,
 				E0BAC1BB285EA4BE001D1E85 /* Account .swift in Sources */,
 				E0B45657285B663F00ED1B37 /* SwiftUI_OTP.xcdatamodeld in Sources */,
+				E0BAC1D0285F6ADA001D1E85 /* loading.swift in Sources */,
 				E0E46218284847B40044E19D /* VerificationViewModel.swift in Sources */,
 				E0AE50C7285E68D500312D29 /* information.swift in Sources */,
 				E0AE50B3285BCDAF00312D29 /* offersCustomer.swift in Sources */,
 				E02D6F3A2856267A000A6638 /* User.swift in Sources */,
 				E0AE50D2285E7E7200312D29 /* DetailsOrder.swift in Sources */,
+				E0BAC1D2285F6DA7001D1E85 /* Argiculture.swift in Sources */,
 				E0AE50DA285E845D00312D29 /* View permit.swift in Sources */,
 				E0B4564E285B12CC00ED1B37 /* AuthManger.swift in Sources */,
 				E0E4621B284917F20044E19D /* Color.swift in Sources */,
 				E02D6F422856292F000A6638 /* Permit.swift in Sources */,
 				E0E46216284847AC0044E19D /* LoginViewModel.swift in Sources */,
 				E02D6F68285A05B0000A6638 /* MyTab.swift in Sources */,
+				E0BAC1CA285F6472001D1E85 /* success.swift in Sources */,
+				E0BAC1C8285F5BEC001D1E85 /* orderdetailsowner .swift in Sources */,
 				E0B45652285B5B9600ED1B37 /* SwiftUI_OTPApp.swift in Sources */,
 				E0B45654285B5CDA00ED1B37 /* PersistenceController.swift in Sources */,
 				E0AE50BC285E550900312D29 /* Settings.swift in Sources */,
 				E0B45650285B242600ED1B37 /* Countries.swift in Sources */,
 				E0AE50C1285E5AFE00312D29 /* share.swift in Sources */,
+				E0BAC1D6285F6FB0001D1E85 /* eng.swift in Sources */,
 				E0BAC1BD285F0314001D1E85 /* custumerOrdr.swift in Sources */,
+				E0BAC1D4285F6F04001D1E85 /*  Mining .swift in Sources */,
 				E0AE50CE285E6E1900312D29 /* Agree .swift in Sources */,
+				E0BAC1CC285F6686001D1E85 /* Photography .swift in Sources */,
 				E02D6F40285628D6000A6638 /* NoFlyZone.swift in Sources */,
 				E0AE50CB285E6A0B00312D29 /* PDFCompont.swift in Sources */,
 			);

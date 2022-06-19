@@ -137,6 +137,8 @@ struct OffersProvider: View {
     
     
 struct myOffers :View {
+    @State var showSheet = false
+
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: 4, alignment: nil)]
     

@@ -13,7 +13,7 @@ enum UserKind: Int, Codable {
 }
 
 
-struct User: Codable {
+struct User: Identifiable {
 let id : String = UUID().uuidString
 let passward : String
 let fullName : String
@@ -21,5 +21,5 @@ let email : String
 let profilePictureURL : String
 let userType : UserKind
 let order: Array<Order>
-let rating: Array<String>
+let rating: Array<String> // order
 }

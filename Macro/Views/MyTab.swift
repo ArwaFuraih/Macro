@@ -31,7 +31,7 @@ struct MyTab: View{
 //                OffersProvider()
 //            }
             
-            
+        
             offersCustomer()
             .tabItem {
                         Image(systemName: "list.bullet.rectangle.portrait")

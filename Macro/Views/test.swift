@@ -78,21 +78,21 @@
 //    }
 //
 //
-////    func checkUser() -> String  {
-////        @State var showSheet2: Bool = false
-////
-////        print("yeeeeees clicked")
-////        let x = Button("Show Sheet") {
-////            showSheet2.toggle()
-////               }
-////               .sheet(isPresented: $showSheet2) {
-////                   Settings()
-////               }
-////        return x as! String
-////
-////    }
-////
-////    }
+//    func checkUser() -> View  {
+//        @State var showSheet2: Bool = false
+//
+//        print("yeeeeees clicked")
+//         Button("Show Sheet") {
+//            showSheet2.toggle()
+//               }
+//               .sheet(isPresented: $showSheet2) {
+//                   Settings()
+//               }
+//        return
+//
+//    }
+//
+//    }
 //
 //    
 //

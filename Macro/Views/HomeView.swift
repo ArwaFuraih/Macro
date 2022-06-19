@@ -12,8 +12,10 @@ import FirebaseAuth
 struct HomeView: View {
     @State var selectedTab: Int = 0
     @State var showingAlert = false
-    @State var userIsLogin = true
+    @State var userIsLogin = false
     @State var showSheet: Bool = false
+    @State var showSheet3: Bool = false
+
 
 //    var setti = Settings.self
 
@@ -112,33 +114,47 @@ struct HomeView: View {
                   
                     
                         HStack{
-                                            
-                                Button {
-//                                    Auth.auth().currentUser != nil
-
-                                    showingAlert.toggle()
-//                                    showSheet.toggle()
-                                } label: {
-                                    ZStack{
-                                       
-                                        Image("le1").clipShape(
-                                            RoundedRectangle(cornerRadius: 8))
-                                            .frame(width: 162, height:109)
-                                        Image("mle")
-                                            .frame(width: 162, height: 109)
-                                        Text("Photography").foregroundColor(Color.white).padding(.top,84)
-                                    }
-                                    
-                                  
+                                   
+                            NavigationLink {
+                                Photography()
+                            } label: {
+                                ZStack{
+                                   
+                                    Image("le1").clipShape(
+                                        RoundedRectangle(cornerRadius: 8))
+                                        .frame(width: 162, height:109)
+                                    Image("mle")
+                                        .frame(width: 162, height: 109)
+                                    Text("Photography").foregroundColor(Color.white).padding(.top,84)
                                 }
+                            }
+
+//                                Button {
+////                                    Auth.auth().currentUser != nil
+//
+////                                    showingAlert.toggle()
+//                                    showSheet.toggle()
+//                                } label: {
+//                                    ZStack{
+//                                       
+//                                        Image("le1").clipShape(
+//                                            RoundedRectangle(cornerRadius: 8))
+//                                            .frame(width: 162, height:109)
+//                                        Image("mle")
+//                                            .frame(width: 162, height: 109)
+//                                        Text("Photography").foregroundColor(Color.white).padding(.top,84)
+//                                    }
+//                                    
+//                                  
+//                                }.fullScreenCover(isPresented: $showSheet, content: {
+//                                    Photography()
+//                                })
                             
                             
                             //
-                            Button {
-//                                    Auth.auth().currentUser != nil
-
-                                showingAlert.toggle()
-//                                    showSheet.toggle()
+                            
+                            NavigationLink {
+                                Argiculture()
                             } label: {
                                 ZStack{
                                     Image("imlei")
@@ -151,9 +167,30 @@ struct HomeView: View {
                                     .frame(width: 162, height:109)
                                           Text("Argiculture").foregroundColor(Color.white).padding(.top,84)
                                 }
-                                
-                              
                             }
+
+//                            Button {
+////                                    Auth.auth().currentUser != nil
+//
+//                                showingAlert.toggle()
+////                                    showSheet.toggle()
+//                            } label: {
+//                                ZStack{
+//                                    Image("imlei")
+//                                        .clipShape(
+//                                    RoundedRectangle(cornerRadius: 8))
+//                                    .frame(width: 162, height:109)
+//                                    Image("imle")
+//                                        .clipShape(
+//                                    RoundedRectangle(cornerRadius: 8))
+//                                    .frame(width: 162, height:109)
+//                                          Text("Argiculture").foregroundColor(Color.white).padding(.top,84)
+//                                }
+//                                
+//                              
+//                            }.fullScreenCover(isPresented: $showSheet, content: {
+//                                Account()
+//                            })
                             
                                 
                                 
@@ -193,16 +230,30 @@ struct HomeView: View {
                         
                         //
                         
-                        
+                        NavigationLink {
+                            eng()
+                        } label: {
+                            ZStack{
+                                Image("photogra")
+                                    .frame(width: .infinity, height:109)
+                                Image("rightm").resizable()
+                                    .frame(width: .infinity, height: 117)
+                                Text("Photography").foregroundColor(Color.white).padding(.top,84)
+                            }
+
+                        }
+
                         Button {
                         
-//                            if userIsLogin {
-//                                fetchView()}
-//                                    else{
+                            if userIsLogin {
+                                showSheet3.toggle()
+
+                               }
+                                    else{
                                         
                                          showingAlert.toggle()
                             
-//                        }
+                        }
                                     
                                 }
                         
@@ -228,6 +279,8 @@ struct HomeView: View {
                                                 )}
                                 }            .fullScreenCover(isPresented: $showSheet, content: {
                                     Settings()})
+                                .fullScreenCover(isPresented: $showSheet3, content: {
+                                   Settings()})
                         
                         
                         
