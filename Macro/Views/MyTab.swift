@@ -19,7 +19,7 @@ struct MyTab: View{
                                Text("Catogries")
                            }
             
-            Text("AirMap")
+            AirMap()
             .tabItem {
                            Image(systemName: "map.fill")
                            Text("AirMap")
