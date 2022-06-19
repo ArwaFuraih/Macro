@@ -79,7 +79,7 @@ struct HomeView: View {
                         
                         
                         NavigationLink(
-                            destination: offersCustomer(),
+                            destination: CreateOwnerAccount(),
                             label: {
                                 ZStack{
                                     Text("Become a Drone Owner".uppercased())
@@ -182,7 +182,7 @@ struct HomeView: View {
                                         .frame(width: 162, height:109)
                                 Text("Oil & Gas Mining").foregroundColor(Color.white).padding(.top,84)
                             }.fullScreenCover(isPresented: $showSheet, content: {
-                                                offersCustomer()
+                                                Account()
                                             })
 
                             

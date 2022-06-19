@@ -9,6 +9,7 @@ import SwiftUI
 import Firebase
 
 struct offersCustomer: View {
+    @ObservedObject var customerOrder = custumerOrdr()
      
         let columns: [GridItem] = [
             GridItem(.flexible(), spacing: 4, alignment:nil)]
@@ -39,7 +40,7 @@ struct offersCustomer: View {
                         .padding()
                         .pickerStyle(SegmentedPickerStyle())
                     
-                    ForEach(0..<5) { index in
+                    ForEach(customerOrder.list,id:\.self) { index in
                                     
                                
 

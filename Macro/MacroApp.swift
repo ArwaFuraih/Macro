@@ -6,7 +6,9 @@
 //
 
 import SwiftUI
-import Firebase
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseAuth
 
 @main
 struct MacroApp: App {
@@ -16,10 +18,10 @@ struct MacroApp: App {
             NavigationView{
 //                test()
 //                OffersProvider()
-//                HomeView()
+                HomeView()
 //                offersCustomer()
 //                OffersProvider()
-MyTab()
+//MyTab()
 //                offersCustomer().navigationBarHidden(true)
                 
             }

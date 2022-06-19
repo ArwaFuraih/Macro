@@ -8,12 +8,13 @@
 import Foundation
 
 enum status: Int, Codable {
+    
     case customer = 0, provider = 1
     
 }
 
-struct Order: Codable {
-    let orderID: String
+struct Order: Identifiable{
+    var id: String
     let userID: User
     let droneType: String
     let Price: Double
@@ -23,7 +24,9 @@ struct Order: Codable {
 }
 
 
-struct Request: Codable {
+struct Request: Identifiable {
+    var id: ObjectIdentifier
+    
     let locat : Array<String>
     let description: String
     let Attachment : String
