@@ -231,7 +231,7 @@ struct HomeView: View {
                         //
                         
                         NavigationLink {
-                            eng()
+                         //   eng()
                         } label: {
                             ZStack{
                                 Image("photogra")
