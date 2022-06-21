@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 
 struct ts: View {
-    
+
     @StateObject var m : custumerOrdr = custumerOrdr()
 //    @ObservedObject var m = custumerOrdr()
     var body: some View {

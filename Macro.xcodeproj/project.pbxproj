@@ -79,7 +79,6 @@
 		E0AE50DE285E8BA700312D29 /* file.riv in Resources */ = {isa = PBXBuildFile; fileRef = E0AE50DD285E8BA700312D29 /* file.riv */; };
 		E0AE50E0285E8EC300312D29 /* file2.riv in Resources */ = {isa = PBXBuildFile; fileRef = E0AE50DF285E8EC300312D29 /* file2.riv */; };
 		E0B4564E285B12CC00ED1B37 /* AuthManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B4564D285B12CC00ED1B37 /* AuthManger.swift */; };
-		E0B45650285B242600ED1B37 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B4564F285B242600ED1B37 /* Countries.swift */; };
 		E0B45652285B5B9600ED1B37 /* SwiftUI_OTPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B45651285B5B9600ED1B37 /* SwiftUI_OTPApp.swift */; };
 		E0B45654285B5CDA00ED1B37 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B45653285B5CDA00ED1B37 /* PersistenceController.swift */; };
 		E0B45657285B663F00ED1B37 /* SwiftUI_OTP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0B45655285B663F00ED1B37 /* SwiftUI_OTP.xcdatamodeld */; };
@@ -96,10 +95,6 @@
 		E0BAC1DB2861542D001D1E85 /* ts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1DA2861542D001D1E85 /* ts.swift */; };
 		E0BAC1DD28617CAE001D1E85 /* tetextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1DC28617CAE001D1E85 /* tetextfield.swift */; };
 		E0BAC1E12861A99C001D1E85 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0BAC1E02861A99C001D1E85 /* GoogleService-Info.plist */; };
-		E0E461DE2846DFEC0044E19D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E0E461DD2846DFEC0044E19D /* FirebaseAnalytics */; };
-		E0E461E02846DFEC0044E19D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E0E461DF2846DFEC0044E19D /* FirebaseAuth */; };
-		E0E461E22846DFEC0044E19D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E0E461E12846DFEC0044E19D /* FirebaseDatabase */; };
-		E0E461E42846DFEC0044E19D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E0E461E32846DFEC0044E19D /* FirebaseStorage */; };
 		E0E46216284847AC0044E19D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E46215284847AC0044E19D /* LoginViewModel.swift */; };
 		E0E46218284847B40044E19D /* VerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E46217284847B40044E19D /* VerificationViewModel.swift */; };
 		E0E4621B284917F20044E19D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E4621A284917F20044E19D /* Color.swift */; };
@@ -182,7 +177,6 @@
 		E0AE50DD285E8BA700312D29 /* file.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = file.riv; sourceTree = "<group>"; };
 		E0AE50DF285E8EC300312D29 /* file2.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = file2.riv; sourceTree = "<group>"; };
 		E0B4564D285B12CC00ED1B37 /* AuthManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManger.swift; sourceTree = "<group>"; };
-		E0B4564F285B242600ED1B37 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		E0B45651285B5B9600ED1B37 /* SwiftUI_OTPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_OTPApp.swift; sourceTree = "<group>"; };
 		E0B45653285B5CDA00ED1B37 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		E0B45656285B663F00ED1B37 /* SwiftUI_OTP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftUI_OTP.xcdatamodel; sourceTree = "<group>"; };
@@ -436,7 +430,6 @@
 				E02D6F3F285628D6000A6638 /* NoFlyZone.swift */,
 				E02D6F392856267A000A6638 /* User.swift */,
 				E02D6F3B285626EE000A6638 /* Order.swift */,
-				E0B4564F285B242600ED1B37 /* Countries.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -627,7 +620,6 @@
 				E0AE50BC285E550900312D29 /* Settings.swift in Sources */,
 				7A4991E2285FABD8007D3954 /* HourlyWeatherView.swift in Sources */,
 				7A4991F0285FAE69007D3954 /* LocationManager.swift in Sources */,
-				E0B45650285B242600ED1B37 /* Countries.swift in Sources */,
 				7A4991CF285FA99C007D3954 /* Weather.swift in Sources */,
 				7A4991E7285FABD8007D3954 /* TodayWeatherView.swift in Sources */,
 				E0AE50C1285E5AFE00312D29 /* share.swift in Sources */,
