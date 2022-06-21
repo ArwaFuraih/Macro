@@ -58,7 +58,6 @@
 		E02D6F3A2856267A000A6638 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F392856267A000A6638 /* User.swift */; };
 		E02D6F3C285626EE000A6638 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F3B285626EE000A6638 /* Order.swift */; };
 		E02D6F40285628D6000A6638 /* NoFlyZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F3F285628D6000A6638 /* NoFlyZone.swift */; };
-		E02D6F422856292F000A6638 /* Permit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F412856292F000A6638 /* Permit.swift */; };
 		E02D6F6428596117000A6638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E02D6F6328596116000A6638 /* Assets.xcassets */; };
 		E02D6F68285A05B0000A6638 /* MyTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D6F67285A05B0000A6638 /* MyTab.swift */; };
 		E0AE50B1285B6FE700312D29 /* OffersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50B0285B6FE700312D29 /* OffersProvider.swift */; };
@@ -98,11 +97,13 @@
 		E0BAC1D0285F6ADA001D1E85 /* loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1CF285F6ADA001D1E85 /* loading.swift */; };
 		E0BAC1D2285F6DA7001D1E85 /* Argiculture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1D1285F6DA7001D1E85 /* Argiculture.swift */; };
 		E0BAC1D4285F6F04001D1E85 /*  Mining .swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1D3285F6F04001D1E85 /*  Mining .swift */; };
+		E0BAC1DB2861542D001D1E85 /* ts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1DA2861542D001D1E85 /* ts.swift */; };
+		E0BAC1DD28617CAE001D1E85 /* tetextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1DC28617CAE001D1E85 /* tetextfield.swift */; };
+		E0BAC1E12861A99C001D1E85 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0BAC1E02861A99C001D1E85 /* GoogleService-Info.plist */; };
 		E0E461DE2846DFEC0044E19D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E0E461DD2846DFEC0044E19D /* FirebaseAnalytics */; };
 		E0E461E02846DFEC0044E19D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E0E461DF2846DFEC0044E19D /* FirebaseAuth */; };
 		E0E461E22846DFEC0044E19D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E0E461E12846DFEC0044E19D /* FirebaseDatabase */; };
 		E0E461E42846DFEC0044E19D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E0E461E32846DFEC0044E19D /* FirebaseStorage */; };
-		E0E462142848471B0044E19D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0E462132848471B0044E19D /* GoogleService-Info.plist */; };
 		E0E46216284847AC0044E19D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E46215284847AC0044E19D /* LoginViewModel.swift */; };
 		E0E46218284847B40044E19D /* VerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E46217284847B40044E19D /* VerificationViewModel.swift */; };
 		E0E4621B284917F20044E19D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E4621A284917F20044E19D /* Color.swift */; };
@@ -159,7 +160,6 @@
 		E02D6F392856267A000A6638 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E02D6F3B285626EE000A6638 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		E02D6F3F285628D6000A6638 /* NoFlyZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFlyZone.swift; sourceTree = "<group>"; };
-		E02D6F412856292F000A6638 /* Permit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permit.swift; sourceTree = "<group>"; };
 		E02D6F6328596116000A6638 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Views/Assets.xcassets; sourceTree = "<group>"; };
 		E02D6F67285A05B0000A6638 /* MyTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTab.swift; sourceTree = "<group>"; };
 		E0AE50B0285B6FE700312D29 /* OffersProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersProvider.swift; sourceTree = "<group>"; };
@@ -194,8 +194,9 @@
 		E0BAC1CF285F6ADA001D1E85 /* loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loading.swift; sourceTree = "<group>"; };
 		E0BAC1D1285F6DA7001D1E85 /* Argiculture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Argiculture.swift; sourceTree = "<group>"; };
 		E0BAC1D3285F6F04001D1E85 /*  Mining .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = " Mining .swift"; sourceTree = "<group>"; };
-		E0E461DA2846D4010044E19D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E0E462132848471B0044E19D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E0BAC1DA2861542D001D1E85 /* ts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ts.swift; sourceTree = "<group>"; };
+		E0BAC1DC28617CAE001D1E85 /* tetextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tetextfield.swift; sourceTree = "<group>"; };
+		E0BAC1E02861A99C001D1E85 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E0E46215284847AC0044E19D /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E0E46217284847B40044E19D /* VerificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationViewModel.swift; sourceTree = "<group>"; };
 		E0E4621A284917F20044E19D /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -296,7 +297,6 @@
 		7AA91E8E28466B5F006B6BF9 = {
 			isa = PBXGroup;
 			children = (
-				E0E462132848471B0044E19D /* GoogleService-Info.plist */,
 				7AA91E9928466B5F006B6BF9 /* Macro */,
 				7AA91E9828466B5F006B6BF9 /* Products */,
 			);
@@ -322,7 +322,6 @@
 				E0E461E728476DDA0044E19D /* Views */,
 				E02D6F6328596116000A6638 /* Assets.xcassets */,
 				E0E46219284917F20044E19D /* Extention */,
-				E0E461DA2846D4010044E19D /* GoogleService-Info.plist */,
 				E0B45655285B663F00ED1B37 /* SwiftUI_OTP.xcdatamodeld */,
 				7A4991BC285FA947007D3954 /* SceneDelegate.swift */,
 				E0AE50C8285E69FB00312D29 /* DocumentPicker.swift */,
@@ -349,6 +348,8 @@
 			isa = PBXGroup;
 			children = (
 				E0AE50B2285BCDAF00312D29 /* offersCustomer.swift */,
+				E0BAC1DA2861542D001D1E85 /* ts.swift */,
+				E0BAC1DC28617CAE001D1E85 /* tetextfield.swift */,
 			);
 			path = customer;
 			sourceTree = "<group>";
@@ -384,14 +385,22 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		E0BAC1D7285FBDF7001D1E85 /* Views-Home */ = {
+			isa = PBXGroup;
+			children = (
+				E0E4621C28491A870044E19D /* HomeView.swift */,
+			);
+			path = "Views-Home";
+			sourceTree = "<group>";
+		};
 		E0E461E728476DDA0044E19D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E0BAC1D7285FBDF7001D1E85 /* Views-Home */,
+				E02D6F67285A05B0000A6638 /* MyTab.swift */,
 				7A4991EA285FABE1007D3954 /* Views-Weather */,
 				7A4991BE285FA947007D3954 /* AirMap.swift */,
 				E0AE50B6285C909300312D29 /* customer */,
-				E02D6F67285A05B0000A6638 /* MyTab.swift */,
-				E0E4621C28491A870044E19D /* HomeView.swift */,
 				E0BAC1CB285F6686001D1E85 /* Photography .swift */,
 				E0BAC1D1285F6DA7001D1E85 /* Argiculture.swift */,
 				E0BAC1D3285F6F04001D1E85 /*  Mining .swift */,
@@ -406,6 +415,7 @@
 				E0AE50B0285B6FE700312D29 /* OffersProvider.swift */,
 				E0BAC1CD285F6994001D1E85 /* New Request .swift */,
 				E0BAC1C7285F5BEC001D1E85 /* orderdetailsowner .swift */,
+				E0BAC1E02861A99C001D1E85 /* GoogleService-Info.plist */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -418,7 +428,6 @@
 				7A4991CC285FA99C007D3954 /* WeatherDetail.swift */,
 				7A4991CB285FA99C007D3954 /* WeatherRespose.swift */,
 				7A4991C8285FA99C007D3954 /* Temperature.swift */,
-				E02D6F412856292F000A6638 /* Permit.swift */,
 				E02D6F3F285628D6000A6638 /* NoFlyZone.swift */,
 				E02D6F392856267A000A6638 /* User.swift */,
 				E02D6F3B285626EE000A6638 /* Order.swift */,
@@ -533,7 +542,6 @@
 				7A49921A285FAFEA007D3954 /* nightFewClouds.json in Resources */,
 				7AA91EA228466B60006B6BF9 /* Preview Assets.xcassets in Resources */,
 				7A499222285FAFEA007D3954 /* nightShowerRains.json in Resources */,
-				E0E462142848471B0044E19D /* GoogleService-Info.plist in Resources */,
 				7A499218285FAFEA007D3954 /* dayRain.json in Resources */,
 				7A499211285FAFEA007D3954 /* dayShowerRains.json in Resources */,
 				7A499216285FAFEA007D3954 /* dayThunderstorm.json in Resources */,
@@ -549,6 +557,7 @@
 				7A49921E285FAFEA007D3954 /* nightRain.json in Resources */,
 				7A49921B285FAFEA007D3954 /* nightMist.json in Resources */,
 				7A49921D285FAFEA007D3954 /* nightClearSky.json in Resources */,
+				E0BAC1E12861A99C001D1E85 /* GoogleService-Info.plist in Resources */,
 				7A499212285FAFEA007D3954 /* dayScatteredClouds.json in Resources */,
 				E0AE50DE285E8BA700312D29 /* file.riv in Resources */,
 				7A499219285FAFEA007D3954 /* nightSnow.json in Resources */,
@@ -570,6 +579,7 @@
 				E0AE50C3285E5B2E00312D29 /* Privacy Policy .swift in Sources */,
 				7A4991D7285FABA5007D3954 /* LocationViewModel.swift in Sources */,
 				E0E4621D28491A870044E19D /* HomeView.swift in Sources */,
+				E0BAC1DD28617CAE001D1E85 /* tetextfield.swift in Sources */,
 				E0AE50C9285E69FB00312D29 /* DocumentPicker.swift in Sources */,
 				7AA91E9B28466B5F006B6BF9 /* MacroApp.swift in Sources */,
 				7A4991E4285FABD8007D3954 /* MapView.swift in Sources */,
@@ -577,6 +587,7 @@
 				E0BAC1B9285E9C4F001D1E85 /* CreateOwnerAccount .swift in Sources */,
 				E0AE50B1285B6FE700312D29 /* OffersProvider.swift in Sources */,
 				E0BAC1CE285F6994001D1E85 /* New Request .swift in Sources */,
+				E0BAC1DB2861542D001D1E85 /* ts.swift in Sources */,
 				E0AE50D4285E826D00312D29 /* successpremit.swift in Sources */,
 				E0AE50B8285CF59C00312D29 /* test.swift in Sources */,
 				E0AE50C5285E5C6800312D29 /* AboutUs .swift in Sources */,
@@ -595,7 +606,6 @@
 				7A4991D1285FA99C007D3954 /* WeatherDetail.swift in Sources */,
 				E0B4564E285B12CC00ED1B37 /* AuthManger.swift in Sources */,
 				E0E4621B284917F20044E19D /* Color.swift in Sources */,
-				E02D6F422856292F000A6638 /* Permit.swift in Sources */,
 				7A4991F9285FAF6E007D3954 /* API.swift in Sources */,
 				E0E46216284847AC0044E19D /* LoginViewModel.swift in Sources */,
 				7A4991FB285FAF8A007D3954 /* API+Extensions.swift in Sources */,

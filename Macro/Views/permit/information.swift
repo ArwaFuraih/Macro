@@ -50,7 +50,7 @@ struct information: View {
     
     var body: some View {
 //        Color.them.myColor1.ignoresSafeArea()
-                   NavigationView{
+//                   NavigationView{
                        ScrollView(showsIndicators: false){
                            ZStack{
                             VStack{
@@ -409,34 +409,48 @@ struct information: View {
 //                                   EmptyView()
 //                               }
 //                          
-                
-                            
-                            
-                           
-                           ZStack{
-                               Button {
-                                   showDetails.toggle()
-                           }
-                           label: {
-                               
-                               
-                               Text("Submit")
-                               .foregroundColor(.white)
-                               .bold()
-                               .frame(width: 342, height: 41.31)
-                               .cornerRadius(8)
-                               .background(Color("btnColor"))
-                               .cornerRadius(8)
-                           
-                           .disabled(stringOfTextField1.isEmpty || stringOfTextField2.isEmpty || stringOfTextField3.isEmpty || stringOfTextField4.isEmpty || stringOfTextField7.isEmpty || hight.isEmpty || Duration.isEmpty || polit.isEmpty || DateandTime.isEmpty || Permit.isEmpty || Activity.isEmpty)
+                                ZStack{
+                                NavigationLink {
+                                    Agree()
+                                } label: {
+                                    Text("Submit")
+                                    .foregroundColor(.white)
+                                    .bold()
+                                    .frame(width: 342, height: 41.31)
+                                    .cornerRadius(8)
+                                    .background(Color("btnColor"))
+                                    .cornerRadius(8)
+                                
+                                .disabled(stringOfTextField1.isEmpty || stringOfTextField2.isEmpty || stringOfTextField3.isEmpty || stringOfTextField4.isEmpty || stringOfTextField7.isEmpty || hight.isEmpty || Duration.isEmpty || polit.isEmpty || DateandTime.isEmpty || Permit.isEmpty || Activity.isEmpty)
+                                }
+                                }.padding()
 
-                           }.fullScreenCover(isPresented: $showDetails, content: {
-                               Agree()
-                           })
-                              
-                           }
-                              .padding()
-        
+                            
+                           
+//                           ZStack{
+//                               Button {
+//                                   showDetails.toggle()
+//                           }
+//                           label: {
+//
+//
+//                               Text("Submit")
+//                               .foregroundColor(.white)
+//                               .bold()
+//                               .frame(width: 342, height: 41.31)
+//                               .cornerRadius(8)
+//                               .background(Color("btnColor"))
+//                               .cornerRadius(8)
+//
+//                           .disabled(stringOfTextField1.isEmpty || stringOfTextField2.isEmpty || stringOfTextField3.isEmpty || stringOfTextField4.isEmpty || stringOfTextField7.isEmpty || hight.isEmpty || Duration.isEmpty || polit.isEmpty || DateandTime.isEmpty || Permit.isEmpty || Activity.isEmpty)
+//
+//                           }.fullScreenCover(isPresented: $showDetails, content: {
+//                               Agree()
+//                           })
+//
+//                           }
+//                              .padding()
+        Spacer()
 //                                if showDetails {Agree()}
                            }
                        }
@@ -444,7 +458,7 @@ struct information: View {
                        
                             .navigationTitle("Request a Permit")
                             .navigationBarTitleDisplayMode(.inline)
-                       }
+//                       }
 
 }
 }

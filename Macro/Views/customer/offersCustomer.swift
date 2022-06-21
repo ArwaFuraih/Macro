@@ -9,10 +9,14 @@ import SwiftUI
 import Firebase
 
 struct offersCustomer: View {
+    @StateObject var m : custumerOrdr = custumerOrdr()
+
 //    @ObservedObject var customerOrder = custumerOrdr()
      
-        let columns: [GridItem] = [
-            GridItem(.flexible(), spacing: 4, alignment:nil)]
+    let columns: [GridItem] = [
+        GridItem(.flexible(), spacing: 4, alignment:nil)
+    ]
+    
     @State var serviceName : String = "Photography Service"
     @State var serviceTime : String = "12:00"
     @State var serviceDate : String = "10-8-2022"
@@ -25,8 +29,7 @@ struct offersCustomer: View {
 
     @State var selected = 1
         var body: some View {
-           
-            ScrollView{
+                ScrollView{
                 VStack {
                     //segmantPicker
                     Picker(selection: $selected, label: Text("Picker"), content: {
@@ -41,13 +44,14 @@ struct offersCustomer: View {
                         .pickerStyle(SegmentedPickerStyle())
                     
                     
-                    ForEach(0..<5)  { index in
                                     
-                               
-
                  if selected == 1 {
-                                        LazyVGrid(columns: columns){
-                                            
+                     
+                     ForEach(m.list)  { index in
+                        
+                         
+                                    LazyVGrid(columns: columns){
+//                                        print("\(index.NameOfServece)")
                                       ZStack {
                                           RoundedRectangle(cornerRadius: 8)
                                                           .fill(Color.them.myColor2)
@@ -62,7 +66,7 @@ struct offersCustomer: View {
                                               VStack(alignment: .leading, spacing: 2 ){
                                                   HStack(spacing: 3 ){
                                                       Image( "servtype")
-                                                      Text("\(serviceName)"
+                                                      Text("\(index.NameOfServece)"
                                                       
     ).foregroundColor(.white)
                                                           .font(.system(size:12, weight: .regular, design: .rounded))
@@ -70,19 +74,19 @@ struct offersCustomer: View {
                                                   }.padding(.trailing, 140)
                                                   HStack{
                                                       Image( "clo").foregroundColor(.white)
-                                                      Text("\(serviceTime)").foregroundColor(.white)
+                                                      Text("\(index.time)").foregroundColor(.white)
                                                           .font(.system(size:12, weight: .regular, design: .rounded))
 
                                                   }
                                                   HStack{
                                                       Image("date")
-                                                      Text("\(serviceDate)").foregroundColor(.white)
+                                                      Text("\(index.date)").foregroundColor(.white)
                                                           .font(.system(size:12, weight: .regular, design: .rounded))
                                                   }
                                                   
                                                   HStack{
                                                   Image("location").foregroundColor(.white)
-                                                      Text("\(serviceLoc)").foregroundColor(.white)
+                                                      Text("\(index.city)").foregroundColor(.white)
                                                           .font(.system(size:12, weight: .regular, design: .rounded))
                                                   }}
 
@@ -101,23 +105,29 @@ struct offersCustomer: View {
                                                           
                                                           Text("#998999").foregroundColor(.white)
                                                               .font(.system(size:12, weight: .regular, design: .rounded))
-                                                          Text("\(serviceStatus)").foregroundColor(.green)
+                                                          Text("\(index.status)").foregroundColor(.green)
                                                               .font(.system(size:12, weight: .regular, design: .rounded))
                                                       }.padding(.leading,200)
                                                       
                                                       
-                                                      Button(action: {
-                                                          showSheet.toggle()
+                                                      NavigationLink {
+                                                          Viewpermit()
+                                                      } label: {
+                                                          Image("chevron order.right.2").padding(.leading,260).padding(.top, 10)
+                                                      }
 
-                                                          print("g")
-                                                                 }, label: {
-                                                                     Image("chevron order.right.2").padding(.leading,260).padding(.top, 10)
-                   //
-                                                      
-                                                                 }).fullScreenCover(isPresented: $showSheet, content: { Viewpermit()
-                                                                  
-                                                                                 })
-                                                      
+//                                                      Button(action: {
+//                                                          showSheet.toggle()
+//
+//                                                          print("g")
+//                                                                 }, label: {
+//                                                                     Image("chevron order.right.2").padding(.leading,260).padding(.top, 10)
+//                   //
+//
+//                                                                 }).fullScreenCover(isPresented: $showSheet, content: { Viewpermit()
+//
+//                                                                                 })
+//
                                                       
                                                      
                                                   
@@ -135,20 +145,24 @@ struct offersCustomer: View {
                                         }
                     
                                             }
+                 }
                     else{
                         myOffersCu()
                     }
                     
-                    Spacer()
+                  
 
                 
                 }
-
+                    Spacer()
                 }
             }
-          
-        }
-    }
+    
+}
+           
+ 
+        
+
 
 
 struct offersCustomer_Previews: PreviewProvider {
@@ -160,7 +174,7 @@ struct offersCustomer_Previews: PreviewProvider {
 
 
 struct myOffersCu :View {
-    
+    @StateObject var m : custumerOrdr = custumerOrdr()
     @State var showSheet = false
     @State var showSheet1 = false
 
@@ -191,43 +205,46 @@ var body: some View {
 //                                   Image("ORDER1").clipShape(Circle()).padding(.bottom)
 //
 //                               }).padding(.leading,7)
-                   
+                    ForEach (m.list) {index in
+                        
                         Text("Fahad Alrogay").foregroundColor(.white)
                             .font(.system(size: 16, weight: .regular, design: .rounded))
 
-                        Text("Price: 200 RS").foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
+                        Text("\(index.Price) SR").foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
 
-                        Text("Hours: 4").foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
+                        Text("\(index.Hours)").foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
                    
                     
                 }.padding(.trailing,195)
+                    }
+                       
                   
                 
                
 //                Spacer()
                 
-                NavigationLink {
-                    DetailsOrder()
-
-                } label: {
-                    Text("Accept".uppercased())
-                        .font(.system(size: 16, weight: .regular, design: .rounded))
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .frame(width: 108, height: 28)
-//                                                       .padding()
-//                                                       .padding(.horizontal, 20)
-                        .background(
-                         Color.them.btnColor
-                                .cornerRadius(8)
-                                .shadow(radius: 8)
-                        )                }
+             
 
                 
                 HStack{
 //                        Button(action: , label: ).padding(.trailing,40)
                       
+                    NavigationLink {
+                        DetailsOrder()
 
+                    } label: {
+                        Text("Accept".uppercased())
+                            .font(.system(size: 16, weight: .regular, design: .rounded))
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .frame(width: 108, height: 28)
+    //                                                       .padding()
+    //                                                       .padding(.horizontal, 20)
+                            .background(
+                             Color.them.btnColor
+                                    .cornerRadius(8)
+                                    .shadow(radius: 8)
+                            )                }
                         
                         Button(action: {
                             print("Reject")
@@ -260,7 +277,7 @@ var body: some View {
 
             }
             
-        }
+    }.padding(.top,40)
 
 }
 

@@ -12,7 +12,7 @@ struct Agree: View {
 
     var body: some View {
         
-         NavigationView{
+//         NavigationView{
              ScrollView(.vertical){
                  ZStack{
              VStack(alignment: .leading, spacing: 25){
@@ -100,9 +100,12 @@ struct Agree: View {
                          .cornerRadius(8)
                          .background(Color("btnColor"))
                          .cornerRadius(8)
-                 }.fullScreenCover(isPresented: $showDetails, content: {
-                     DetailsOrder()
-                 })
+                     }.sheet(isPresented: $showDetails, content: {
+                         DetailsOrder()
+                     })
+//                     .fullScreenCover(isPresented: $showDetails, content: {
+//                     DetailsOrder()
+//                 })
                  }
              }
                      }
@@ -110,9 +113,9 @@ struct Agree: View {
                  
              }
              }
-         }
-         .navigationTitle("Agreement")
-         .navigationBarTitleDisplayMode(.inline)
+//         }
+//         .navigationTitle("Agreement")
+//         .navigationBarTitleDisplayMode(.inline)
     }
      
 

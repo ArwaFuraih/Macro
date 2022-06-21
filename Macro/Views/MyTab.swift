@@ -12,7 +12,9 @@ struct MyTab: View{
     
 //    let user = UserKind.self
     var body: some View {
+
         TabView{
+            
                 HomeView()
                 .tabItem {
                                Image("categcolor")
