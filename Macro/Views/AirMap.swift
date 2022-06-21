@@ -13,7 +13,7 @@ struct AirMap: View {
     @ObservedObject var weatherVM = WeatherViewModel()
 //    @ObservedObject var locationManager = LocationManager.shared
   //  @State var cardShown = false
-    @State var isPresented = true
+    @State var isPresented = false
 
 //    @State var bottomSheetPosition: BottomSheetPosition = .middle
 
@@ -28,14 +28,40 @@ struct AirMap: View {
 //            //to print lat and log
 //        }
 //        }
-        
-      
-    
-        VStack{
-            
+        ZStack {
             MapView()
+            if !isPresented {
+                VStack {
+                    Spacer()
+                    Button(action: {
+                        isPresented.toggle()
+                    }, label: {
+                        VStack{
+                            Text(Image(systemName: "cloud.sun"));
+                           //Text("Weather")
+                        }
+                        
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .fill(.black)
+                                    .opacity(0.5)
+                                    .frame(maxWidth: .infinity, idealHeight: 32, alignment: .center)
+                            )
+                    })
+                    .frame(maxWidth: .infinity, idealHeight: 32, alignment: .center)
+                    .position(x: 350, y: 650)
+                }
+            } else {
+                EmptyView()
+            }
+
         }
-        .sheetWithDetents(isPresented: $isPresented, detents: [.medium(),.large()], onDismiss: {}, content: {
+
+            .sheetWithDetents(isPresented: $isPresented, detents: [.medium(),.large()], onDismiss: {
+                
+            }, content: {
     
             ZStack(alignment: .bottom){
 
@@ -138,7 +164,8 @@ struct SheetPresentationForSwiftUI<Content>: UIViewRepresentable where Content: 
         // Set the coordinator (delegate)
         // We need the delegate to use the presentationControllerDidDismiss function
         viewController.presentationController?.delegate = context.coordinator
-        
+//        viewController.isModalInPresentation = true
+
         
         if isPresented {
             // Present the viewController

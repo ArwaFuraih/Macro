@@ -11,14 +11,14 @@ struct TodayWeatherView: View {
     @ObservedObject var weatherVM: WeatherViewModel
     
     var body: some View {
-        VStack(spacing: 10){
+        VStack(spacing: 0){
 //            Text("Today")
 //                .font(.title)
 //                .bold()
 //
-            HStack(spacing: 40){
+            HStack(spacing: 30){
                 LottieView(name: weatherVM.getLottieAnimationFor(icon: weatherVM.weatherIcon))
-                    .frame(width: 100, height: 100)
+                    .frame(width: 100, height: 120)
                 VStack(alignment: .leading){
                     Text("\(weatherVM.temperature)℉")
                         .font(.system(size: 33))
