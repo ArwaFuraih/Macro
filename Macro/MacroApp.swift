@@ -237,11 +237,20 @@ import Firebase
 
 @main
 struct MacroApp: App {
+    
+    @StateObject var registrationViewModel = RegistrationViewModel()
+
     init(){FirebaseApp.configure()}
 //     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
             NavigationView{
+//                loginView().environmentObject(AuthViewModel.shared)
+                CreateOwnerAccount().environmentObject( RegistrationViewModel.shared)
+                //                OffersProvider()
+               
+                
+//                CreateCustomerAccount().environmentObject(RegistrationCustomerViewModel.shared)
 //                OffersProvider()
 ////                test()
 ////                OffersProvider()
@@ -251,7 +260,7 @@ struct MacroApp: App {
 //                offersCustomer()
 //                offersCustomer()
 ////                OffersProvider()
-                MyTab()
+//                MyTab()
 //                offersCustomer().navigationBarHidden(true)
                 
             }
