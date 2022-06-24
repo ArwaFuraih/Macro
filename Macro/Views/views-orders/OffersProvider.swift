@@ -11,6 +11,8 @@
 import SwiftUI
 
 struct OffersProvider: View {
+    @StateObject var m: custumerOrdr = custumerOrdr()
+
     var phoneNumber = "718-555-5555"
     @State var serviceName : String = "Photography Service"
     @State var serviceTime : String = "12:00"
@@ -42,9 +44,10 @@ struct OffersProvider: View {
                 .cornerRadius(8)
                 .padding()
                 .pickerStyle(SegmentedPickerStyle())
-
+      
          if selected == 1 {
-             ForEach(0..<5)  {item in
+            
+             ForEach(m.orders)  { index in
                                 LazyVGrid(columns: columns){
                                     
                                     ZStack{
@@ -84,19 +87,19 @@ struct OffersProvider: View {
                                                                        })
                                                             
                                                         Image("ORDER2")
-                                                            Text("\(fullName)").foregroundColor(.white).padding(.trailing)
+                                                Text("\(index.user.fullName)").foregroundColor(.white).padding(.trailing)
                                 
                                 
                                                             }
                                             VStack(alignment: .leading){
 
-                                                        Text("Pilots : \(Piolt)").foregroundColor(.white)
+                                                Text("Pilots : \(index.order.pilot)").foregroundColor(.white)
 
-                                                        Text("Hours :\(hours)").foregroundColor(.white)
+                                                Text("Hours :\(index.order.Hours)").foregroundColor(.white)
 
-                                                        Text("Date :\(serviceDate)").foregroundColor(.white)
+                                                Text("Date :\(index.order.timestamp)").foregroundColor(.white)
 
-                                                        Text("\(serviceName)").foregroundColor(.white)
+                                                Text("\(index.order.NameOfServece)").foregroundColor(.white)
 
 
                                                             }.padding(.trailing,19)

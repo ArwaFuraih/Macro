@@ -7,12 +7,13 @@
 
 import SwiftUI
     struct CreateOwnerAccount : View {
-    @State private var stringOfTextField1: String =  String()
-    @State private var stringOfTextField2: String =  String()
-    @State private var stringOfTextField3: String =  String()
-    @State private var stringOfTextField4: String =  String()
-    @State private var stringOfTextField5: String =  String()
-    @State private var stringOfTextField6: String =  String()
+    @EnvironmentObject var registrationViewModel : RegistrationViewModel
+//    @State private var stringOfTextField1: String =  String()
+//    @State private var stringOfTextField2: String =  String()
+//    @State private var stringOfTextField3: String =  String()
+//    @State private var stringOfTextField4: String =  String()
+//    @State private var stringOfTextField5: String =  String()
+//    @State private var stringOfTextField6: String =  String()
         @State var showSheet: Bool = false
         @State var showSheet2: Bool = false
 
@@ -25,11 +26,13 @@ import SwiftUI
             NavigationView{
                 ScrollView{
                 VStack{
+//                    CustomTextField(
+//                    DroneNumberAsString
 
                     VStack(alignment: .leading, spacing: 10){
 
-                        Text("Full  Name")
-        TextField("", text: $stringOfTextField1)
+                        Text("Full Name")
+                        TextField("", text: $registrationViewModel.FullName)
                         .padding()
     //                    .foregroundColor(Color.white)
     .overlay(RoundedRectangle(cornerRadius: 8.0)
@@ -40,15 +43,18 @@ import SwiftUI
 
                     VStack(alignment: .leading, spacing: 10){
                         Text("National ID")
-        TextField("", text: $stringOfTextField2)
-                        .padding()
-                        .overlay(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color.them.mygray, style: StrokeStyle(lineWidth: 1)))
-                        .frame(width: 342.15, height: 66.86)
+                        
+                        TextField("", text: $registrationViewModel.NationalIDAsString
+                                  
+                        ) .padding()
+                            .overlay(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color.them.mygray, style: StrokeStyle(lineWidth: 1)))
+                            .frame(width: 342.15, height: 66.86)
+                        
                     }
     //                .padding()
                     VStack(alignment: .leading, spacing: 10){
                         Text("Phone Number")
-        TextField("", text: $stringOfTextField3)
+                        TextField("", text: $registrationViewModel.PhoneNumber)
                         .padding()
                         .overlay(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color.them.mygray, style: StrokeStyle(lineWidth: 1)))
                         .frame(width: 342.15, height: 66.86)
@@ -57,7 +63,7 @@ import SwiftUI
 
                     VStack(alignment: .leading, spacing: 10){
                         Text("Email")
-    TextField("", text: $stringOfTextField4)
+                        TextField("", text: $registrationViewModel.email)
                         .padding()
                         .overlay(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color.them.mygray, style: StrokeStyle(lineWidth: 1)))
                         .frame(width: 342.15, height: 66.86)
@@ -66,7 +72,7 @@ import SwiftUI
 
                     VStack(alignment: .leading, spacing: 10){
                         Text("Flying Permit")
-    TextField("", text: $stringOfTextField5)
+                        TextField("", text: $registrationViewModel.FlyingPermitAsString)
                         .padding()
                         .overlay(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color.them.mygray, style: StrokeStyle(lineWidth: 1)))
                         .frame(width: 342.15, height: 66.86)
@@ -74,7 +80,7 @@ import SwiftUI
 
                     VStack(alignment: .leading, spacing: 10){
                         Text("Drone Number")
-            TextField("", text: $stringOfTextField6)
+                        TextField("", text: $registrationViewModel.DroneNumberAsString)
                         .padding()
                         .overlay(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color.them.mygray, style: StrokeStyle(lineWidth: 1)))
                         .frame(width: 342.15, height: 66.86)
@@ -94,7 +100,9 @@ import SwiftUI
 //                        }
                         
                         Button {
-                            showSheet.toggle()
+                            registrationViewModel.createUser()
+                            
+//                            showSheet.toggle()
                         } label: {
                             Text("Terms").underline().foregroundColor(.blue)
                             Text("and")

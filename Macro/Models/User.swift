@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Firebase
+
 struct User: Identifiable {
     
     let id : String

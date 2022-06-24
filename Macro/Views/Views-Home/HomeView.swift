@@ -47,13 +47,7 @@ struct HomeView: View {
     //                        .indexViewStyle(.page())
                             .frame(width: 375, height: 150)
       
-    //                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/5)
-    //                        .accentColor(Color.pink)
-    //                                  .tabViewStyle(.page)
 
-                        // two btn
-                        
-                        //
                         
                         VStack(alignment: .center, spacing: 0){
                             NavigationLink(
@@ -114,93 +108,134 @@ struct HomeView: View {
                         
                       
                         
-                            HStack{
-                                       
-                                NavigationLink {
-                                    Photography()
-                                } label: {
-                                    ZStack{
-                                       
-                                        Image("le1").clipShape(
-                                            RoundedRectangle(cornerRadius: 8))
-                                            .frame(width: 162, height:109)
+                HStack{
+                    //photography button
+                                
+                        Button {
+                            if userIsLogin {showSheet3.toggle()}
+                            else{showingAlert.toggle()}
+                                }
+                                
+                        label: {
+                                ZStack{
+                                        Image("photogra")
+                                        .frame(width: .infinity, height:109)
                                         Image("mle")
-                                            .frame(width: 162, height: 109)
+                                        .frame(width: 162, height: 109)
+//                                        Image("rightm").resizable()
+//                                        .frame(width: .infinity, height: 117)
                                         Text("Photography").foregroundColor(Color.white).padding(.top,84)
+                                        }
+                        .alert(isPresented:$showingAlert) {
+                                            Alert(
+                               title: Text("not logged it"),
+                               message: Text("you have to log in to use this service"),
+                               primaryButton: .destructive(Text("login"))
+                               {showSheet.toggle()},
+                                secondaryButton: .cancel())}
+                                        }
+                       .fullScreenCover(isPresented: $showSheet, content: { Photography()})
+                       .sheet(isPresented: $showSheet3, content: {Settings()})
+//                       .fullScreenCover(isPresented: $showSheet3, content: {Settings()})
+//
+                                
+                  //Argiculture button
+                    
+                    Button {
+                        if userIsLogin {showSheet3.toggle()}
+                        else{showingAlert.toggle()}
+                            }
+                            
+                    label: {
+                            ZStack{
+                                    Image("imlei")
+                                    .frame(width: .infinity, height:109)
+                                    Image("mle")
+                                    .frame(width: 162, height: 109)
+//                                        Image("rightm").resizable()
+//                                        .frame(width: .infinity, height: 117)
+                                    Text("Argiculture").foregroundColor(Color.white).padding(.top,84)
                                     }
-                                }
-
-    //                                Button {
-    ////                                    Auth.auth().currentUser != nil
-    //
-    ////                                    showingAlert.toggle()
-    //                                    showSheet.toggle()
-    //                                } label: {
-    //                                    ZStack{
-    //
-    //                                        Image("le1").clipShape(
-    //                                            RoundedRectangle(cornerRadius: 8))
-    //                                            .frame(width: 162, height:109)
-    //                                        Image("mle")
-    //                                            .frame(width: 162, height: 109)
-    //                                        Text("Photography").foregroundColor(Color.white).padding(.top,84)
-    //                                    }
-    //
-    //
-    //                                }.fullScreenCover(isPresented: $showSheet, content: {
-    //                                    Photography()
-    //                                })
-                                
-                                
-                                //
-                                
-                                NavigationLink {
-                                    Argiculture()
-                                } label: {
-                                    ZStack{
-                                        Image("imlei")
-                                            .clipShape(
-                                        RoundedRectangle(cornerRadius: 8))
-                                        .frame(width: 162, height:109)
-                                        Image("imle")
-                                            .clipShape(
-                                        RoundedRectangle(cornerRadius: 8))
-                                        .frame(width: 162, height:109)
-                                              Text("Argiculture").foregroundColor(Color.white).padding(.top,84)
+                    .alert(isPresented:$showingAlert) {
+                                        Alert(
+                           title: Text("not logged it"),
+                           message: Text("you have to log in to use this service"),
+                           primaryButton: .destructive(Text("login"))
+                           {showSheet.toggle()},
+                            secondaryButton: .cancel())}
                                     }
-                                }
-
-    //                            Button {
-    ////                                    Auth.auth().currentUser != nil
-    //
-    //                                showingAlert.toggle()
-    ////                                    showSheet.toggle()
-    //                            } label: {
-    //                                ZStack{
-    //                                    Image("imlei")
-    //                                        .clipShape(
-    //                                    RoundedRectangle(cornerRadius: 8))
-    //                                    .frame(width: 162, height:109)
-    //                                    Image("imle")
-    //                                        .clipShape(
-    //                                    RoundedRectangle(cornerRadius: 8))
-    //                                    .frame(width: 162, height:109)
-    //                                          Text("Argiculture").foregroundColor(Color.white).padding(.top,84)
-    //                                }
-    //
-    //
-    //                            }.fullScreenCover(isPresented: $showSheet, content: {
-    //                                Account()
-    //                            })
-                                
-                                    
-                                    
-                                }
+                   .fullScreenCover(isPresented: $showSheet, content: {                                     Argiculture()
+})
+                   .fullScreenCover(isPresented: $showSheet3, content: {                                    Argiculture()})
+        }
                         
                         
                         
                         
                         HStack{
+                            //Oil & Gas Mining
+                            
+                            Button {
+                                if userIsLogin {showSheet3.toggle()}
+                                else{showingAlert.toggle()}
+                                    }
+                                    
+                            label: {
+                                    ZStack{
+                                            Image("photogra")
+                                            .frame(width: .infinity, height:109)
+                                            Image("mle")
+                                            .frame(width: 162, height: 109)
+    //                                        Image("rightm").resizable()
+    //                                        .frame(width: .infinity, height: 117)
+                                            Text("Oil & Gas Mining").foregroundColor(Color.white).padding(.top,84)
+                                            }
+                            .alert(isPresented:$showingAlert) {
+                                                Alert(
+                                   title: Text("not logged it"),
+                                   message: Text("you have to log in to use this service"),
+                                   primaryButton: .destructive(Text("login"))
+                                   {showSheet.toggle()},
+                                    secondaryButton: .cancel())}
+                                            }
+                           .fullScreenCover(isPresented: $showSheet, content: { Settings()})
+                           .fullScreenCover(isPresented: $showSheet3, content: {Argiculture()})
+                                    
+                                    
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            Button {
+                                if userIsLogin {showSheet3.toggle()}
+                                else{showingAlert.toggle()}
+                                    }
+                                    
+                            label: {
+                                    ZStack{
+                                            Image("photogra")
+                                            .frame(width: .infinity, height:109)
+                                            Image("mle")
+                                            .frame(width: 162, height: 109)
+    //                                        Image("rightm").resizable()
+    //                                        .frame(width: .infinity, height: 117)
+                                            Text("Energy").foregroundColor(Color.white).padding(.top,84)
+                                            }
+                            .alert(isPresented:$showingAlert) {
+                                                Alert(
+                                   title: Text("not logged it"),
+                                   message: Text("you have to log in to use this service"),
+                                   primaryButton: .destructive(Text("login"))
+                                   {showSheet.toggle()},
+                                    secondaryButton: .cancel())}
+                                            }
+                           .fullScreenCover(isPresented: $showSheet, content: { Settings()})
+                           .fullScreenCover(isPresented: $showSheet3, content: {Mining()})
+                                    
+                                    
                             
                             
                             
@@ -231,18 +266,7 @@ struct HomeView: View {
                             
                             //
                             
-                            NavigationLink {
-                             //   eng()
-                            } label: {
-                                ZStack{
-                                    Image("photogra")
-                                        .frame(width: .infinity, height:109)
-                                    Image("rightm").resizable()
-                                        .frame(width: .infinity, height: 117)
-                                    Text("Photography").foregroundColor(Color.white).padding(.top,84)
-                                }
-
-                            }
+                       
 
                             Button {
                             
@@ -264,7 +288,7 @@ struct HomeView: View {
                                                 .frame(width: .infinity, height:109)
                                             Image("rightm").resizable()
                                                 .frame(width: .infinity, height: 117)
-                                            Text("Photography").foregroundColor(Color.white).padding(.top,84)
+                                            Text("Energy").foregroundColor(Color.white).padding(.top,84)
                                         }
                             
                             
@@ -282,60 +306,9 @@ struct HomeView: View {
                                         Settings()})
                                     .fullScreenCover(isPresented: $showSheet3, content: {
                                        Settings()})
-                            
-                            
-                            
-                            
-                            
-                            //
-                          
-                            
-                            
-                            
-                            
-                            
-    //                        .onTapGesture {
-                                //  if Auth.auth().currentUser =! nil ? nav.togele : showalet.toggele
+     
                             }
-    //                            NavigationLink(
-    //                                                destination: MyOtherScreen(),
-    //                                                label: {
-    //                                                    Image(systemName: "gear")
-    //                                                })
-                            
-                   
-                        
-                        
-                        
-                            
-                            
-                            
-                            
-                            
-    //                            Button(action: {
-    //                                Alert(
-    //                                    title: Text("An important title!"),
-    //                                    message: Text("A message that adds additional context on the alert."),
-    //                                    dismissButton: .cancel(Text("A cancel button"), action: {
-    //                                        print("Cancel button pressed, do something.")
-    //                                    })
-    //                                )
-    //
-    //                            }) {
-    //
-    //                                ZStack{
-    //
-    //                                    Image("sev4")
-    //                                        .frame(width: .infinity, height: 109)
-    //                                    Image("rightMask").resizable().frame(width: .infinity, height: 109)
-    //                                    Text("Energy").foregroundColor(Color.white).padding(.top,84)
-    //
-    //                                }.onTapGesture {
-    ////                                    if Auth.auth().currentUser =! nil ? Settings.toggle() : .alear
-    //                                }
-    //                            }
-                       
-                            
+                      
                     }.padding(.bottom,100)
                         
                             
@@ -361,44 +334,7 @@ struct HomeView: View {
         
         
     
-   
-    
-//        return
-//        if (userIsLogin == true){
-//            NavigationLink {
-//                Settings()} label: {"gjj"}
-//
-//        }else{
-//            Alert(
-//                title: Text("Title"),
-//                message: Text("Message"),
-//                dismissButton: .default(Text("Okay"), action: {
-//
-//
-//                })
-//            )
-//        }
-    
-   
-                
-                
-//            }.navigationBarItems(
-//                leading:
-//
-//                    Image(systemName: "bell.badge")
-                
-//            )
-            
-            
-//        }
-        
-        
-        
-        
-//    }
-    
-//
-//}
+ 
 
 
 struct HomeView_Previews: PreviewProvider {

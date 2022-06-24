@@ -56,6 +56,9 @@ struct Photography: View {
                     }
                     Spacer()
                 
+                
+                
+                
                 NavigationLink {
                     NewRequest()
                 } label: {

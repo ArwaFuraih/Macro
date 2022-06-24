@@ -9,7 +9,8 @@ import SwiftUI
 import Firebase
 
 struct offersCustomer: View {
-    @StateObject var m : custumerOrdr = custumerOrdr()
+   
+    @StateObject var m: custumerOrdr = custumerOrdr()
 
 //    @ObservedObject var customerOrder = custumerOrdr()
      
@@ -17,15 +18,7 @@ struct offersCustomer: View {
         GridItem(.flexible(), spacing: 4, alignment:nil)
     ]
     
-    @State var serviceName : String = "Photography Service"
-    @State var serviceTime : String = "12:00"
-    @State var serviceDate : String = "10-8-2022"
-    @State var serviceLoc : String = "Riyadh"
-    @State var serviceStatus : String = "completed"
     @State var showSheet: Bool = false
-
-//    @State var status : Order = Order(orderID: T##String, userID: T##User, droneType: T##String, Price: T##Double, status: T##Int, providerID: T##User, request: T##Request)
-//
 
     @State var selected = 1
         var body: some View {
@@ -47,10 +40,12 @@ struct offersCustomer: View {
                                     
                  if selected == 1 {
                      
-                     ForEach(m.list)  { index in
                         
                          
                                     LazyVGrid(columns: columns){
+                                        ForEach(m.orders)  { index in
+
+                                      
 //                                        print("\(index.NameOfServece)")
                                       ZStack {
                                           RoundedRectangle(cornerRadius: 8)
@@ -66,7 +61,7 @@ struct offersCustomer: View {
                                               VStack(alignment: .leading, spacing: 2 ){
                                                   HStack(spacing: 3 ){
                                                       Image( "servtype")
-                                                      Text("\(index.NameOfServece)"
+                                                      Text("\(index.order.NameOfServece)"
                                                       
     ).foregroundColor(.white)
                                                           .font(.system(size:12, weight: .regular, design: .rounded))
@@ -74,19 +69,19 @@ struct offersCustomer: View {
                                                   }.padding(.trailing, 140)
                                                   HStack{
                                                       Image( "clo").foregroundColor(.white)
-                                                      Text("\(index.time)").foregroundColor(.white)
+                                                      Text("\(index.order.time)").foregroundColor(.white)
                                                           .font(.system(size:12, weight: .regular, design: .rounded))
 
                                                   }
                                                   HStack{
                                                       Image("date")
-                                                      Text("\(index.date)").foregroundColor(.white)
+                                                      Text("\(index.order.date)").foregroundColor(.white)
                                                           .font(.system(size:12, weight: .regular, design: .rounded))
                                                   }
                                                   
                                                   HStack{
                                                   Image("location").foregroundColor(.white)
-                                                      Text("\(index.city)").foregroundColor(.white)
+                                                      Text("\(index.order.time)").foregroundColor(.white)
                                                           .font(.system(size:12, weight: .regular, design: .rounded))
                                                   }}
 
@@ -105,7 +100,7 @@ struct offersCustomer: View {
                                                           
                                                           Text("#998999").foregroundColor(.white)
                                                               .font(.system(size:12, weight: .regular, design: .rounded))
-                                                          Text("\(index.status)").foregroundColor(.green)
+                                                          Text("\(index.order.status)").foregroundColor(.green)
                                                               .font(.system(size:12, weight: .regular, design: .rounded))
                                                       }.padding(.leading,200)
                                                       
@@ -174,7 +169,9 @@ struct offersCustomer_Previews: PreviewProvider {
 
 
 struct myOffersCu :View {
-    @StateObject var m : custumerOrdr = custumerOrdr()
+    @StateObject var m: custumerOrdr = custumerOrdr()
+
+//    @StateObject var viewModel : custumerOrdr = custumerOrdr()
     @State var showSheet = false
     @State var showSheet1 = false
 
@@ -183,7 +180,8 @@ let columns: [GridItem] = [
     GridItem(.flexible(), spacing: 4, alignment: nil)]
 
 var body: some View {
-   
+    
+    ForEach (m.orders) {index in
     ZStack{
         RoundedRectangle(cornerRadius: 8)
                         .fill(Color.them.myColor2)
@@ -205,14 +203,13 @@ var body: some View {
 //                                   Image("ORDER1").clipShape(Circle()).padding(.bottom)
 //
 //                               }).padding(.leading,7)
-                    ForEach (m.list) {index in
-                        
-                        Text("Fahad Alrogay").foregroundColor(.white)
+                                        
+                        Text("\(index.user.fullName)").foregroundColor(.white)
                             .font(.system(size: 16, weight: .regular, design: .rounded))
 
-                        Text("\(index.Price) SR").foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
+                        Text("\(index.order.Price) SR").foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
 
-                        Text("\(index.Hours)").foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
+                        Text("\(index.order.Hours)").foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
                    
                     
                 }.padding(.trailing,195)
