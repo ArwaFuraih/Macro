@@ -21,7 +21,6 @@ final class AuthViewModel:ObservableObject{
 
 func logInUser(email:String, password: String){
     self.showLoadingView()
-//    Firebase.collection("User").collectionID
     Auth.auth().signIn(withEmail: email, password: password) { result, error in
         if let error = error{
             print("Faild to Login",error)
@@ -30,7 +29,7 @@ func logInUser(email:String, password: String){
         
         else{
             print(Auth.auth().currentUser)
-//            print("sucsess log in \(result?.user.uid)")
+            print("sucsess log in \(result?.user.uid)")
 //            print("sucsess log in \(result?.user.uid)")
 
             

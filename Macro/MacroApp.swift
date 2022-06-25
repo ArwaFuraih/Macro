@@ -246,7 +246,8 @@ struct MacroApp: App {
         WindowGroup {
             NavigationView{
 //                loginView().environmentObject(AuthViewModel.shared)
-                CreateOwnerAccount().environmentObject( RegistrationViewModel.shared)
+                orderDetailsCustomer()
+//                CreateOwnerAccount().environmentObject( RegistrationViewModel.shared)
                 //                OffersProvider()
                
                 
