@@ -9,50 +9,82 @@ import SwiftUI
 import Firebase
 
 struct MyTab: View{
-    
+    @StateObject var firebaseManger = FirebaseManger()
+
+    @EnvironmentObject var  m : AuthViewModel
+//    init() {UITabBar.appearance().backgroundColor = UIColor.systemBackground}
+
+
 //    let user = UserKind.self
     var body: some View {
-
-        TabView{
+        ZStack{
+            Color.them.myColor1.ignoresSafeArea()
             
-                HomeView()
+            TabView{
+       
+                NavigationView{
+                    HomeView()
+                }
+                    
+                    .tabItem {
+                                   Image("categcolor")
+                                   Text("Catogries")
+                               }
+                NavigationView{
+                    AirMap()
+                }
+                
                 .tabItem {
-                               Image("categcolor")
-                               Text("Catogries")
+                               Image(systemName: "map.fill")
+                               Text("AirMap")
                            }
-            
-            AirMap()
-            .tabItem {
-                           Image(systemName: "map.fill")
-                           Text("AirMap")
-                       }
-            
-//            if Auth.auth().currentUser =  {
-//                offersCustomer()
-//            }else{
-//                OffersProvider()
-//            }
-            
-        
-            offersCustomer()
-            .tabItem {
-                        Image(systemName: "list.bullet.rectangle.portrait")
-                           Text("orders")
-                       }
-             Settings()
-            .tabItem {
-                           Image(systemName: "gear")
-                           Text("Settings")
-                       }
-            
-        }.accentColor(Color.them.mygray)
-
-            
+                Group{
+                if firebaseManger.user.isprovider{
+                    NavigationView{
+                        OffersProvider()
+                    }
+                    
+                }
+                    else{
+                    NavigationView{
+                        offersCustomer()
+                    }
+                    
+                }
+                }.tabItem {
+                            Image(systemName: "list.bullet.rectangle.portrait")
+                               Text("orders")
+                           }
+                
+                NavigationView{
+                    Settings()
+                }
+                 
+                .tabItem {
+                               Image(systemName: "gear")
+                               Text("Settings")
+                           }
+                
+            }.accentColor(Color.them.mygray)
             
         }
+        
+
+        
+//        if m.isAouthenticatting{
+
+        
+
+            
+            
+//        }
+//        else{
+//            loginView()
+//            
+//        }
     }
 
-
+}
 struct MyTab_Previews: PreviewProvider {
     static var previews: some View {
         Group {

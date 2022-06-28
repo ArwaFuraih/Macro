@@ -7,7 +7,7 @@
 
 import SwiftUI
 struct CreateCustomerAccount: View {
-    @EnvironmentObject var registerationCustomerViewModel : RegistrationCustomerViewModel
+    @EnvironmentObject var RegistrationViewModel : RegistrationViewModel
     
         @State var showSheet: Bool = false
         @State var showSheet2: Bool = false
@@ -21,7 +21,7 @@ struct CreateCustomerAccount: View {
                     
                     VStack(alignment: .leading, spacing: 10){
                         Text("Full Name")
-                        TextField("", text: $registerationCustomerViewModel.FullName)
+                        TextField("", text: $RegistrationViewModel.FullName)
                         .padding()
     //                    .foregroundColor(Color.white)
                        .overlay(RoundedRectangle(cornerRadius: 8.0)
@@ -31,14 +31,14 @@ struct CreateCustomerAccount: View {
     //                    .padding()
                     VStack(alignment: .leading, spacing: 10){
                         Text("Phone Number")
-                        TextField("", text: $registerationCustomerViewModel.PhoneNumber)
+                        TextField("", text: $RegistrationViewModel.phone)
                         .padding()
                         .overlay(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color.them.mygray, style: StrokeStyle(lineWidth: 1)))
                         .frame(width: 342.15, height: 66.86)
                     }
                     VStack(alignment: .leading, spacing: 10){
                         Text("Email")
-                        TextField("", text: $registerationCustomerViewModel.email)
+                        TextField("", text: $RegistrationViewModel.email)
                         .padding()
                         .overlay(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color.them.mygray, style: StrokeStyle(lineWidth: 1)))
                         .frame(width: 342.15, height: 66.86)
@@ -46,7 +46,7 @@ struct CreateCustomerAccount: View {
                     
                     VStack(alignment: .leading, spacing: 10){
                         Text("Password")
-                        TextField("", text: $registerationCustomerViewModel.password)
+                        TextField("", text: $RegistrationViewModel.password)
                         .padding()
                         .overlay(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color.them.mygray, style: StrokeStyle(lineWidth: 1)))
                         .frame(width: 342.15, height: 66.86)
@@ -66,9 +66,9 @@ struct CreateCustomerAccount: View {
 //                            Text("Privacy").underline().foregroundColor(.blue)
 //                        }
                         Button {
-                            registerationCustomerViewModel.createUser()
+                            RegistrationViewModel.createUser()
                             
-//                            showSheet.toggle()
+                            showSheet.toggle()
                         } label: {
                             Text("Terms").underline().foregroundColor(.blue)
                             Text("and")
@@ -83,7 +83,9 @@ struct CreateCustomerAccount: View {
     //                    .padding()
     //                     Spacer()
                     ZStack{
-                        Button(action:{showSheet2.toggle()}){
+                        Button(action:{
+                            RegistrationViewModel.createUser()
+                            showSheet2.toggle()}){
                         Text("Sign Up")
                         .foregroundColor(.white)
                         .bold()
@@ -94,7 +96,7 @@ struct CreateCustomerAccount: View {
                     }
                     .padding(.top,51)
                     .fullScreenCover(isPresented: $showSheet2, content: {
-                        HomeView()
+                        MyTab()
                     }
     //
                 )}

@@ -29,7 +29,10 @@ struct AirMap: View {
 //        }
 //        }
         ZStack {
+            Color.them.myColor1.ignoresSafeArea()
+
             MapView()
+                
             if !isPresented {
                 VStack {
                     Spacer()

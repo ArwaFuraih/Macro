@@ -7,10 +7,13 @@
 
 import SwiftUI
 
+// Auth.auth().currentUser?//.uid
 struct loginView: View {
-    @EnvironmentObject var viewModel: AuthViewModel
-    @AppStorage("email") var email = ""
-    @AppStorage("password") var password = ""
+//    @EnvironmentObject var viewModel = AuthViewModel
+    @ObservedObject var viewModel = AuthViewModel()
+    @State var email = ""
+    @State var password = ""
+    @State var showHome = false
 
     var body: some View {
         
@@ -33,8 +36,11 @@ struct loginView: View {
                              .frame(width: 342.15, height: 66.86)
             }
                 
+                
                 Button {
+//                    guard !email.isEmpty, !password.isEmpty else {return}
                     viewModel.logInUser(email: email, password: password)
+                    showHome.toggle()
                 } label: {
                     Text("Login")
                         .font(.headline)
@@ -43,9 +49,8 @@ struct loginView: View {
                         .clipShape(Capsule())
                         .padding()
                 }
+                .fullScreenCover(isPresented: $showHome, content: {MyTab()})
                 Spacer()
-                
-                
 
 //                    ZStack{
                 HStack{
@@ -77,58 +82,7 @@ struct loginView: View {
            
 //                    .padding()
                  Spacer()
-//                ZStack{
-//Button { AuthManager.createAccountWithPhoneNumber (phoneNumber: phoneNumber) {isSuccess in
-//    print ("DEBUG: phone \(isSuccess)")
 //
-//}
-//    isShowingHomeView.toggle()
-//
-//}
-//
-//            NavigationLink{
-//                Verification()
-//               // Verification()
-//            } label: {
-////                Button {
-////                    authManager.createAccountWithPhoneNumber(phoneNumber: phoneNumber) {isSuccess in
-////                        print ("DEBUG: phone \(isSuccess)")
-////                    }
-////                    isShowingHomeView.toggle()
-////                } label: {
-////                    Text("Sign Up")
-////                        .foregroundColor(.white)
-////                        .bold()
-////                        .frame(width: 342, height: 41.31)
-////                        .cornerRadius(8)
-////                        .background(Color("btnColor"))
-////                        .cornerRadius(8)
-////                }
-//
-//
-//            }
-
-//                NavigationLink(destination: { Verification() }, label: {
-//                    Button (action: {
-//                        authManager.createAccountWithPhoneNumber(phoneNumber: phoneNumber) {isSuccess in
-//                            print ("DEBUG: phone \(isSuccess)")
-//                        }
-//                        isShowingHomeView.toggle()
-//
-//                    }, label:{
-//                        Text("Sign Up")
-//                            .foregroundColor(.white)
-//                            .bold()
-//                            .frame(width: 342, height: 41.31)
-//                            .cornerRadius(8)
-//                            .background(Color("btnColor"))
-//                            .cornerRadius(8)
-//                    })
-//                })
-           
-                
-//                }
-            
             HStack{
             Text("Already have an account ? ")
             Button(" Sign In") {

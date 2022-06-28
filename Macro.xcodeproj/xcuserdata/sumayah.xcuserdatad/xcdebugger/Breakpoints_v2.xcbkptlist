@@ -20,5 +20,53 @@
             landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "068DD02E-638D-4EB9-BD8D-D9C0EBF95C93"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Macro/Views/Views-Home/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "HomeView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "068DD02E-638D-4EB9-BD8D-D9C0EBF95C93 - 64b52c6335777b78"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Macro.HomeView.init() -&gt; Macro.HomeView"
+                  moduleName = "Macro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sumayah/Documents/lastVMaccro/Macro/Views/Views-Home/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "068DD02E-638D-4EB9-BD8D-D9C0EBF95C93 - ec0207c3691f9d06"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Macro.HomeView.init(authViewModel: Macro.AuthViewModel, firebaseManger: @autoclosure () -&gt; Macro.FirebaseManger, selectedTab: Swift.Int, showingAlert: Swift.Bool, userIsLogin: Swift.Bool, showSheet: Swift.Bool, showSheet3: Swift.Bool) -&gt; Macro.HomeView"
+                  moduleName = "Macro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sumayah/Documents/lastVMaccro/Macro/Views/Views-Home/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "216">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -11,9 +11,10 @@ import FirebaseStorage
 import SwiftUI
 //only for customer
 final class  RegistrationCustomerViewModel : ObservableObject{
+    @ObservedObject var authViewModel = AuthViewModel()
     
     @Published var FullName : String = ""
-    @Published var PhoneNumber : String = ""
+    @Published var phone : String = ""
     @Published var email : String = ""
     @Published var password : String = ""
     @Published var isShowingImagePicker = false
@@ -21,15 +22,10 @@ final class  RegistrationCustomerViewModel : ObservableObject{
     static let shared = RegistrationCustomerViewModel()
 
     
-    
-//    @Published var isProvieder : Bool = true
-//    var authViewModel = AuthViewModel.shared
-//    let users = "Users"
-    
      
     func isValidProfile()->Bool{
         guard !self.FullName.isEmpty
-                ,!self.PhoneNumber.isEmpty
+                ,!self.phone.isEmpty
                 ,!self.email.isEmpty
                 ,!self.password.isEmpty
         else {return false}
@@ -38,38 +34,92 @@ final class  RegistrationCustomerViewModel : ObservableObject{
     
     
     func createUser(){
-        
-        guard isValidProfile() else {
-            print("Invalid Profile")
-            return
-        }
-        
-        
         self.showLoadingView()
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
-            
-            if let _ = error{
-                print("Create Profile Failure")
+            if let error = error{
+                print("Create Profile Failure\(error)")
                 self.hideLoadingView()
                 return
             }
-            
-            else{print("Successfully created user \( result?.user.uid ?? "")")}
-            
-        }
-    }
-    func storeUserInformation(userData:[String:Any]){
-        guard let uid = Auth.auth().currentUser?.uid else { return  }
-        Firestore.firestore().collection("User").document(uid).setData(userData) { error in
-            if let error = error {
-                print(error)
+            if let result = result{
+                print("user has beem created \(result.user.uid)")
+                
+                guard let uid = Auth.auth().currentUser?.uid else { return  }
+
+                var userData : [String:Any] = [:]
+                userData[User.fullName] = self.FullName
+                userData[User.email] = self.email
+                userData[User.phone] = self.phone
+                userData[User.id] = uid
+                userData[User.isprovider] = false
+                
+    //            guard let uid = Auth.auth().currentUser?.uid else { return  }
+                Firestore.firestore().collection("user").document(uid).setData(userData) { error in
+                    if let error = error{
+                        print("Create Profile Failure\(error)")
+                        return
+                        
+                    }
+                    self.authViewModel.fetchUser()
+                    print("successfuly store user info")
+                }
+
+                
                 return
             }
+            
+            
+            
+            
+            
+        }
+
+
+
+
+//        var userData : [String:String] = [User.fullName:fullName
+//                                          ,User.email:email
+//                                          ,User.phone:phone]
+        var userData : [String:Any] = [:]
+        userData[User.fullName] = self.FullName
+        userData[User.email] = self.email
+        userData[User.phone] = self.phone
+
+//        userData[User.id] = uid
+        
+            
+      
+        func storeUserInformation(userData:[String:Any]){  guard let uid = Auth.auth().currentUser?.uid else { return  }
+            Firestore.firestore().collection("User").document(uid).setData(userData) { error in
+                if let error = error{
+                    print("error\(error)")
+                    self.hideLoadingView()
+
+                    return
+
+                }
+                
+                print("successfully store user info")
+            }
+
+                
+        }
+
+          
+        }
+    
+//    func storeUserInformation(userData:[String:Any]){
+//        guard let uid = Auth.auth().currentUser?.uid else { return  }
+//        Firestore.firestore().collection("User").document(uid).setData(userData) { error in
+//            if let error = error {
+//                print(error)
+//                return
+//            }
 //            AuthViewModel.shared.fetchUser()
 //            AuthViewModel.shared.isAouthenticatting.toggle()
-        }
-    }
-    
+//        }
+//    }
+//
     
     
     private func showLoadingView(){isLoading = true}

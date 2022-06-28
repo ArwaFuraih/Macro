@@ -6,6 +6,19 @@
 ////
 //
 //
+
+
+
+//class AppDelegate: NSObject, UIApplicationDelegate {
+//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+//        FirebaseApp.configure()
+//        return true
+//
+//    }
+//}
+
+
+
 //import SwiftUI
 //import FirebaseCore
 //import Firebase
@@ -238,30 +251,35 @@ import Firebase
 @main
 struct MacroApp: App {
     
-    @StateObject var registrationViewModel = RegistrationViewModel()
+   // @StateObject var registrationViewModel = RegistrationViewModel()
 
     init(){FirebaseApp.configure()}
 //     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            NavigationView{
+            NavigationView {
+                MyTab()
+                
+                
+                //.environmentObject(registrationViewModel)
+//                    .environmentObject(AuthViewModel.shared)
 //                loginView().environmentObject(AuthViewModel.shared)
-                orderDetailsCustomer()
+////                HomeView()
+//                Settings().environmentObject(AuthViewModel.shared)
 //                CreateOwnerAccount().environmentObject( RegistrationViewModel.shared)
                 //                OffersProvider()
                
                 
-//                CreateCustomerAccount().environmentObject(RegistrationCustomerViewModel.shared)
+//                CreateCustomerAccount().environmentObject(RegistrationViewModel.shared)
 //                OffersProvider()
 ////                test()
-////                OffersProvider()
-//         HomeView()
+//                OffersProvider()
 //                tetextfield()
 //                ts()
 //                offersCustomer()
 //                offersCustomer()
 ////                OffersProvider()
-//                MyTab()
+         
 //                offersCustomer().navigationBarHidden(true)
                 
             }

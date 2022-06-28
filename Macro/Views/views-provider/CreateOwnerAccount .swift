@@ -7,7 +7,9 @@
 
 import SwiftUI
     struct CreateOwnerAccount : View {
-    @EnvironmentObject var registrationViewModel : RegistrationViewModel
+        
+        @StateObject var registrationViewModel: RegistrationViewModel = RegistrationViewModel()
+
 //    @State private var stringOfTextField1: String =  String()
 //    @State private var stringOfTextField2: String =  String()
 //    @State private var stringOfTextField3: String =  String()
@@ -44,7 +46,7 @@ import SwiftUI
                     VStack(alignment: .leading, spacing: 10){
                         Text("National ID")
                         
-                        TextField("", text: $registrationViewModel.NationalIDAsString
+                        TextField("", text: $registrationViewModel.NationalID
                                   
                         ) .padding()
                             .overlay(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color.them.mygray, style: StrokeStyle(lineWidth: 1)))
@@ -64,6 +66,22 @@ import SwiftUI
                     VStack(alignment: .leading, spacing: 10){
                         Text("Email")
                         TextField("", text: $registrationViewModel.email)
+                        .padding()
+                        .overlay(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color.them.mygray, style: StrokeStyle(lineWidth: 1)))
+                        .frame(width: 342.15, height: 66.86)
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 10){
+                        Text("password")
+                        TextField("", text: $registrationViewModel.password)
+                        .padding()
+                        .overlay(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color.them.mygray, style: StrokeStyle(lineWidth: 1)))
+                        .frame(width: 342.15, height: 66.86)
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 10){
+                        Text("password")
+                        TextField("", text: $registrationViewModel.phone)
                         .padding()
                         .overlay(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color.them.mygray, style: StrokeStyle(lineWidth: 1)))
                         .frame(width: 342.15, height: 66.86)
@@ -100,7 +118,7 @@ import SwiftUI
 //                        }
                         
                         Button {
-                            registrationViewModel.createUser()
+                            registrationViewModel.createprovider()
                             
 //                            showSheet.toggle()
                         } label: {
@@ -118,7 +136,11 @@ import SwiftUI
     //                    .padding()
     //                     Spacer()
                     ZStack{
-                        Button(action:{showSheet2.toggle()}){
+                        Button(action:{
+                            registrationViewModel.createprovider()
+
+                            
+                            showSheet2.toggle()}){
                         Text("Sign Up")
                         .foregroundColor(.white)
                         .bold()

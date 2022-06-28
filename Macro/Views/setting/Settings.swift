@@ -7,6 +7,8 @@
 import SwiftUI
 
 struct  Settings: View {
+    @ObservedObject var authViewModel = AuthViewModel()
+    @State var showmytab = false
     @State var showingAlert = false
     @State private var isShareSheetPresented = false
 
@@ -240,8 +242,10 @@ struct  Settings: View {
                                             }
                                             }
 //                                        .padding()
-                    
-                    NavigationLink(destination: HomeView()) {
+                    Button {
+                        authViewModel.handleSignout()
+                        showmytab.toggle()
+                    } label: {
                         ZStack{
                         Image("")
                         .resizable()
@@ -261,7 +265,32 @@ struct  Settings: View {
                             
                                                         }
                                                         }
+
+                    }.fullScreenCover(isPresented: $showmytab) {
+                        MyTab()
                     }
+
+//                    NavigationLink(destination: HomeView()) {
+//                        ZStack{
+//                        Image("")
+//                        .resizable()
+//        //              .padding()
+//                        .background(Color.them.btnColor)
+//                        .cornerRadius(8)
+//                        .frame(width: 153, height: 148)
+//                        .padding()
+//                        VStack{
+//                        Image("log-off")
+//                        .font(.system(size: 35))
+//                        .padding()
+//                         Text("Log Out")
+//                        .fontWeight(.bold)
+//                        .foregroundColor(.white)
+//                        .font(.system(size: 18))
+//
+//                                                        }
+//                                                        }
+//                    }
              
                                         
                                     }

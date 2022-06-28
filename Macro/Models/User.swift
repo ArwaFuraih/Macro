@@ -10,11 +10,11 @@ import Firebase
 
 struct User: Identifiable {
     
-    let id : String
+    let id : String?
     let fullName : String
     let email : String
     let phone:Int
-    let userType : Bool
+    var isprovider : Bool
     let profilePic : String
     let profileDesc: String
     let DroneNumber : Int
@@ -22,14 +22,16 @@ struct User: Identifiable {
     let profileImg: Array<String>
     let profileVd : Array<String>
     let orders: Array<String>
+    let NationalID : String
+
     
     
     init(dictionary:[String:Any]){
-        self.id = dictionary[User.id]  as! String
+        self.id = dictionary[User.id]  as? String
         self.fullName = dictionary[User.fullName]  as? String ?? ""
         self.phone = dictionary[User.phone]  as? Int ?? 0
         self.email = dictionary[User.email]  as? String ?? "N/A"
-        self.userType = dictionary[User.userType]  as? Bool ?? true
+        self.isprovider = dictionary[User.isprovider]  as? Bool ?? true
         self.profileImg = dictionary[User.profileImg]  as? [String] ?? []
         self.profilePic = dictionary[User.profilePic] as? String ?? ""
         self.profileDesc = dictionary[User.profileDesc] as? String ?? ""
@@ -37,6 +39,8 @@ struct User: Identifiable {
         self.FlyingPermit = dictionary[User.FlyingPermit] as? String ?? ""
         self.profileVd = dictionary[User.profileVd]  as? Array ?? [""]
         self.orders = dictionary[User.orders] as? Array ?? [""]
+        self.NationalID = dictionary[User.NationalID] as? String ?? ""
+
 
        
     }
@@ -52,12 +56,15 @@ struct User: Identifiable {
         data[User.fullName] = self.fullName
         data[User.phone] = User.phone
         data[User.email] = self.email
-        data[User.userType] = User.userType
+        data[User.isprovider] = User.isprovider
         data[User.profileImg] = self.profileImg
         data[User.profileDesc] = self.profileDesc
         data[User.profileVd] = self.profileVd
         data[User.profilePic] = self.profilePic
         data[User.orders] = self.orders
+        data[User.NationalID] = self.NationalID
+
+        
         
         return data
 
@@ -70,7 +77,7 @@ struct User: Identifiable {
     static let fullName             = "fullName"
     static let email                = "email"
     static let phone                = "phone"
-    static let userType             = "userType"
+    static let isprovider           = "isprovider"
     static let profileImg           = "profileImg"
     static let profilePic           = "profilePic"
     static let profileDesc          = "profileDesc"
@@ -78,7 +85,7 @@ struct User: Identifiable {
     static let FlyingPermit         = "FlyingPermit"
     static let profileVd            = "profileVd"
     static let orders               = "orders"
-
+    static let NationalID           = "NationalID"
     
     
     

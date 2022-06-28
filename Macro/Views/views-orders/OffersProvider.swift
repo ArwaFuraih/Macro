@@ -14,15 +14,7 @@ struct OffersProvider: View {
     @StateObject var m: custumerOrdr = custumerOrdr()
 
     var phoneNumber = "718-555-5555"
-    @State var serviceName : String = "Photography Service"
-    @State var serviceTime : String = "12:00"
-    @State var serviceDate : String = "10-8-2022"
-    @State var serviceLoc : String = "Riyadh"
-    @State var serviceStatus : String = "completed"
-    @State var userImage : String = "ORDER1"
-    @State var fullName : String = "Fahad Alrogay"
-    @State var Piolt : String = "1"
-    @State var hours : String = "4"
+    
     
 
 
@@ -82,7 +74,7 @@ struct OffersProvider: View {
                                                             Button(action: {
                                                                 print("g")
                                                                        }, label: {
-                                                                           Image("\(userImage)").clipShape(Circle()).padding(.bottom)
+                                                                           Image("\(index.user.profilePic)").clipShape(Circle()).padding(.bottom)
                                                             
                                                                        })
                                                             
@@ -141,12 +133,13 @@ struct OffersProvider: View {
     
 struct myOffers :View {
     @State var showSheet = false
+    @StateObject var m: custumerOrdr = custumerOrdr()
 
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: 4, alignment: nil)]
     
     var body: some View {
-        ForEach(0..<5)  { item in
+        ForEach(m.orders)  { index in
 
         LazyVGrid(columns: columns){
             ZStack{
@@ -176,20 +169,20 @@ struct myOffers :View {
                 HStack{
                                 VStack{
                                 Image("ORDER1")
-                                Image("ORDER2")
-                                    Text("Fahad Alrogay").foregroundColor(.white)
+                                    Image("\(index.user.profilePic)").clipShape(Circle()).padding(.bottom)
+                                    Text("\(index.user.fullName)").foregroundColor(.white)
         
         
                                     }
                                 VStack{
 
-                                Text("Pilots : 1").foregroundColor(.white)
+                                    Text("Pilots : \(index.order.pilot)").foregroundColor(.white)
 
-                                Text("Hours :4").foregroundColor(.white)
+                                Text("Hours :\(index.order.Hours)").foregroundColor(.white)
 
-                                Text("           Date :1 -1-2022").foregroundColor(.white)
+                                    Text("           Date :\(index.order.timestamp)").foregroundColor(.white)
 
-                                Text("      Photography").foregroundColor(.white)
+                                    Text("      \(index.order.NameOfServece)").foregroundColor(.white)
 
 
                                 }.padding(.trailing,16)

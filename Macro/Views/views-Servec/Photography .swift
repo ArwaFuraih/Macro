@@ -60,7 +60,8 @@ struct Photography: View {
                 
                 
                 NavigationLink {
-                    NewRequest()
+//                    NewRequest()
+                    Settings()
                 } label: {
                     ZStack{
                     Button(action:{}){

@@ -194,7 +194,7 @@ var body: some View {
                     NavigationLink {
                         HomeView()                    }
                 label: {
-                    Image("ORDER1").clipShape(Circle()).padding(.bottom)
+                    Image("\(index.user.profilePic)").clipShape(Circle()).padding(.bottom)
                     }
 
 //                    Button(action: {
