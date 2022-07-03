@@ -28,6 +28,8 @@ struct AirMap: View {
 //            //to print lat and log
 //        }
 //        }
+        
+        
         ZStack {
             Color.them.myColor1.ignoresSafeArea()
 
@@ -92,6 +94,7 @@ struct AirMap: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        
         AirMap()
     }
 }

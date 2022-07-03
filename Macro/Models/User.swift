@@ -10,7 +10,7 @@ import Firebase
 
 struct User: Identifiable {
     
-    let id : String?
+    let id : String
     let fullName : String
     let email : String
     let phone:Int
@@ -27,7 +27,7 @@ struct User: Identifiable {
     
     
     init(dictionary:[String:Any]){
-        self.id = dictionary[User.id]  as? String
+        self.id = dictionary[User.id]  as? String ??  ""
         self.fullName = dictionary[User.fullName]  as? String ?? ""
         self.phone = dictionary[User.phone]  as? Int ?? 0
         self.email = dictionary[User.email]  as? String ?? "N/A"

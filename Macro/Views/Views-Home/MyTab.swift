@@ -7,11 +7,13 @@
 
 import SwiftUI
 import Firebase
+import FirebaseAuth
 
 struct MyTab: View{
-    @StateObject var firebaseManger = FirebaseManger()
+//    @StateObject var firebaseManger = FirebaseManger()
+//    @StateObject var firebaseManger = AuthViewModel()
 
-    @EnvironmentObject var  m : AuthViewModel
+    @EnvironmentObject var  viewModel : AuthViewModel
 //    init() {UITabBar.appearance().backgroundColor = UIColor.systemBackground}
 
 
@@ -21,7 +23,6 @@ struct MyTab: View{
             Color.them.myColor1.ignoresSafeArea()
             
             TabView{
-       
                 NavigationView{
                     HomeView()
                 }
@@ -38,23 +39,36 @@ struct MyTab: View{
                                Image(systemName: "map.fill")
                                Text("AirMap")
                            }
-                Group{
-                if firebaseManger.user.isprovider{
-                    NavigationView{
-                        OffersProvider()
-                    }
-                    
-                }
-                    else{
-                    NavigationView{
-                        offersCustomer()
-                    }
-                    
-                }
-                }.tabItem {
+                
+                if let user =  AuthViewModel.shared.user {
+                    Group{
+                        if user.isprovider {
+                            NavigationView{
+                              
+                                orderProv()
+                                
+                            }.tabItem {
+                                Image(systemName: "list.bullet.rectangle.portrait")
+                                   Text("orders")
+                               }
+                        }else{ NavigationView{
+                            orderCust()
+
+                        }.tabItem {
                             Image(systemName: "list.bullet.rectangle.portrait")
                                Text("orders")
                            }
+                            
+                        }
+
+                    }
+                    
+                   
+                    
+                 
+                }
+                
+                
                 
                 NavigationView{
                     Settings()
@@ -65,23 +79,12 @@ struct MyTab: View{
                                Text("Settings")
                            }
                 
-            }.accentColor(Color.them.mygray)
+
+                }
+
             
         }
         
-
-        
-//        if m.isAouthenticatting{
-
-        
-
-            
-            
-//        }
-//        else{
-//            loginView()
-//            
-//        }
     }
 
 }
@@ -95,3 +98,4 @@ struct MyTab_Previews: PreviewProvider {
                }
     }
 }
+

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Photography: View {
+    
+    @State var showNewReq : Bool = false
     var body: some View {
         NavigationView{
             VStack(alignment: .leading, spacing: 10){
@@ -57,12 +59,7 @@ struct Photography: View {
                     Spacer()
                 
                 
-                
-                
-                NavigationLink {
-//                    NewRequest()
-                    Settings()
-                } label: {
+                Button { showNewReq.toggle()} label: {
                     ZStack{
                     Button(action:{}){
                         Text("Request")
@@ -76,8 +73,29 @@ struct Photography: View {
                  .padding(.top,-38)
 
                     }
+                        NavigationLink(isActive: $showNewReq,
+                                       destination: {
+                            NewRequest()
+                        },
+                           
+
+                        label:
+                            EmptyView.init)
+                        
+
+                        
+                        
+                        
+                        
                      }
                 }
+
+                
+                
+//                NavigationLink {
+//                    NewRequest()
+////                    Settings()
+//                } label: { }
 
               
             }

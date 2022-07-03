@@ -101,7 +101,7 @@ struct Agree: View {
                          .background(Color("btnColor"))
                          .cornerRadius(8)
                      }.sheet(isPresented: $showDetails, content: {
-                         DetailsOrder()
+                         Detailspermit()
                      })
 //                     .fullScreenCover(isPresented: $showDetails, content: {
 //                     DetailsOrder()

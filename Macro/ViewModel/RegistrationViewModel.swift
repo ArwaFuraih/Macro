@@ -81,6 +81,8 @@ final class  RegistrationViewModel : ObservableObject{
                     }
                     AuthViewModel.shared.fetchUser()
 
+//                    AuthViewModel.shared.fetchUser(userId: uid)
+
                     print("successfuly store user info")
                 }
 
@@ -169,6 +171,8 @@ final class  RegistrationViewModel : ObservableObject{
                         
                     }
                     AuthViewModel.shared.fetchUser()
+
+//                    AuthViewModel.shared.fetchUser(userId: uid)
                     print("successfuly store user info")
                 }
                 return

@@ -8,6 +8,20 @@
 import SwiftUI
 import Firebase
 
+enum Status: String , CaseIterable {
+    case new
+    case accepted
+    case closed
+    case rejected
+}
+
+enum NameOfServece: String, CaseIterable {
+    case Photography
+    case Argiculture
+    case Energy
+    case Oil
+}
+
 struct Order: Identifiable{
     var id: String
     let userID: String

@@ -6,14 +6,16 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import Firebase
 
 // Auth.auth().currentUser?//.uid
 struct loginView: View {
-//    @EnvironmentObject var viewModel = AuthViewModel
-    @ObservedObject var viewModel = AuthViewModel()
-    @State var email = ""
-    @State var password = ""
-    @State var showHome = false
+    @EnvironmentObject var viewModel : AuthViewModel
+//    @ObservedObject var viewModel = AuthViewModel()
+    @State var email : String = ""
+    @State var password : String = ""
+    @State var showHome :Bool = false
 
     var body: some View {
         

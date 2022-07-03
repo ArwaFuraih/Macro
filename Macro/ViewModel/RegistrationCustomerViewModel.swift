@@ -61,6 +61,8 @@ final class  RegistrationCustomerViewModel : ObservableObject{
                         
                     }
                     self.authViewModel.fetchUser()
+                 
+//                    self.authViewModel.fetchUser(userId: uid)
                     print("successfuly store user info")
                 }
 

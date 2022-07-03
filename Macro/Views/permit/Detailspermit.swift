@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import Firebase
 
-struct DetailsOrder: View {
+
+struct Detailspermit: View {
+    @StateObject var alldetiles = permitviewModel()
+    
     @State var showSheet: Bool = false
 
     var body: some View {
@@ -16,8 +20,10 @@ struct DetailsOrder: View {
                 
                 ScrollView(.vertical){
 
+                    ForEach(alldetiles.permit) { i in
+                        VStack(alignment: .leading) {
                  ZStack{
-                         
+ 
                      Image("")
                      .resizable()
                      .background(Color.them.myColor2)
@@ -27,7 +33,6 @@ struct DetailsOrder: View {
             VStack(alignment: .leading, spacing: 8){
                         HStack {
                         Image("date")
-                        Text("Date: 1-1-2021 ")
                         .foregroundColor(.white)
                         .font(.system(size: 18))
 
@@ -36,8 +41,9 @@ struct DetailsOrder: View {
                         HStack {
                         Image(systemName:"hourglass")
                         .foregroundColor(.white)
-
-                        Text("Duration:  4hour ")
+                            
+                            Text("\(i.user.fullName)")
+//                        Text("Duration:  4hour ")
                         .font(.system(size: 18))
                         .foregroundColor(.white)
 
@@ -54,7 +60,8 @@ struct DetailsOrder: View {
                         Image(systemName:"clock")
                         .foregroundColor(.white)
 
-                        Text("Time: 4;30 PM ")
+                            
+//                        Text("Time: 4;30 PM ")
                         .font(.system(size: 18))
                         .foregroundColor(.white)
                         .foregroundColor(.white)
@@ -65,7 +72,7 @@ struct DetailsOrder: View {
                         Image("hight")
                         .foregroundColor(.white)
 
-                        Text("Hight: 100 ft ")
+                            Text("\(i.permit.hight)")
                         .font(.system(size: 18))
                         .foregroundColor(.white)
                         .foregroundColor(.white)
@@ -140,6 +147,7 @@ Text("Coverage of the opening of the exhibition north of Riyadh ")
 .frame(maxWidth:.maximum(10,350),alignment:.leading)
                .padding(.top,286)
                  }
+                        }
                  .padding(.top,-90)
 
                     ZStack{
@@ -183,11 +191,12 @@ Text("  Total price :                                   700 RS")
                 .padding(.top,50)
                     }
                     }
+                    }
+                
                     VStack{
-                        
-                        
-                        
-                    Button(action:{
+                       Button(action:{
+                           
+//                           PaymentButton(action: alldetiles.payPermit)
                         showSheet.toggle()
 
                     }){
@@ -209,17 +218,15 @@ Text("  Total price :                                   700 RS")
 }
             .navigationTitle("Order details")
             .navigationBarTitleDisplayMode(.inline)
-//            .padding(.top,-157)
-
+//            .onAppear(){
+//                self.permitModel.fethchPermit()
+//            }
+ 
     }
     }
-
-    
-
-        
-struct DetailsOrder_Previews: PreviewProvider {
+ struct DetailsOrder_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsOrder()
+        Detailspermit()
             .preferredColorScheme(.dark)
         
     }

@@ -10,14 +10,14 @@ import FirebaseAuth
 import FirebaseFirestore
 
 
-
-class FirebaseManger:ObservableObject {
-   @Published  var user = User(dictionary: [:])
-
-   init() {
+//
+//class FirebaseManger:ObservableObject {
+//   @Published  var user = User(dictionary: [:])
+//
+//   init() {
 //       fetchCurrentUser()
-   }
-
+//   }
+//
 //   func fetchCurrentUser(){
 //       guard let userID = Auth.auth().currentUser?.uid else{return}
 //       Firestore.firestore().collection("user").document(userID).getDocument { snapshot, error in
@@ -27,14 +27,15 @@ class FirebaseManger:ObservableObject {
 //
 //       }
 //   }
-}
+//}
 
 
 
 @available(iOS 15.0, *)
 struct HomeView: View {
-    @ObservedObject var authViewModel = AuthViewModel()
-    @StateObject var firebaseManger = FirebaseManger()
+//    @ObservedObject var authViewModel = AuthViewModel()
+    @EnvironmentObject var viewModel : AuthViewModel
+//    @StateObject var firebaseManger = FirebaseManger()
     @State var selectedTab: Int = 0
     @State var showingAlert = false
 //    @State var userIsLogin = false
@@ -117,7 +118,7 @@ struct HomeView: View {
                         secondaryButton: .cancel())}
                                 }
                .fullScreenCover(isPresented: $showSheet, content: { loginView()})
-               .sheet(isPresented: $RequestAPermitSheet, content: {Settings()})
+               .sheet(isPresented: $RequestAPermitSheet, content: {information()})
                         
                         
                         
@@ -128,48 +129,59 @@ struct HomeView: View {
 //
 //                        }
                          
-                        
-//                        if !firebaseManger.user.isprovider
-                        if ((authViewModel.user?.isprovider ) == nil){
-                            Button {
-                                print(firebaseManger.user)
-                                if Auth.auth().currentUser != nil {
-                                    BecomeADroneOwnerSheet.toggle()
-                                }else{  showingAlert.toggle ()}
-    //
-    //                            if authViewModel.isAouthenticatting{showSheet3.toggle()}
-    //                            else{showingAlert.toggle()}
-                            }
-                           
-                            label: {
-                                ZStack{
-                                    Text("Become a Drone Owner".uppercased())
-                                        .font(.headline)
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(.white)
-                                        .padding()
-                                        .frame(width: 332, height: 78)
-                                        .padding(.horizontal, 20)
-                                        .background(
-                                            Color.them.btnColor
-                                                .cornerRadius(8)
-                                                .shadow(radius: 2)
-                                        )
-                                    Image("chevron.right.2") .padding(.leading,270)
-                                    
+//
+//                        if !firebaseManger.user.isprovider{
+//                        if Auth.auth().currentUser != nil
+                            if viewModel.user != nil{
+                                Text( viewModel.user?.fullName  as? String ?? "gg").foregroundColor(.white)
+//                            Text(authViewModel.user!.fullName)
+                        }
+                 
+                        if let user =  AuthViewModel.shared.user {
+                            if user.isprovider == false{
+                                Button {
+    //                                print(firebaseManger.user)
+                                    if Auth.auth().currentUser != nil {
+                                        BecomeADroneOwnerSheet.toggle()
+                                    }else{  showingAlert.toggle ()}
+        //
+        //                            if authViewModel.isAouthenticatting{showSheet3.toggle()}
+        //                            else{showingAlert.toggle()}
                                 }
-                            .alert(isPresented:$showingAlert) {
-                                                Alert(
-                                   title: Text("not logged it"),
-                                   message: Text("you have to log in to use this service"),
-                                   primaryButton: .destructive(Text("login"))
-                                   {showSheet.toggle()},
-                                    secondaryButton: .cancel())}
-                                            }
-                           .fullScreenCover(isPresented: $showSheet, content: { loginView() })
-                           .sheet(isPresented: $BecomeADroneOwnerSheet, content: { CreateOwnerAccount() })
+                               
+                                label: {
+                                    ZStack{
+                                        Text("Become a Drone Owner".uppercased())
+                                            .font(.headline)
+                                            .fontWeight(.semibold)
+                                            .foregroundColor(.white)
+                                            .padding()
+                                            .frame(width: 332, height: 78)
+                                            .padding(.horizontal, 20)
+                                            .background(
+                                                Color.them.btnColor
+                                                    .cornerRadius(8)
+                                                    .shadow(radius: 2)
+                                            )
+                                        Image("chevron.right.2") .padding(.leading,270)
+                                        
+                                    }
+                                .alert(isPresented:$showingAlert) {
+                                                    Alert(
+                                       title: Text("not logged it"),
+                                       message: Text("you have to log in to use this service"),
+                                       primaryButton: .destructive(Text("login"))
+                                       {showSheet.toggle()},
+                                        secondaryButton: .cancel())}
+                                                }
+                            }
+                     
+                        }
                             
-//                        }else{
+                           
+                            
+                      //  }
+//                        else{
 //
 //                            EmptyView()
 //
@@ -178,10 +190,12 @@ struct HomeView: View {
                                     
                             
                         
-                    }
+//                        }
                     
                     Text("Request  Services").foregroundColor(Color.white).font(.headline)
                         .fontWeight(.bold).padding(.trailing,172)
+                        .fullScreenCover(isPresented: $showSheet, content: { loginView() })
+                        .sheet(isPresented: $BecomeADroneOwnerSheet, content: { CreateOwnerAccount() })
                     //..................
                     
 //                    VStack {
@@ -207,7 +221,7 @@ struct HomeView: View {
                     label: {
                             ZStack{
                                     Image("photogra")
-                                    .frame(width: .infinity, height:109)
+//                                    .frame(width: .infinity, height:109)
                                     Image("mle")
                                     .frame(width: 162, height: 109)
 //                                        Image("rightm").resizable()
