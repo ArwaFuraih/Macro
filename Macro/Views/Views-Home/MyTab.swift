@@ -14,7 +14,6 @@ struct MyTab: View{
 //    @StateObject var firebaseManger = AuthViewModel()
 
     @EnvironmentObject var  viewModel : AuthViewModel
-//    init() {UITabBar.appearance().backgroundColor = UIColor.systemBackground}
 
 
 //    let user = UserKind.self
@@ -72,7 +71,12 @@ struct MyTab: View{
                 
                 NavigationView{
                     Settings()
-                }
+                    
+                } .navigationBarTitle("Settings", displayMode: .inline)
+                    .background(NavigationConfigurator { nc in
+                        nc.navigationBar.barTintColor = .blue
+                        nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+                    })
                  
                 .tabItem {
                                Image(systemName: "gear")
@@ -80,7 +84,7 @@ struct MyTab: View{
                            }
                 
 
-                }
+            }.accentColor(.gray)
 
             
         }

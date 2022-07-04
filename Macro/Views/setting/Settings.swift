@@ -14,303 +14,292 @@ struct  Settings: View {
 
 
     var body: some View {
-        NavigationView{
-            
-                VStack(spacing:10){
-
-                    NavigationLink(destination: HomeView(), label: {
-                        HStack{
-                            ZStack{
-                                Image("")
-                                .resizable()
-        //            .padding()
-                    .background(Color.them.btnColor)
-                                .cornerRadius(8)
-                                .frame(width: 153, height: 148)
-        //                        .padding()
-
-                                VStack{
-                                Image("profile33")
-                                        .font(.system(size: 35))
-                                    .padding()
-                                   
-                            Text("Profile")
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.white)
-                                        .font(.system(size: 18))
-
-                                }
-                                
-                            }
-                                                .padding()
-
-                            ZStack{
-                                Image("")
-                                .resizable()
-                        .padding()
-                        .background(Color.them.btnColor)
-                                .cornerRadius(8)
-                                .frame(width: 153, height: 148)
-                                .padding()
-                                VStack{
-                                Image(systemName:"questionmark.circle")
-                                        .font(.system(size: 35))
-                                        .foregroundColor(.white)
-
-                                            .padding()
-                                
-                                    NavigationLink(destination: faq(), label: {Text("FAQ")
-                                            .fontWeight(.bold)
-                                            .foregroundColor(.white)
-                                            .font(.system(size: 18))})
-                                    
-                                    }
-        //                           }                                 .padding()
-
-                                    }
-        //                    .padding()
-
-                                }
-                    })
-              
-                    VStack{
-                HStack{
-                ZStack{
-                    Image("")
-                    .resizable()
-                    .padding()
-                    .background(Color.them.btnColor)
-                    .cornerRadius(8)
-                    .frame(width: 153, height: 148)
-                    .padding()
+        ZStack{
+//            Color.them.myColor1.ignoresSafeArea()
+           
+            VStack{
                     VStack(spacing:10){
 
-                Image(systemName:"checkmark.shield")
-                            .font(.system(size: 35))
-                                .padding()
-                                .foregroundColor(.white)
-
-                        
-                        NavigationLink(destination: PrivacyPolicy(), label: {Text("Privacy Policy")
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .font(.system(size: 18))})
-                        
-
-                            }
-                            }
-//                        .padding()
-                    
-                    Button {
-                       showingAlert.toggle()
-
-                    } label: {
-                        ZStack{
-                           
-                            Image("")
-                            .resizable()
-                            .padding()
-                    .background(Color.them.btnColor)
-                            .cornerRadius(8)
-                            .frame(width: 153, height: 148)
-                            .padding()
-                            VStack{
-                            Image("Technical Support")
-                            .font(.system(size: 18))
-
-                                    .padding()
-
-                            Text("Technical Support")
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .font(.system(size: 16))
-
-                                }
-                        }
-                    }.alert(isPresented:$showingAlert) {
-                        Alert(
-                            title: Text("share"), primaryButton: .destructive(Text("shares")) {
-//                                    share()
-                                print("logging in...")
-                            },
-                            secondaryButton: .cancel()
-                        )}
-
-                       
-//                        .padding()
-                }
-               
-                
-                        VStack{
-                HStack{
-                    NavigationLink(destination: AboutUs(), label: {ZStack{
-                        
-                        Image("")
-                        .resizable()
-                        .padding()
+                        NavigationLink(destination: HomeView(), label: {
+                            HStack{
+                                ZStack{
+                                    Image("")
+                                    .resizable()
+            //            .padding()
                         .background(Color.them.btnColor)
-                        .cornerRadius(8)
-                        .frame(width: 153, height: 148)
-                        .padding()
-                        VStack{
+                                    .cornerRadius(8)
+                                    .frame(width: 153, height: 148)
+            //                        .padding()
 
-                                Image(systemName: "info.circle")
-                                .font(.system(size: 35))
-                                .foregroundColor(.white)
-
-                                .padding()
-                                Text("Apot us")
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .font(.system(size: 18))
-
-                                    }
-                                    }})
-
-                
-//                            .padding()
-                    
-                    
-//                    NavigationLink(destination: share(), label: {
-                    
-                    Button {
-                        showingAlert.toggle()
-                    } label: {
-                        ZStack{
-                        Image("")
-                        .resizable()
-                        .padding()
-                        .background(Color.them.btnColor)
-                        .cornerRadius(8)
-                        .frame(width: 153, height: 148)
-                        .padding()
                                     VStack{
-                                    Image("share")
-                                    .font(.system(size: 35))
-
-                                    .padding()
-
-                                    Text("Share")
+                                    Image("profile33")
+                                            .font(.system(size: 35))
+                                        .padding()
+                                       
+                                Text("Profile")
                                             .fontWeight(.bold)
                                             .foregroundColor(.white)
                                             .font(.system(size: 18))
 
                                     }
-                        }.alert(isPresented:$showingAlert) {
-                            Alert(
-                                title: Text("share"), primaryButton: .destructive(Text("shares")) {
-//                                    share()
-                                    print("logging in...")
-                                },
-                                secondaryButton: .cancel()
-                            )}
-                    }
+                                    
+                                }
+                                                    .padding()
 
-                     
-//                            }            .fullScreenCover(isPresented: $isShareSheetPresented, content: {
-//                                Settings()})
-                        
-//                    })
+                                ZStack{
+                                    Image("")
+                                    .resizable()
+                            .padding()
+                            .background(Color.them.btnColor)
+                                    .cornerRadius(8)
+                                    .frame(width: 153, height: 148)
+                                    .padding()
+                                    VStack{
+                                    Image(systemName:"questionmark.circle")
+                                            .font(.system(size: 35))
+                                            .foregroundColor(.white)
+
+                                                .padding()
+                                    
+                                        NavigationLink(destination: faq(), label: {Text("FAQ")
+                                                .fontWeight(.bold)
+                                                .foregroundColor(.white)
+                                                .font(.system(size: 18))})
+                                        
+                                        }
+            //                           }                                 .padding()
+
+                                        }
+            //                    .padding()
+
+                                    }
+                        })
                   
-                            
-                        }
-                            
-                            
-                VStack{
-                HStack{
-                ZStack{
-                                
-                Image("")
-                .resizable()
-                                .padding()
-                .background(Color.them.btnColor)
-                .cornerRadius(8)
-                .frame(width: 153, height: 148)
-                .padding()
-                VStack{
-
-                Image(systemName: "person.2.circle")
-                .font(.system(size: 35))
-                .padding()
-                .foregroundColor(.white)
-
-                Text("Social media")
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-                .font(.system(size: 18))
-
-                                            }
-                                            }
-//                                        .padding()
-                    Button {
-                        authViewModel.handleSignout()
-                        showmytab.toggle()
-                    } label: {
-                        ZStack{
+                        VStack{
+                    HStack{
+                    ZStack{
                         Image("")
                         .resizable()
-        //              .padding()
+                        .padding()
                         .background(Color.them.btnColor)
                         .cornerRadius(8)
                         .frame(width: 153, height: 148)
                         .padding()
-                        VStack{
-                        Image("log-off")
-                        .font(.system(size: 35))
-                        .padding()
-                         Text("Log Out")
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .font(.system(size: 18))
+                        VStack(spacing:10){
+
+                    Image(systemName:"checkmark.shield")
+                                .font(.system(size: 35))
+                                    .padding()
+                                    .foregroundColor(.white)
+
                             
-                                                        }
-                                                        }
+                            NavigationLink(destination: PrivacyPolicy(), label: {Text("Privacy Policy")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 18))})
+                            
 
-                    }.fullScreenCover(isPresented: $showmytab) {
-                        MyTab()
-                    }
+                                }
+                                }
+    //                        .padding()
+                        
+                        Button {
+                           showingAlert.toggle()
 
-//                    NavigationLink(destination: HomeView()) {
-//                        ZStack{
-//                        Image("")
-//                        .resizable()
-//        //              .padding()
-//                        .background(Color.them.btnColor)
-//                        .cornerRadius(8)
-//                        .frame(width: 153, height: 148)
-//                        .padding()
-//                        VStack{
-//                        Image("log-off")
-//                        .font(.system(size: 35))
-//                        .padding()
-//                         Text("Log Out")
-//                        .fontWeight(.bold)
-//                        .foregroundColor(.white)
-//                        .font(.system(size: 18))
-//
-//                                                        }
-//                                                        }
-//                    }
-             
-                                        
+                        } label: {
+                            ZStack{
+                               
+                                Image("")
+                                .resizable()
+                                .padding()
+                        .background(Color.them.btnColor)
+                                .cornerRadius(8)
+                                .frame(width: 153, height: 148)
+                                .padding()
+                                VStack{
+                                Image("Technical Support")
+                                .font(.system(size: 18))
+
+                                        .padding()
+
+                                Text("Technical Support")
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .font(.system(size: 16))
+
                                     }
-                
+                            }
+                        }.alert(isPresented:$showingAlert) {
+                            Alert(
+                                title: Text("share"), primaryButton: .destructive(Text("shares")) {
+    //                                    share()
+                                    print("logging in...")
+                                },
+                                secondaryButton: .cancel()
+                            )}
+
+                           
+    //                        .padding()
                     }
+                   
+                    
+                            VStack{
+                    HStack{
+                        NavigationLink(destination: AboutUs(), label: {ZStack{
+                            
+                            Image("")
+                            .resizable()
+                            .padding()
+                            .background(Color.them.btnColor)
+                            .cornerRadius(8)
+                            .frame(width: 153, height: 148)
+                            .padding()
+                            VStack{
+
+                                    Image(systemName: "info.circle")
+                                    .font(.system(size: 35))
+                                    .foregroundColor(.white)
+
+                                    .padding()
+                                    Text("Apot us")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 18))
+
+                                        }
+                                        }})
+
+                    
+    //                            .padding()
+                        
+                        
+    //                    NavigationLink(destination: share(), label: {
+                        
+                        Button {
+                            showingAlert.toggle()
+                        } label: {
+                            ZStack{
+                            Image("")
+                            .resizable()
+                            .padding()
+                            .background(Color.them.btnColor)
+                            .cornerRadius(8)
+                            .frame(width: 153, height: 148)
+                            .padding()
+                                        VStack{
+                                        Image("share")
+                                        .font(.system(size: 35))
+
+                                        .padding()
+
+                                        Text("Share")
+                                                .fontWeight(.bold)
+                                                .foregroundColor(.white)
+                                                .font(.system(size: 18))
+
+                                        }
+                            }.alert(isPresented:$showingAlert) {
+                                Alert(
+                                    title: Text("share"), primaryButton: .destructive(Text("shares")) {
+    //                                    share()
+                                        print("logging in...")
+                                    },
+                                    secondaryButton: .cancel()
+                                )}
+                        }
+
+                         
+    //                            }            .fullScreenCover(isPresented: $isShareSheetPresented, content: {
+    //                                Settings()})
+                            
+    //                    })
+                      
                                 
+                            }
+                                
+                                
+                    VStack{
+                    HStack{
+                    ZStack{
+                                    
+                    Image("")
+                    .resizable()
+                                    .padding()
+                    .background(Color.them.btnColor)
+                    .cornerRadius(8)
+                    .frame(width: 153, height: 148)
+                    .padding()
+                    VStack{
+
+                    Image(systemName: "person.2.circle")
+                    .font(.system(size: 35))
+                    .padding()
+                    .foregroundColor(.white)
+
+                    Text("Social media")
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .font(.system(size: 18))
+
+                                                }
+                                                }
+    //                                        .padding()
+                        Button {
+                            authViewModel.handleSignout()
+                            showmytab.toggle()
+                        } label: {
+                            ZStack{
+                            Image("")
+                            .resizable()
+            //              .padding()
+                            .background(Color.them.btnColor)
+                            .cornerRadius(8)
+                            .frame(width: 153, height: 148)
+                            .padding()
+                            VStack{
+                            Image("log-off")
+                            .font(.system(size: 35))
+                            .padding()
+                             Text("Log Out")
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .font(.system(size: 18))
+                                
+                                                            }
+                                                            }
+
+                        }.fullScreenCover(isPresented: $showmytab) {
+                            MyTab()
+                        }
+
+  
+                                            
+                                        }
+                    
+                        }
+                                    
+                        }
                     }
-                }
-                }
-                .padding(.top,3)
-        .navigationTitle(" Settings")
-.navigationBarTitleDisplayMode(.inline)
-}
+                    }
+                   
+//                    .navigationTitle(" Settings").foregroundColor(.white)
+//    .navigationBarTitleDisplayMode(.inline)
+//
+                Spacer()
+
+            } .padding(.bottom,100)
+          
+          
         }
+      
+    }
 
     
 struct   Settings_Previews: PreviewProvider {
     static var previews: some View {
-        Settings()
-            .preferredColorScheme(.light)
+        Settings()                    .navigationViewStyle(StackNavigationViewStyle())
+
+//            .preferredColorScheme(.light)
 
     }
 }

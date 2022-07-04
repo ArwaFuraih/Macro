@@ -33,7 +33,7 @@ struct success: View {
                 .foregroundColor(Color.white)
                 
             NavigationLink {
-                    offersCustomer()
+                   orderCust()
                 } label: {
                  Text("Track your order")
                  .foregroundColor(.white)
