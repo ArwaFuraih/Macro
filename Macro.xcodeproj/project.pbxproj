@@ -353,7 +353,7 @@
 				E0E461EF28477AEB0044E19D /* ViewModel */,
 				E0E461E728476DDA0044E19D /* Views */,
 				E02D6F6328596116000A6638 /* Assets.xcassets */,
-				E0E46219284917F20044E19D /* Extention */,
+				E0E46219284917F20044E19D /* Extensions */,
 				E0B45655285B663F00ED1B37 /* SwiftUI_OTP.xcdatamodeld */,
 				7A4991BC285FA947007D3954 /* SceneDelegate.swift */,
 				E0AE50C8285E69FB00312D29 /* DocumentPicker.swift */,
@@ -530,14 +530,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		E0E46219284917F20044E19D /* Extention */ = {
+		E0E46219284917F20044E19D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				E0E4621A284917F20044E19D /* Color.swift */,
 				E04DE67D28739E5A0077EBFB /* NavigationColorb.swift */,
 				E04DE679287394020077EBFB /* cornerRadius.swift */,
 			);
-			path = Extention;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E0E606422865C6A100CB69C6 /* Authentication */ = {
