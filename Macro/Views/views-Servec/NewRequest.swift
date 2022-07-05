@@ -250,7 +250,7 @@ struct NewRequest: View {
                                return
                            }
 //                           viewModel.addOrder(order: order)
-                           viewModel.addorder(userID: userId, city: city, userType: userType, timestamp: selectedDate1, adddescrption: adddescrption, lettel: lettel, addpilot: addpilot, morepilot: morepilot)
+//                           viewModel.addorder(userID: userId, city: city, userType: userType, timestamp: selectedDate1, adddescrption: adddescrption, lettel: lettel, addpilot: addpilot, morepilot: morepilot)
                            
                        } label: {
                            ZStack{

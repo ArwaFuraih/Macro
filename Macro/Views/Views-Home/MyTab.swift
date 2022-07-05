@@ -49,15 +49,16 @@ struct MyTab: View{
                     Group{
                         if user.isprovider {
                             NavigationView{
-                              
-                                orderProv()
+                                OrdersProvView()
+//                                orderProv()
                                 
                             }.tabItem {
                                 Image(systemName: "list.bullet.rectangle.portrait")
                                    Text("orders")
                                }
                         }else{ NavigationView{
-                            orderCust()
+//                            orderCust()
+                            OrdersCustView()
 
                         }.tabItem {
                             Image(systemName: "list.bullet.rectangle.portrait")

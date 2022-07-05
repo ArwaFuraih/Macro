@@ -13,7 +13,7 @@ struct orderdetailsowner: View {
     @State private var stringOfTextField: String =  String()
     var body: some View {
                     ScrollView{
-                        ForEach (m.orders) {index in
+//                        ForEach (m.orders) {index in
                     ZStack{
                     VStack(alignment: .leading, spacing: 10){
                             Image("")
@@ -28,20 +28,20 @@ struct orderdetailsowner: View {
                                     VStack(spacing:10){
                                 Image("ORDER1")
                                 Image("ORDER2")
-                                        Text("\(index.user.fullName)")
+//                                        Text("\(index.user.fullName)")
                                     }
                                     .padding()
 
                                 Section{
                                     HStack{
-                                        Text("City     :\(index.order.city)")
+//                                        Text("City     :\(index.order.city)")
                                     }
                                     HStack{
                                     Text("Date    :")
                                     Text("1-1-2022")
                                     }
                                     HStack{
-                                        Text("Hours  :\(index.order.Hours)")
+//                                        Text("Hours  :\(index.order.Hours)")
                                     }
                                     
                         VStack(spacing:8){
@@ -177,4 +177,4 @@ struct orderdetailsowner_Previews: PreviewProvider {
 
 
 
-}
+//}

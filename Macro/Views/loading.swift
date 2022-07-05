@@ -13,7 +13,7 @@ struct loading: View {
 
     var body: some View {
         NavigationLink {
-            orderCust()
+            OrdersProvView()
         } label: {
             Text("dd")
         }
