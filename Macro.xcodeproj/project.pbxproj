@@ -85,7 +85,6 @@
 		E093D72628656D6900DD1DEF /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E093D72528656D6900DD1DEF /* FirebaseFirestoreSwift */; };
 		E093D72828656D6900DD1DEF /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = E093D72728656D6900DD1DEF /* FirebaseMessaging */; };
 		E093D72A28656D6900DD1DEF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E093D72928656D6900DD1DEF /* FirebaseStorage */; };
-		E0AE50B8285CF59C00312D29 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50B7285CF59C00312D29 /* test.swift */; };
 		E0AE50BC285E550900312D29 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50BB285E550900312D29 /* Settings.swift */; };
 		E0AE50BE285E589400312D29 /* faq.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50BD285E589400312D29 /* faq.swift */; };
 		E0AE50C1285E5AFE00312D29 /* share.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50C0285E5AFD00312D29 /* share.swift */; };
@@ -99,9 +98,8 @@
 		E0AE50DA285E845D00312D29 /* View permit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE50D9285E845D00312D29 /* View permit.swift */; };
 		E0AE50DE285E8BA700312D29 /* file.riv in Resources */ = {isa = PBXBuildFile; fileRef = E0AE50DD285E8BA700312D29 /* file.riv */; };
 		E0AE50E0285E8EC300312D29 /* file2.riv in Resources */ = {isa = PBXBuildFile; fileRef = E0AE50DF285E8EC300312D29 /* file2.riv */; };
-		E0B4564E285B12CC00ED1B37 /* AuthManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B4564D285B12CC00ED1B37 /* AuthManger.swift */; };
 		E0B45657285B663F00ED1B37 /* SwiftUI_OTP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0B45655285B663F00ED1B37 /* SwiftUI_OTP.xcdatamodeld */; };
-		E0BAC1BB285EA4BE001D1E85 /* Account .swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1BA285EA4BE001D1E85 /* Account .swift */; };
+		E0BAC1BB285EA4BE001D1E85 /* createCustoAcc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1BA285EA4BE001D1E85 /* createCustoAcc.swift */; };
 		E0BAC1CA285F6472001D1E85 /* success.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1C9285F6472001D1E85 /* success.swift */; };
 		E0BAC1CC285F6686001D1E85 /* Photography .swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1CB285F6686001D1E85 /* Photography .swift */; };
 		E0BAC1D0285F6ADA001D1E85 /* loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAC1CF285F6ADA001D1E85 /* loading.swift */; };
@@ -118,7 +116,6 @@
 		E0E60648286609CE00CB69C6 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E60647286609CE00CB69C6 /* AuthViewModel.swift */; };
 		E0E6064A2866832300CB69C6 /* orderDetailsCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E606492866832300CB69C6 /* orderDetailsCustomer.swift */; };
 		E0E6064C286689AC00CB69C6 /* orderDetailsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E6064B286689AC00CB69C6 /* orderDetailsProvider.swift */; };
-		E0E6064F286697DB00CB69C6 /* otp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E6064E286697DB00CB69C6 /* otp.swift */; };
 		E0E606512868586D00CB69C6 /* New Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E606502868586D00CB69C6 /* New Request.swift */; };
 		E0E6065B286C3C9E00CB69C6 /* NewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E6065A286C3C9E00CB69C6 /* NewRequest.swift */; };
 		E3E4AECF28619A550069254C /*  Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E4AECE28619A540069254C /*  Verification.swift */; };
@@ -197,7 +194,6 @@
 		E04DE67D28739E5A0077EBFB /* NavigationColorb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationColorb.swift; sourceTree = "<group>"; };
 		E093D7192865590400DD1DEF /* OrderForFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderForFeed.swift; sourceTree = "<group>"; };
 		E093D71B28655DA100DD1DEF /* custumerOrdr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = custumerOrdr.swift; path = ../../../db/Macro/ViewModel/custumerOrdr.swift; sourceTree = "<group>"; };
-		E0AE50B7285CF59C00312D29 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		E0AE50BB285E550900312D29 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E0AE50BD285E589400312D29 /* faq.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = faq.swift; sourceTree = "<group>"; };
 		E0AE50C0285E5AFD00312D29 /* share.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = share.swift; sourceTree = "<group>"; };
@@ -210,9 +206,8 @@
 		E0AE50D9285E845D00312D29 /* View permit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View permit.swift"; sourceTree = "<group>"; };
 		E0AE50DD285E8BA700312D29 /* file.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = file.riv; sourceTree = "<group>"; };
 		E0AE50DF285E8EC300312D29 /* file2.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = file2.riv; sourceTree = "<group>"; };
-		E0B4564D285B12CC00ED1B37 /* AuthManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManger.swift; sourceTree = "<group>"; };
 		E0B45656285B663F00ED1B37 /* SwiftUI_OTP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftUI_OTP.xcdatamodel; sourceTree = "<group>"; };
-		E0BAC1BA285EA4BE001D1E85 /* Account .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account .swift"; sourceTree = "<group>"; };
+		E0BAC1BA285EA4BE001D1E85 /* createCustoAcc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createCustoAcc.swift; sourceTree = "<group>"; };
 		E0BAC1C9285F6472001D1E85 /* success.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = success.swift; sourceTree = "<group>"; };
 		E0BAC1CB285F6686001D1E85 /* Photography .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photography .swift"; sourceTree = "<group>"; };
 		E0BAC1CF285F6ADA001D1E85 /* loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loading.swift; sourceTree = "<group>"; };
@@ -230,7 +225,6 @@
 		E0E606492866832300CB69C6 /* orderDetailsCustomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderDetailsCustomer.swift; sourceTree = "<group>"; };
 		E0E6064B286689AC00CB69C6 /* orderDetailsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderDetailsProvider.swift; sourceTree = "<group>"; };
 		E0E6064D28668F9400CB69C6 /* Macro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Macro.entitlements; sourceTree = "<group>"; };
-		E0E6064E286697DB00CB69C6 /* otp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = otp.swift; sourceTree = "<group>"; };
 		E0E606502868586D00CB69C6 /* New Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "New Request.swift"; sourceTree = "<group>"; };
 		E0E6065A286C3C9E00CB69C6 /* NewRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRequest.swift; sourceTree = "<group>"; };
 		E3E4AECC286076130069254C /* MacroDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacroDebug.entitlements; sourceTree = "<group>"; };
@@ -261,6 +255,7 @@
 		7A4991EA285FABE1007D3954 /* Views-Weather */ = {
 			isa = PBXGroup;
 			children = (
+				7A4991BE285FA947007D3954 /* AirMap.swift */,
 				7A4991DD285FABD8007D3954 /* CityNameView.swift */,
 				7A4991DC285FABD8007D3954 /* DailyWeatherView.swift */,
 				7A4991D9285FABD8007D3954 /* HourlyWeatherView.swift */,
@@ -354,7 +349,6 @@
 				E0AE50DF285E8EC300312D29 /* file2.riv */,
 				E0AE50DD285E8BA700312D29 /* file.riv */,
 				7AA91E9A28466B5F006B6BF9 /* MacroApp.swift */,
-				E0B4564C285B12A700ED1B37 /* Auth */,
 				E0E461EA2847788E0044E19D /* Models */,
 				E0E461EF28477AEB0044E19D /* ViewModel */,
 				E0E461E728476DDA0044E19D /* Views */,
@@ -424,7 +418,6 @@
 		E093D7152865562400DD1DEF /* views-provider */ = {
 			isa = PBXGroup;
 			children = (
-				E0E6063E28659C3800CB69C6 /* CreateOwnerAccount .swift */,
 				E0E6064B286689AC00CB69C6 /* orderDetailsProvider.swift */,
 				E04DE5D82870622A0077EBFB /* orderProv.swift */,
 				E04DE5DC28706DE50077EBFB /* orderdetailsowner.swift */,
@@ -443,7 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				E0E606492866832300CB69C6 /* orderDetailsCustomer.swift */,
-				E04DE66C287304230077EBFB /* components */,
+				E04DE5DA287063A20077EBFB /* orderCust.swift */,
 			);
 			path = customer;
 			sourceTree = "<group>";
@@ -472,20 +465,11 @@
 			path = permit;
 			sourceTree = "<group>";
 		};
-		E0B4564C285B12A700ED1B37 /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				E0B4564D285B12CC00ED1B37 /* AuthManger.swift */,
-				E0E6064E286697DB00CB69C6 /* otp.swift */,
-			);
-			path = Auth;
-			sourceTree = "<group>";
-		};
 		E0BAC1D7285FBDF7001D1E85 /* Views-Home */ = {
 			isa = PBXGroup;
 			children = (
-				E02D6F67285A05B0000A6638 /* MyTab.swift */,
 				E0E4621C28491A870044E19D /* HomeView.swift */,
+				E02D6F67285A05B0000A6638 /* MyTab.swift */,
 			);
 			path = "Views-Home";
 			sourceTree = "<group>";
@@ -493,21 +477,18 @@
 		E0E461E728476DDA0044E19D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7A4991BE285FA947007D3954 /* AirMap.swift */,
 				E0E606422865C6A100CB69C6 /* Authentication */,
 				E0BAC1D7285FBDF7001D1E85 /* Views-Home */,
 				7A4991EA285FABE1007D3954 /* Views-Weather */,
 				E093D7142865514500DD1DEF /* views-Servec */,
 				E093D7152865562400DD1DEF /* views-provider */,
+				E04DE66C287304230077EBFB /* components */,
 				E0AE50B6285C909300312D29 /* customer */,
 				E3E4AECE28619A540069254C /*  Verification.swift */,
-				E04DE5DA287063A20077EBFB /* orderCust.swift */,
-				E0BAC1BA285EA4BE001D1E85 /* Account .swift */,
 				E0BAC1CF285F6ADA001D1E85 /* loading.swift */,
 				E0AE50BF285E58A400312D29 /* setting */,
 				E0AE50CC285E6DE600312D29 /* permit */,
 				E0AE50D3285E826D00312D29 /* successpremit.swift */,
-				E0AE50B7285CF59C00312D29 /* test.swift */,
 				E0BAC1C9285F6472001D1E85 /* success.swift */,
 				E093D716286556DF00DD1DEF /* views-orders */,
 				E0BAC1E02861A99C001D1E85 /* GoogleService-Info.plist */,
@@ -563,6 +544,8 @@
 			isa = PBXGroup;
 			children = (
 				E0E606402865C69600CB69C6 /* loginView.swift */,
+				E0E6063E28659C3800CB69C6 /* CreateOwnerAccount .swift */,
+				E0BAC1BA285EA4BE001D1E85 /* createCustoAcc.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -699,11 +682,10 @@
 				E02D6F3C285626EE000A6638 /* Order.swift in Sources */,
 				E093D71A2865590400DD1DEF /* OrderForFeed.swift in Sources */,
 				E0AE50D4285E826D00312D29 /* successpremit.swift in Sources */,
-				E0AE50B8285CF59C00312D29 /* test.swift in Sources */,
 				E0AE50C5285E5C6800312D29 /* AboutUs .swift in Sources */,
 				7A4991F6285FAEB2007D3954 /* LocationRequest.swift in Sources */,
 				E04DE5D3286DCD740077EBFB /* PaymentButton.swift in Sources */,
-				E0BAC1BB285EA4BE001D1E85 /* Account .swift in Sources */,
+				E0BAC1BB285EA4BE001D1E85 /* createCustoAcc.swift in Sources */,
 				E04DE655287215050077EBFB /* offerCellP.swift in Sources */,
 				E04DE67A287394030077EBFB /* cornerRadius.swift in Sources */,
 				E0B45657285B663F00ED1B37 /* SwiftUI_OTP.xcdatamodeld in Sources */,
@@ -717,11 +699,9 @@
 				E093D71C28655DA100DD1DEF /* custumerOrdr.swift in Sources */,
 				E02D6F3A2856267A000A6638 /* User.swift in Sources */,
 				E0BAC1D2285F6DA7001D1E85 /* Argiculture.swift in Sources */,
-				E0E6064F286697DB00CB69C6 /* otp.swift in Sources */,
 				E04DE678287341120077EBFB /* offerCellC.swift in Sources */,
 				E0AE50DA285E845D00312D29 /* View permit.swift in Sources */,
 				7A4991D1285FA99C007D3954 /* WeatherDetail.swift in Sources */,
-				E0B4564E285B12CC00ED1B37 /* AuthManger.swift in Sources */,
 				E0E6063D28659BBF00CB69C6 /* RegistrationViewModel.swift in Sources */,
 				E3E4AECF28619A550069254C /*  Verification.swift in Sources */,
 				E04DE5CC286DC4E50077EBFB /* permitanduser.swift in Sources */,

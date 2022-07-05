@@ -8,10 +8,6 @@
 import Foundation
 import SwiftUI
 
-extension Color{
-    static let them = Them()
-    
-}
 
 struct Them{
     let white =   Color("white")
@@ -23,5 +19,26 @@ struct Them{
     
 
 }
+
+extension Color{
+    static let them = Them()
+    
+}
+
+extension View {
+    
+    func NAVColor(){
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
+    
+    func TabBarCustom(){
+        UITabBar.appearance().backgroundColor = UIColor(Color.them.myColor1)
+    }
+   
+
+}
+
+
 
 

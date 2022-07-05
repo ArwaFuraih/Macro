@@ -10,6 +10,12 @@ import Firebase
 import FirebaseAuth
 
 struct MyTab: View{
+   init() {
+       NAVColor()
+       TabBarCustom()
+}
+
+
 //    @StateObject var firebaseManger = FirebaseManger()
 //    @StateObject var firebaseManger = AuthViewModel()
 
@@ -22,9 +28,9 @@ struct MyTab: View{
             Color.them.myColor1.ignoresSafeArea()
             
             TabView{
-                NavigationView{
+            
                     HomeView()
-                }
+               
                     
                     .tabItem {
                                    Image("categcolor")
@@ -70,13 +76,12 @@ struct MyTab: View{
                 
                 
                 NavigationView{
+                   
                     Settings()
-                    
-                } .navigationBarTitle("Settings", displayMode: .inline)
-                    .background(NavigationConfigurator { nc in
-                        nc.navigationBar.barTintColor = .blue
-                        nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
-                    })
+                   
+                }.navigationBarTitle("Settings", displayMode: .inline)
+
+
                  
                 .tabItem {
                                Image(systemName: "gear")

@@ -7,6 +7,7 @@
 import SwiftUI
 
 struct  Settings: View {
+
     @ObservedObject var authViewModel = AuthViewModel()
     @State var showmytab = false
     @State var showingAlert = false
@@ -14,295 +15,307 @@ struct  Settings: View {
 
 
     var body: some View {
+     
         ZStack{
-//            Color.them.myColor1.ignoresSafeArea()
            
-            VStack{
-                    VStack(spacing:10){
-
-                        NavigationLink(destination: HomeView(), label: {
-                            HStack{
-                                ZStack{
-                                    Image("")
-                                    .resizable()
-            //            .padding()
-                        .background(Color.them.btnColor)
-                                    .cornerRadius(8)
-                                    .frame(width: 153, height: 148)
-            //                        .padding()
-
-                                    VStack{
-                                    Image("profile33")
-                                            .font(.system(size: 35))
-                                        .padding()
-                                       
-                                Text("Profile")
-                                            .fontWeight(.bold)
-                                            .foregroundColor(.white)
-                                            .font(.system(size: 18))
-
-                                    }
-                                    
-                                }
-                                                    .padding()
-
-                                ZStack{
-                                    Image("")
-                                    .resizable()
-                            .padding()
-                            .background(Color.them.btnColor)
-                                    .cornerRadius(8)
-                                    .frame(width: 153, height: 148)
-                                    .padding()
-                                    VStack{
-                                    Image(systemName:"questionmark.circle")
-                                            .font(.system(size: 35))
-                                            .foregroundColor(.white)
-
-                                                .padding()
-                                    
-                                        NavigationLink(destination: faq(), label: {Text("FAQ")
-                                                .fontWeight(.bold)
-                                                .foregroundColor(.white)
-                                                .font(.system(size: 18))})
-                                        
-                                        }
-            //                           }                                 .padding()
-
-                                        }
-            //                    .padding()
-
-                                    }
-                        })
-                  
-                        VStack{
-                    HStack{
-                    ZStack{
-                        Image("")
-                        .resizable()
-                        .padding()
-                        .background(Color.them.btnColor)
-                        .cornerRadius(8)
-                        .frame(width: 153, height: 148)
-                        .padding()
-                        VStack(spacing:10){
-
-                    Image(systemName:"checkmark.shield")
-                                .font(.system(size: 35))
-                                    .padding()
-                                    .foregroundColor(.white)
-
-                            
-                            NavigationLink(destination: PrivacyPolicy(), label: {Text("Privacy Policy")
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 18))})
-                            
-
-                                }
-                                }
-    //                        .padding()
-                        
-                        Button {
-                           showingAlert.toggle()
-
-                        } label: {
-                            ZStack{
-                               
-                                Image("")
-                                .resizable()
-                                .padding()
-                        .background(Color.them.btnColor)
-                                .cornerRadius(8)
-                                .frame(width: 153, height: 148)
-                                .padding()
+                    Color.them.myColor1.ignoresSafeArea()
+       
+               
+                          
                                 VStack{
-                                Image("Technical Support")
-                                .font(.system(size: 18))
+                                        VStack(spacing:10){
 
-                                        .padding()
+                                            NavigationLink(destination: HomeView(), label: {
+                                                HStack{
+                                                    ZStack{
+                                                        Image("")
+                                                        .resizable()
+                                //            .padding()
+                                            .background(Color.them.btnColor)
+                                                        .cornerRadius(8)
+                                                        .frame(width: 153, height: 148)
+                                //                        .padding()
 
-                                Text("Technical Support")
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .font(.system(size: 16))
+                                                        VStack{
+                                                        Image("profile33")
+                                                                .font(.system(size: 35))
+                                                            .padding()
+                                                           
+                                                    Text("Profile")
+                                                                .fontWeight(.bold)
+                                                                .foregroundColor(.white)
+                                                                .font(.system(size: 18))
 
-                                    }
-                            }
-                        }.alert(isPresented:$showingAlert) {
-                            Alert(
-                                title: Text("share"), primaryButton: .destructive(Text("shares")) {
-    //                                    share()
-                                    print("logging in...")
-                                },
-                                secondaryButton: .cancel()
-                            )}
+                                                        }
+                                                        
+                                                    }
+                                                                        .padding()
 
-                           
-    //                        .padding()
-                    }
-                   
-                    
-                            VStack{
-                    HStack{
-                        NavigationLink(destination: AboutUs(), label: {ZStack{
-                            
-                            Image("")
-                            .resizable()
-                            .padding()
-                            .background(Color.them.btnColor)
-                            .cornerRadius(8)
-                            .frame(width: 153, height: 148)
-                            .padding()
-                            VStack{
+                                                    ZStack{
+                                                        Image("")
+                                                        .resizable()
+                                                .padding()
+                                                .background(Color.them.btnColor)
+                                                        .cornerRadius(8)
+                                                        .frame(width: 153, height: 148)
+                                                        .padding()
+                                                        VStack{
+                                                        Image(systemName:"questionmark.circle")
+                                                                .font(.system(size: 35))
+                                                                .foregroundColor(.white)
 
-                                    Image(systemName: "info.circle")
-                                    .font(.system(size: 35))
-                                    .foregroundColor(.white)
+                                                                    .padding()
+                                                        
+                                                            NavigationLink(destination: faq(), label: {Text("FAQ")
+                                                                    .fontWeight(.bold)
+                                                                    .foregroundColor(.white)
+                                                                    .font(.system(size: 18))})
+                                                            
+                                                            }
+                                //                           }                                 .padding()
 
-                                    .padding()
-                                    Text("Apot us")
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 18))
+                                                            }
+                                //                    .padding()
 
+                                                        }
+                                            })
+                                      
+                                            VStack{
+                                        HStack{
+                                        ZStack{
+                                            Image("")
+                                            .resizable()
+                                            .padding()
+                                            .background(Color.them.btnColor)
+                                            .cornerRadius(8)
+                                            .frame(width: 153, height: 148)
+                                            .padding()
+                                            VStack(spacing:10){
+
+                                        Image(systemName:"checkmark.shield")
+                                                    .font(.system(size: 35))
+                                                        .padding()
+                                                        .foregroundColor(.white)
+
+                                                
+                                                NavigationLink(destination: PrivacyPolicy(), label: {Text("Privacy Policy")
+                                                        .fontWeight(.bold)
+                                                        .foregroundColor(.white)
+                                                        .font(.system(size: 18))})
+                                                
+
+                                                    }
+                                                    }
+                        //                        .padding()
+                                            
+                                            Button {
+                                               showingAlert.toggle()
+
+                                            } label: {
+                                                ZStack{
+                                                   
+                                                    Image("")
+                                                    .resizable()
+                                                    .padding()
+                                            .background(Color.them.btnColor)
+                                                    .cornerRadius(8)
+                                                    .frame(width: 153, height: 148)
+                                                    .padding()
+                                                    VStack{
+                                                    Image("Technical Support")
+                                                    .font(.system(size: 18))
+
+                                                            .padding()
+
+                                                    Text("Technical Support")
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(.white)
+                                                    .font(.system(size: 16))
+
+                                                        }
+                                                }
+                                            }.alert(isPresented:$showingAlert) {
+                                                Alert(
+                                                    title: Text("share"), primaryButton: .destructive(Text("shares")) {
+                        //                                    share()
+                                                        print("logging in...")
+                                                    },
+                                                    secondaryButton: .cancel()
+                                                )}
+
+                                               
+                        //                        .padding()
                                         }
-                                        }})
+                                       
+                                        
+                                                VStack{
+                                        HStack{
+                                            NavigationLink(destination: AboutUs(), label: {ZStack{
+                                                
+                                                Image("")
+                                                .resizable()
+                                                .padding()
+                                                .background(Color.them.btnColor)
+                                                .cornerRadius(8)
+                                                .frame(width: 153, height: 148)
+                                                .padding()
+                                                VStack{
 
-                    
-    //                            .padding()
-                        
-                        
-    //                    NavigationLink(destination: share(), label: {
-                        
-                        Button {
-                            showingAlert.toggle()
-                        } label: {
-                            ZStack{
-                            Image("")
-                            .resizable()
-                            .padding()
-                            .background(Color.them.btnColor)
-                            .cornerRadius(8)
-                            .frame(width: 153, height: 148)
-                            .padding()
+                                                        Image(systemName: "info.circle")
+                                                        .font(.system(size: 35))
+                                                        .foregroundColor(.white)
+
+                                                        .padding()
+                                                        Text("Apot us")
+                                                        .fontWeight(.bold)
+                                                        .foregroundColor(.white)
+                                                        .font(.system(size: 18))
+
+                                                            }
+                                                            }})
+
+                                        
+                        //                            .padding()
+                                            
+                                            
+                        //                    NavigationLink(destination: share(), label: {
+                                            
+                                            Button {
+                                                showingAlert.toggle()
+                                            } label: {
+                                                ZStack{
+                                                Image("")
+                                                .resizable()
+                                                .padding()
+                                                .background(Color.them.btnColor)
+                                                .cornerRadius(8)
+                                                .frame(width: 153, height: 148)
+                                                .padding()
+                                                            VStack{
+                                                            Image("share")
+                                                            .font(.system(size: 35))
+
+                                                            .padding()
+
+                                                            Text("Share")
+                                                                    .fontWeight(.bold)
+                                                                    .foregroundColor(.white)
+                                                                    .font(.system(size: 18))
+
+                                                            }
+                                                }.alert(isPresented:$showingAlert) {
+                                                    Alert(
+                                                        title: Text("share"), primaryButton: .destructive(Text("shares")) {
+                        //                                    share()
+                                                            print("logging in...")
+                                                        },
+                                                        secondaryButton: .cancel()
+                                                    )}
+                                            }
+
+                                             
+                        //                            }            .fullScreenCover(isPresented: $isShareSheetPresented, content: {
+                        //                                Settings()})
+                                                
+                        //                    })
+                                          
+                                                    
+                                                }
+                                                    
+                                                    
                                         VStack{
-                                        Image("share")
-                                        .font(.system(size: 35))
-
+                                        HStack{
+                                        ZStack{
+                                                        
+                                        Image("")
+                                        .resizable()
+                                                        .padding()
+                                        .background(Color.them.btnColor)
+                                        .cornerRadius(8)
+                                        .frame(width: 153, height: 148)
                                         .padding()
+                                        VStack{
 
-                                        Text("Share")
+                                        Image(systemName: "person.2.circle")
+                                        .font(.system(size: 35))
+                                        .padding()
+                                        .foregroundColor(.white)
+
+                                        Text("Social media")
+                                        .fontWeight(.bold)
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 18))
+
+                                                                    }
+                                                                    }
+                        //                                        .padding()
+                                            Button {
+                                                authViewModel.handleSignout()
+                                                showmytab.toggle()
+                                            } label: {
+                                                ZStack{
+                                                Image("")
+                                                .resizable()
+                                //              .padding()
+                                                .background(Color.them.btnColor)
+                                                .cornerRadius(8)
+                                                .frame(width: 153, height: 148)
+                                                .padding()
+                                                VStack{
+                                                Image("log-off")
+                                                .font(.system(size: 35))
+                                                .padding()
+                                                 Text("Log Out")
                                                 .fontWeight(.bold)
                                                 .foregroundColor(.white)
                                                 .font(.system(size: 18))
+                                                    
+                                                                                }
+                                                                                }
 
-                                        }
-                            }.alert(isPresented:$showingAlert) {
-                                Alert(
-                                    title: Text("share"), primaryButton: .destructive(Text("shares")) {
-    //                                    share()
-                                        print("logging in...")
-                                    },
-                                    secondaryButton: .cancel()
-                                )}
-                        }
+                                            }.fullScreenCover(isPresented: $showmytab) {
+                                                MyTab()
+                                            }
 
-                         
-    //                            }            .fullScreenCover(isPresented: $isShareSheetPresented, content: {
-    //                                Settings()})
-                            
-    //                    })
                       
-                                
-                            }
-                                
-                                
-                    VStack{
-                    HStack{
-                    ZStack{
-                                    
-                    Image("")
-                    .resizable()
-                                    .padding()
-                    .background(Color.them.btnColor)
-                    .cornerRadius(8)
-                    .frame(width: 153, height: 148)
-                    .padding()
-                    VStack{
-
-                    Image(systemName: "person.2.circle")
-                    .font(.system(size: 35))
-                    .padding()
-                    .foregroundColor(.white)
-
-                    Text("Social media")
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .font(.system(size: 18))
-
-                                                }
-                                                }
-    //                                        .padding()
-                        Button {
-                            authViewModel.handleSignout()
-                            showmytab.toggle()
-                        } label: {
-                            ZStack{
-                            Image("")
-                            .resizable()
-            //              .padding()
-                            .background(Color.them.btnColor)
-                            .cornerRadius(8)
-                            .frame(width: 153, height: 148)
-                            .padding()
-                            VStack{
-                            Image("log-off")
-                            .font(.system(size: 35))
-                            .padding()
-                             Text("Log Out")
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .font(.system(size: 18))
-                                
+                                                                
                                                             }
-                                                            }
-
-                        }.fullScreenCover(isPresented: $showmytab) {
-                            MyTab()
-                        }
-
-  
-                                            
+                                        
+                                            }
+                                                        
+                                            }
                                         }
-                    
-                        }
-                                    
-                        }
-                    }
-                    }
-                   
-//                    .navigationTitle(" Settings").foregroundColor(.white)
-//    .navigationBarTitleDisplayMode(.inline)
-//
-                Spacer()
+                                        }
+                                       
+                    //                    .navigationTitle(" Settings").foregroundColor(.white)
+                    //    .navigationBarTitleDisplayMode(.inline)
+                    //
+                                    Spacer()
 
-            } .padding(.bottom,100)
-          
-          
-        }
-      
-    }
+                                } .padding(.bottom,40)
+                          
+        //                    .background(NavigationConfigurator { nc in
+        //                        nc.navigationBar.barTintColor = .blue
+        //                        nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+        //                    })
+                                
+                           
+                          
+                          
+                }
+            }
+    
 
     
 struct   Settings_Previews: PreviewProvider {
     static var previews: some View {
-        Settings()                    .navigationViewStyle(StackNavigationViewStyle())
+        Settings()
 
 //            .preferredColorScheme(.light)
 
     }
 }
 }
+
 
 

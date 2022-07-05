@@ -1,33 +1,34 @@
 //
-//  loginView.swift
+//  SwiftUIViewCreate Account.swift
 //  Macro
 //
-//  Created by sumayah on 25/11/1443 AH.
+//  Created by تهاني حامد عاطي الثقفي  on 08/11/1443 AH.
 //
 
 import SwiftUI
-import FirebaseAuth
 import Firebase
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseFirestoreSwift
+import Contacts
 
-// Auth.auth().currentUser?//.uid
-struct loginView: View {
-    @EnvironmentObject var viewModel : AuthViewModel
-    @EnvironmentObject var registrationViewModel : RegistrationViewModel
-
-//    @ObservedObject var viewModel = AuthViewModel()
-    @State var email : String = ""
-    @State var password : String = ""
-    @State var showHome :Bool = false
-    @State var showAcoountView :Bool = false
-    @State var  showTerms :Bool = false
-
-   
-    
-
+    struct createCustoAcc: View {
+//        @EnvironmentObject var viewModel : RegistrationViewModel
+        @StateObject var registrationViewModel: RegistrationViewModel = RegistrationViewModel()
+        
+        @State var email : String = ""
+        @State var password : String = ""
+        @State var showHome :Bool = false
+        @State var  showTerms :Bool = false
+        @State var showLoginView :Bool = false
+       
+//
+//        @State var fullName : String = ""
+//    @State var phoneNumber: String = ""
+//    @State var smsCode: String = ""
     var body: some View {
 
         ZStack {
-            
                 Color.them.myColor1.ignoresSafeArea()
                 
             VStack{
@@ -41,8 +42,8 @@ struct loginView: View {
     //.overlay(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color.them.mygray, style: StrokeStyle(lineWidth: 1)))
     //                    .frame(width: 342.15, height: 66.86)
                         
-                        Text("Email:") .foregroundColor(.gray)
-                        TextField("ex@gmail.com"  , text: $email) .foregroundColor(.gray)
+                        Text("Email:")
+                        TextField("ex@gmail.com"  , text: $email)
                                         .padding()
                     .overlay(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color.them.mygray, style: StrokeStyle(lineWidth: 1)))
                                         .frame(width: 342.15, height: 66.86)
@@ -59,8 +60,8 @@ struct loginView: View {
     //                    .frame(width: 342.15, height: 66.86)
                         
                       
-                             Text("Password:") .foregroundColor(.gray)
-                        TextField("******* ", text: $password) .foregroundColor(.gray)
+                             Text("Password:")
+                        TextField("******* ", text: $password)
                                         .padding()
                                         .overlay(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color.them.mygray, style: StrokeStyle(lineWidth: 1)))
                                         .frame(width: 342.15, height: 66.86)
@@ -71,8 +72,8 @@ struct loginView: View {
 
     //                    ZStack{
                         HStack{
-                            Image(systemName:"checkmark.square") .foregroundColor(.gray)
-                           Text(" agree with  and Privacy") .foregroundColor(.gray)
+                            Image(systemName:"checkmark.square")
+                           Text(" agree with  and Privacy")
                             .font(.system(size: 16))
                             
                             
@@ -80,7 +81,7 @@ struct loginView: View {
         showTerms.toggle()
         } label: {
         Text("Terms").underline().foregroundColor(.blue)
-            Text("and") .foregroundColor(.white) .foregroundColor(.gray)
+            Text("and")                .foregroundColor(.white)
 
         Text("Privacy").underline().foregroundColor(.blue)
         }.fullScreenCover(isPresented: $showTerms, content: {
@@ -109,10 +110,9 @@ struct loginView: View {
     //                    guard !email.isEmpty, !password.isEmpty else {return}
     //                    viewModel.logInUser(email: email, password: password)
                                          showHome.toggle()
-                        viewModel.logInUser(email: email, password: password)
-                        
+                        registrationViewModel.createUser()
                     } label: {
-                        Text("Sign In")
+                        Text("Sign Up")
                             .foregroundColor(.white)
                             .bold()
                             .frame(width: 342, height: 41.31)
@@ -124,32 +124,34 @@ struct loginView: View {
                     
 
                     
-                HStack(alignment: .center, spacing: -10){
-                    Text("Already have an account ? ") .foregroundColor(.gray)
-                            .padding(.leading, 79)
-                        Button {
-                            showAcoountView.toggle()
-                        } label: {
-                            Text("Sign up").foregroundColor(.blue)
-                        }.fullScreenCover(isPresented: $showAcoountView, content: {createCustoAcc()})
-                    .padding()
+                    HStack{
+                    Text("Already have an account ? ")
+                    Button(" Sign In") {
+                        showLoginView.toggle()
+                    }
+                    } .fullScreenCover(isPresented: $showLoginView, content: {loginView()})
+    //                .padding()
                      Spacer()
 
 
                     }
-                
+                .padding(.top,-100)
 
-           Spacer()
+           
             
-                    .navigationTitle("Create Account") .foregroundColor(.gray)
+                    .navigationTitle("Create Account")
                 .navigationBarTitleDisplayMode(.inline)
         }
     }
+            
+    }
+    
+    
+struct Account_Previews: PreviewProvider {
+    static var previews: some View {
+        createCustoAcc()
+            .preferredColorScheme(.dark)
     }
 }
-struct loginView_Previews: PreviewProvider {
-    static var previews: some View {
-        loginView()
-    }
+    
 
-    }
