@@ -7,6 +7,8 @@
 
 import SwiftUI
     struct CreateOwnerAccount : View {
+        @Environment(\.presentationMode) var presentationMode
+
         
         @StateObject var registrationViewModel: RegistrationViewModel = RegistrationViewModel()
 
@@ -135,33 +137,51 @@ import SwiftUI
                     .padding(.top,-4)
     //                    .padding()
     //                     Spacer()
-                    ZStack{
-                        Button(action:{
-                            registrationViewModel.createprovider()
+                    VStack{
+                        Button {
+                            presentationMode.wrappedValue.dismiss()
+                        } label: {
+                            Text("Cancel")
+                                .foregroundColor(.white)
+                                .bold()
+                                .frame(width: 342, height: 41.31)
+                                .cornerRadius(8)
+                                .background(Color("btnColor"))
+                                .cornerRadius(8)
+                         .frame(maxWidth:.maximum(80,699),alignment:.center)
+    //                     .padding(.top,-38)
 
-                            
-                            showSheet2.toggle()}){
-                        Text("Sign Up")
-                        .foregroundColor(.white)
-                        .bold()
-                        .frame(width: 342, height: 41.31)
-                        .cornerRadius(8)
-                        .background(Color("btnColor"))
-                        .cornerRadius(8)
+                        }
+                        
+                        ZStack{
+                            Button(action:{
+                                registrationViewModel.createprovider()
+
+                                
+                                showSheet2.toggle()}){
+                            Text("Sign Up")
+                            .foregroundColor(.white)
+                            .bold()
+                            .frame(width: 342, height: 41.31)
+                            .cornerRadius(8)
+                            .background(Color("btnColor"))
+                            .cornerRadius(8)
+                        }
+                        .padding(.top,51)
+                        .fullScreenCover(isPresented: $showSheet2, content: {
+                            MyTab()
+
+                        
+                        }
+        //
+
+                        
+
+                        
+                    )}
+                    .padding(.top,-20)
                     }
-                    .padding(.top,51)
-                    .fullScreenCover(isPresented: $showSheet2, content: {
-                        HomeView()
-
-                    
-                    }
-    //
-
-                    
-
-                    
-                )}
-                .padding(.top,-20)
+                   
 
                     
     //    }

@@ -39,9 +39,9 @@ struct MacroApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-
+                RootView()
 //                let mviewModel = AuthViewModel()
-                MyTab()
+//                MyTab()
 //                environment(mviewModel)
                 
             }.environmentObject( AuthViewModel.shared)

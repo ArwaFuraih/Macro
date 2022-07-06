@@ -21,49 +21,58 @@ struct MyTab: View{
 
     @EnvironmentObject var  viewModel : AuthViewModel
 
+    @State private var selectedIndex = 0
 
 //    let user = UserKind.self
     var body: some View {
         ZStack{
             Color.them.myColor1.ignoresSafeArea()
             
-            TabView{
+            TabView(selection: $selectedIndex){
             
-                    HomeView()
-               
-                    
+            HomeView()
+                    .onTapGesture {
+                        self.selectedIndex = 0
+                    }
                     .tabItem {
                                    Image("categcolor")
                                    Text("Catogries")
-                               }
-                NavigationView{
-                    AirMap()
-                }
+                               }.tag(0)
                 
-                .tabItem {
+                
+              
+            AirMap()
+                    .onTapGesture {
+                        self.selectedIndex = 1
+                    }
+                
+                    .tabItem {
                                Image(systemName: "map.fill")
                                Text("AirMap")
-                           }
+                           }.tag(1)
                 
                 if let user =  AuthViewModel.shared.user {
                     Group{
                         if user.isprovider {
-                            NavigationView{
+                            
                                 OrdersProvView()
-//                                orderProv()
-                                
-                            }.tabItem {
+                                .onTapGesture {
+                                    self.selectedIndex = 2
+                                }
+                            .tabItem {
                                 Image(systemName: "list.bullet.rectangle.portrait")
                                    Text("orders")
-                               }
+                               }.tag(2)
                         }else{ NavigationView{
 //                            orderCust()
                             OrdersCustView()
-
+                                .onTapGesture {
+                                    self.selectedIndex = 3
+                                }
                         }.tabItem {
                             Image(systemName: "list.bullet.rectangle.portrait")
                                Text("orders")
-                           }
+                        }.tag(3)
                             
                         }
 
@@ -76,18 +85,22 @@ struct MyTab: View{
                 
                 
                 
-                NavigationView{
+//                NavigationView{
                    
                     Settings()
+                    .onTapGesture {
+                        self.selectedIndex = 4
+                    }
+                    
                    
-                }.navigationBarTitle("Settings", displayMode: .inline)
+//                }.navigationBarTitle("Settings", displayMode: .inline)
 
 
                  
                 .tabItem {
                                Image(systemName: "gear")
                                Text("Settings")
-                           }
+                }.tag(4)
                 
 
             }.accentColor(.gray)
