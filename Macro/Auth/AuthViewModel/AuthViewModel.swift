@@ -47,13 +47,15 @@ final class AuthViewModel:ObservableObject{
    
 
 func logInUser(email:String, password: String){
+    self.showLoadingView()
+
 print("DEBUD: Login eith email \(email)")
     
-    
+
     Auth.auth().signIn(withEmail: email, password: password) { result, error in
         if let error = error{
             print("Faild to Login",error)
-//            self.hideLoadingView()
+            self.hideLoadingView()
         }
         
         
@@ -61,6 +63,7 @@ print("DEBUD: Login eith email \(email)")
 //        self.userSession = user
 //        print("DEBUG: user is \(self.userSession?.uid)")
         else{
+            self.hideLoadingView()
             self.isSignin.toggle()
 //            self.hideLoadingView()
             self.fetchUser()

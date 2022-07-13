@@ -7,9 +7,10 @@
 
 import Foundation
  
-struct OrderForFeed : Identifiable{
+struct OrderForFeed : Identifiable {
     let order: Order
     let user: User
+    let orderID:String //documentID in firestore
     let id: String = UUID().uuidString
 //    var id : String {
 //        order.id

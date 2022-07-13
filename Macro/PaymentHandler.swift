@@ -61,10 +61,10 @@ class PaymentHandler: NSObject {
         paymentSummaryItems = []
 
         // Iterate over the products array, create a PKPaymentSummaryItem for each and append to the paymentSummaryItems array
-        products.forEach { product in
-            let item = PKPaymentSummaryItem(label: Order.NameOfServece, amount: NSDecimalNumber(string: "\(product.Price).00"), type: .final)
-            paymentSummaryItems.append(item)
-        }
+//        products.forEach { product in
+//            let item = PKPaymentSummaryItem(label: Order.NameOfServece, amount: NSDecimalNumber(string: "\(product.Price).00"), type: .final)
+//            paymentSummaryItems.append(item)
+//        }
 
         // Add a PKPaymentSummaryItem for the total to the paymentSummaryItems array
         let total = PKPaymentSummaryItem(label: "Total", amount: NSDecimalNumber(string: "\(total).00"), type: .final)

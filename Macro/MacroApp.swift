@@ -31,7 +31,7 @@ struct MacroApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
     @StateObject var viewModle = AuthViewModel()
-    @StateObject var customerOrder = custumerOrdr()
+    @StateObject var customerOrder = custumerOrder()
    // @StateObject var registrationViewModel = RegistrationViewModel()
 
 //    init(){FirebaseApp.configure()}
@@ -39,13 +39,16 @@ struct MacroApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
+                
+//                test()
                 RootView()
 //                let mviewModel = AuthViewModel()
 //                MyTab()
 //                environment(mviewModel)
                 
             }.environmentObject( AuthViewModel.shared)
-                .environmentObject( custumerOrdr())
+                            .environmentObject( custumerOrder())
+            
         }
     }
 }

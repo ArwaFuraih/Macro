@@ -32,6 +32,7 @@ struct MyTab: View{
             
             HomeView()
                     .onTapGesture {
+                        
                         self.selectedIndex = 0
                     }
                     .tabItem {
@@ -86,12 +87,12 @@ struct MyTab: View{
                 
                 
 //                NavigationView{
-                   
+                NavigationView{
                     Settings()
                     .onTapGesture {
                         self.selectedIndex = 4
                     }
-                    
+                }.navigationTitle("Setting")
                    
 //                }.navigationBarTitle("Settings", displayMode: .inline)
 

@@ -85,7 +85,9 @@ struct orderCellP: View {
                 
                 NavigationLink(isActive: $showSheet,
                                destination: {
-                    orderdetailsowner()
+//                    orderdetailsowner()
+                    LoadingView()
+
                 },
 
                 label:

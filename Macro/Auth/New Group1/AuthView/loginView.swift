@@ -106,6 +106,7 @@ struct loginView: View {
                     
                     
                     Button {
+
     //                    guard !email.isEmpty, !password.isEmpty else {return}
     //                    viewModel.logInUser(email: email, password: password)
                                          showHome.toggle()
@@ -125,13 +126,13 @@ struct loginView: View {
 
                     
                 HStack(alignment: .center, spacing: -10){
-                    Text("Already have an account ? ") .foregroundColor(.gray)
+                    Text("Don't have an account ? ") .foregroundColor(.gray)
                             .padding(.leading, 79)
                         Button {
                             showAcoountView.toggle()
                         } label: {
                             Text("Sign up").foregroundColor(.blue)
-                        }.fullScreenCover(isPresented: $showAcoountView, content: {createCustoAcc()})
+                        }.fullScreenCover(isPresented: $showAcoountView, content: {RegistrationCusView()})
                     .padding()
                      Spacer()
 

@@ -7,17 +7,20 @@
 
 import SwiftUI
 import FirebaseAuth
+import Kingfisher
+
 
 struct offerCellC: View {
-    @StateObject var m: custumerOrdr = custumerOrdr()
+    @StateObject var m: custumerOrder = custumerOrder()
     @State var showSheet = false
     @State var showSheet1 = false
-    
+//    @State var offers: Offers? = nil
+
     var imageUrl = URL(string: "https://img.freepik.com/free-photo/young-handsome-man-with-beard-isolated-keeping-arms-crossed-frontal-position_1368-132662.jpg?w=2000")
     
     var body: some View {
         VStack{
-//            ForEach(m.orders){index in
+            ForEach(m.orders){index in
                 
             
             ZStack{
@@ -29,6 +32,8 @@ struct offerCellC: View {
                 
                 
                 VStack(alignment: .leading, spacing: 2){
+                    KFImage(URL(string: User.profileImg))
+                    
                     AsyncImage(url: imageUrl){ image in
                         image.resizable()
                             .aspectRatio(contentMode: .fill)
@@ -40,23 +45,25 @@ struct offerCellC: View {
                     
                     
                     Group{
-                        Text("(index.user.fullName)").foregroundColor(.white)
+                        Text("\(index.user.fullName)").foregroundColor(.white)
                             .font(.system(size: 16, weight: .regular, design: .rounded))
                         
-                        Text("(index.order.Price) SR").foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
+                        Text("\(index.order.Price) SR").foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
                         
-                        Text("(index.order.Hours)").foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
+                        Text("\(index.order.Hours)").foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
                         
                     }.padding(.leading,30)
                     
                     
                     
                     HStack( spacing: 130){
-                        //                                               Button(action: , label: ).padding(.trailing,40)
                         
-                        NavigationLink {
-                            HomeView()
-                            
+                        
+                        
+                        
+                        Button {
+                            showSheet.toggle()
+//                            m.changeOfferStatus(documentID: offers?.documentID ?? "", status: .accepted)
                         } label: {
                             Text("Accept".uppercased())
                                 .font(.system(size: 16, weight: .regular, design: .rounded))
@@ -67,24 +74,33 @@ struct offerCellC: View {
                                     Color.them.btnColor
                                         .cornerRadius(8)
                                         .shadow(radius: 8)
-                                )                }
+                                ).fullScreenCover(isPresented:$showSheet , content: {information()})
+
+                        }
+
+
                         
-                        Button(action: {
-                            print("Reject")
-                        }, label: {
+                        Button {
+                            showSheet.toggle()
+//                            m.changeOfferStatus(documentID: offers?.documentID ?? "", status: .accepted)
+                        } label: {
                             Text("Reject".uppercased())
                                 .font(.system(size: 16, weight: .regular, design: .rounded))
                                 .fontWeight(.semibold)
                                 .foregroundColor(.white)
                                 .frame(width: 101, height: 28)
-                            
                                 .background(
                                     Color.them.btnColor
                                         .cornerRadius(8)
                                         .shadow(radius: 8)
                                 )
-                        })
+                                
+                                .fullScreenCover(isPresented:$showSheet , content: {MyTab()})
+
+                        }
                         
+                        
+                
                         
                         
                         
@@ -113,7 +129,7 @@ struct offerCellC: View {
         
     }
 }
-
+}
 struct offerCellC_Previews: PreviewProvider {
     static var previews: some View {
         offerCellC()

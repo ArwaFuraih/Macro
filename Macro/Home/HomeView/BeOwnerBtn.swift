@@ -53,7 +53,7 @@ struct BeOwnerBtn: View {
                                secondaryButton: .cancel())}
                                        }
                        .fullScreenCover(isPresented: $showSheet, content: { loginView() })
-                       .fullScreenCover(isPresented: $BecomeADroneOwnerSheet, content: { CreateOwnerAccount() })
+                       .fullScreenCover(isPresented: $BecomeADroneOwnerSheet, content: { RegistrationProView() })
                    }
 
                }

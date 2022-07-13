@@ -8,12 +8,22 @@
 import SwiftUI
 import Firebase
 
-enum Status: String , CaseIterable {
-    case new
-    case accepted
-    case closed
-    case rejected
-}
+//"userID" :userID ,
+//"city" : city ,
+//"isprovider": isprovider,
+//"NameOfServece":NameOfServece
+//"CustomerType" : CustomerType ,
+//"city":city,
+//"dateAndTime":dateAndTime,
+//"Hours":Hours,
+//"timestamp" : timestamp ,
+//"descrption" : adddescrption ,
+//"lettel" : lettel ,
+//"pilot" : addpilot ,
+//"status":status,
+//"Price":Price,
+
+
 
 enum NameOfServece: String, CaseIterable {
     case Photography
@@ -22,20 +32,39 @@ enum NameOfServece: String, CaseIterable {
     case Oil
 }
 
+/*
+{
+    "userID": "sbdkjbcdbc",
+    "user_age": 10,
+}
+ */
+
+//struct Order22: Decodable {
+//    let userID: String
+//    let age: Int
+//
+//    private enum CodingKeys: String, CodingKey {
+//        case userID = "userID"
+//        case age = "user_age"
+//    }
+//}
+
 struct Order: Identifiable{
-    var id: String
+    var id: String = UUID().uuidString
     let userID: String
-    let isprovider : Bool
-    let NameOfServece : String
+//    let isprovider : Bool
+    var nameOfServece : NameOfServece
     let CustomerType : String
     let city : String
-    let date: String
-    let time: String
+    let dateAndTime : Timestamp
+//    let date: String
+//    let time: String
     let Hours: Int
     let description: String
     let Letter : String
     let pilot: Int
-    let status: String
+    let morepilot: Int
+    var cancelled: Bool
     let Price: Double
     let timestamp: Timestamp
    
@@ -45,18 +74,27 @@ struct Order: Identifiable{
     init(dictionary: [String: Any]) {
         self.id = dictionary[Order.id] as? String ?? ""
         self.userID = dictionary[Order.userID] as? String ?? ""
-        self.isprovider = dictionary[Order.isprovider] as? Bool ?? true
-        self.NameOfServece = dictionary[Order.NameOfServece] as? String ?? ""
+//        self.isprovider = dictionary[Order.isprovider] as? Bool ?? true
+        
+        self.cancelled = dictionary[Order.cancelled] as? Bool ?? false
+
+
+        let nameOfServeceString = dictionary[Order.nameOfServece] as? String ?? ""
+        self.nameOfServece = NameOfServece(rawValue: nameOfServeceString) ?? .Photography
+
+        
         self.CustomerType = dictionary[Order.CustomerType] as? String ?? ""
         self.city = dictionary[Order.city] as? String ?? ""
-        self.date = dictionary[Order.date] as? String ?? ""
-        self.time = dictionary[Order.time] as? String ?? ""
+        self.dateAndTime = dictionary[Order.date] as? Timestamp ?? Timestamp(date: Date())
+//        self.time = dictionary[Order.time] as? String ?? ""
         self.Hours = dictionary[Order.Hours] as? Int ?? 0
         self.description = dictionary[Order.description] as? String ?? ""
+        
         self.pilot = dictionary[Order.pilot] as? Int ?? 0
+        self.morepilot = dictionary[Order.morepilot] as? Int ?? 0
+
         self.Letter = dictionary[Order.Letter] as? String ?? ""
         self.Price = dictionary[Order.Price] as? Double ?? 0.0
-        self.status = dictionary[Order.status] as? String ?? ""
         self.timestamp = dictionary[Order.timestamp] as? Timestamp ?? Timestamp(date: Date())
 
         
@@ -66,18 +104,22 @@ struct Order: Identifiable{
     
     
     static let id = "id"
-    static let NameOfServece = "NameOfServece"
+    static let nameOfServece = "nameOfServece"
     static let userID = "userID"
     static let city = "city"
     static let CustomerType = "CustomerType"
     static let date = "date"
+    static let dateAndTime = "dateAndTime"
     static let time = "time"
     static let description = "description"
     static let Price = "Price"
-    static let status = "status"
-    static let isprovider = "isprovider"
+    static let cancelled = "cancelled"
+//    static let isprovider = "isprovider"
     static let Hours = "Hours"
     static let pilot = "pilot"
+    static let morepilot = "morepilot"
+
+    
     static let Letter = "Letter"
     static let timestamp = "timestamp"
 

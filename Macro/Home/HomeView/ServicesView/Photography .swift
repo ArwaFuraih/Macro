@@ -10,7 +10,7 @@ import SwiftUI
 struct Photography: View {
     @Environment(\.presentationMode) var presentationMode
 
-    
+ 
     @State var showNewReq : Bool = false
     var body: some View {
         NavigationView{
@@ -76,37 +76,49 @@ struct Photography: View {
 //                     .padding(.top,-38)
 
                     }
-                    
-                    Button { showNewReq.toggle()} label: {
-                        ZStack{
-                        Button(action:{}){
-                            Text("Request")
-                            .foregroundColor(.white)
-                            .bold()
-                            .frame(width: 342, height: 41.31)
-                            .cornerRadius(8)
-                            .background(Color("btnColor"))
-                            .cornerRadius(8)
-                     .frame(maxWidth:.maximum(80,699),alignment:.center)
-//                     .padding(.top,-38)
+                    Button {
+                        showNewReq.toggle()
+                    } label: {
+                        Text("Request")
+                        .foregroundColor(.white)
+                        .bold()
+                        .frame(width: 342, height: 41.31)
+                        .cornerRadius(8)
+                        .background(Color("btnColor"))
+                        .cornerRadius(8)
+                 .frame(maxWidth:.maximum(80,699),alignment:.center)
+                    } .fullScreenCover(isPresented: $showNewReq, content: {NewRequest()})
 
-                        }
-                            NavigationLink(isActive: $showNewReq,
-                                           destination: {
-                                NewRequest()
-                            },
-                               
-
-                            label:
-                                EmptyView.init)
-                            
-
-                            
-                            
-                            
-                            
-                         }
-                    }
+//                    Button { showNewReq.toggle()} label: {
+//                        ZStack{
+//                        Button(action:{}){
+//                            Text("Request")
+//                            .foregroundColor(.white)
+//                            .bold()
+//                            .frame(width: 342, height: 41.31)
+//                            .cornerRadius(8)
+//                            .background(Color("btnColor"))
+//                            .cornerRadius(8)
+//                     .frame(maxWidth:.maximum(80,699),alignment:.center)
+////                     .padding(.top,-38)
+//
+//                        }
+//                            NavigationLink(isActive: $showNewReq,
+//                                           destination: {
+//                                NewRequest()
+//                            },
+//
+//
+//                            label:
+//                                EmptyView.init)
+//
+//
+//
+//
+//
+//
+//                         }
+//                    }
                 }
                 
                

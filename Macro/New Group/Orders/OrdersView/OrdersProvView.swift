@@ -11,19 +11,21 @@ struct OrdersProvView: View {
     @State private var selectedFilter:OrderCustFilter = .Offers
     @Namespace var animation
     var body: some View {
+        NavigationView{
         ZStack{
             Color.them.myColor1.ignoresSafeArea()
 
             VStack{
                 OrdersFilrerBar
                 OrdersProvView
+      
                 Spacer()
                 
             }
 
             
         }
-      
+        }
     }
 }
 
@@ -68,13 +70,14 @@ extension OrdersProvView{
     var OrdersProvView : some View{
         ScrollView{
             LazyVStack{
-                ForEach(0...9,id:\.self){ _ in
-                    orderCellP().padding(.vertical)
-                    
-                }
+                //                ForEach(0...9,id:\.self){ _ in
+                offerCellP().padding(.vertical)
+
+                                    
+//                                }
             }
         }
     }
-  
+
 }
 

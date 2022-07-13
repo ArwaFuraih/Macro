@@ -17,7 +17,7 @@ struct faq: View {
     
     var body: some View {
         
-        NavigationView{
+      
             ScrollView(showsIndicators: false) {
                 ZStack{
                     VStack{
@@ -214,7 +214,7 @@ struct faq: View {
             
             .navigationTitle("FAQ")
             .navigationBarTitleDisplayMode(.inline)
-        }
+      
     }
 }
 

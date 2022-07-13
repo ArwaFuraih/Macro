@@ -25,6 +25,8 @@ import SwiftUI
 
 
         var body: some View {
+//            NavigationLink(destination: profileView(), isActive: $registrationViewModel.didAuthenticateUser,
+//                           label: {})
            
                 
             NavigationView{
@@ -35,6 +37,7 @@ import SwiftUI
 
                     VStack(alignment: .leading, spacing: 10){
 
+                      
                         Text("Full Name")
                         TextField("", text: $registrationViewModel.FullName)
                         .padding()

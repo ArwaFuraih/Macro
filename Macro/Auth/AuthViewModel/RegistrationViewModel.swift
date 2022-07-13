@@ -2,8 +2,20 @@ import Foundation
 import Firebase
 import FirebaseStorage
 import SwiftUI
+//import FirebaseAuth
+
 
 final class  RegistrationViewModel : ObservableObject{
+    
+    @Published var didAuthenticateUser = false
+//    private var tempUserSession = FirebaseAuth.User?
+
+//    private var tempUserSession = Auth.auth().currentUser
+//    private var UserSession = Auth.auth().currentUser
+
+    
+//    Auth.auth().currentUser?.uid
+
     
     static let shared = RegistrationViewModel()
     
@@ -13,21 +25,14 @@ final class  RegistrationViewModel : ObservableObject{
     @Published var password : String = ""
     @Published var isShowingImagePicker = false
     @Published var isLoading : Bool = false
-  //
     @Published var FlyingPermit : Int = 0
     @Published var DroneNumber : Int = 0
     @Published var NationalID : String = ""
-//    @Published var FullName : String = ""
     @Published var PhoneNumber : String = ""
-//    @Published var email : String = ""
-//    @Published var password : String = ""
-  
-    
     @Published var DroneNumberAsString : String = ""
     @Published var FlyingPermitAsString : String = ""
 //    @Published var NationalIDAsString : String = ""
-    
-    
+
 //    @Published var isShowingImagePicker = false
 //    @Published var isLoading : Bool = false
 //    var authViewModel = AuthViewModel.shared
@@ -82,6 +87,7 @@ final class  RegistrationViewModel : ObservableObject{
                     AuthViewModel.shared.fetchUser()
 
 //                    AuthViewModel.shared.fetchUser(userId: uid)
+                    self.didAuthenticateUser = true
 
                     print("successfuly store user info")
                 }
@@ -131,10 +137,10 @@ final class  RegistrationViewModel : ObservableObject{
     
     func createprovider(){
 
-        guard isValidProfile() else {
-            print("Invalid Profile")
-            return
-        }
+//        guard isValidProfile() else {
+//            print("Invalid Profile")
+//            return
+//        }
 
         _ = Int(DroneNumberAsString) ?? 0
 //        _ = Int(NationalIDAsString) ?? 0
@@ -200,7 +206,18 @@ final class  RegistrationViewModel : ObservableObject{
     }
     
     
-    
+    func uploadProfileImage(_ image:UIImage){
+        guard let uid = Auth.auth().currentUser?.uid else { return  }
+
+        imageUploader.uploadImage(image: image) { profileImageUrl in
+            Firestore.firestore().collection("User").document(uid).updateData(["profileImg":profileImageUrl]) { _ in
+//                self.tempUserSession = self.UserSession
+                print("DEBG:upload image")
+            }
+        }
+        print("DEBG:upload image")
+    }
+
     private func showLoadingView(){isLoading = true}
     private func hideLoadingView(){isLoading = false}
       
