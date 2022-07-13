@@ -72,6 +72,7 @@ struct offerCellP: View {
                     
                     Button(action: {
                         order = item
+
                         //showSheet.toggle()
                    
                    

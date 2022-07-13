@@ -14,7 +14,7 @@ struct offerCellC: View {
     @StateObject var m: custumerOrder = custumerOrder()
     @State var showSheet = false
     @State var showSheet1 = false
-//    @State var offers: Offers? = nil
+    @State var offers: Offers? = nil
 
     var imageUrl = URL(string: "https://img.freepik.com/free-photo/young-handsome-man-with-beard-isolated-keeping-arms-crossed-frontal-position_1368-132662.jpg?w=2000")
     
@@ -125,8 +125,10 @@ struct offerCellC: View {
 //    }
 //        .onAppear{
 //                if let user =  Auth.auth().currentUser?.uid{
-//                    m.fetchCureentUser(userID: user)}}
-        
+//                    m.showOffers(orderID:, status: <#T##OfferStatus#>, completion: <#T##([Offers]) -> ()#>) }
+//
+//        }
+//
     }
 }
 }

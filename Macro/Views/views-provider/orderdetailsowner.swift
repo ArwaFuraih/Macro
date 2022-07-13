@@ -11,8 +11,7 @@ import FirebaseAuth
 struct orderdetailsowner: View {
     
     let myOrder : OrderForFeed
-//    let myOffer : Offers
-    @StateObject var viewModel: custumerOrder = custumerOrder()
+   @StateObject var viewModel: custumerOrder = custumerOrder()
     @State var showpage = false
     @State private var price: String =  String()
     //    let myOrder : Offers
@@ -167,6 +166,9 @@ struct orderdetailsowner: View {
                     //
                     //
                     viewModel.addPrice(documentID: myOrder.orderID, orderID:myOrder.orderID ,providerID: providerID, price: price, offerStatus: .new)
+//                    viewModel.showOffers(orderID: myOrder.orderID, status: myOffer.offerStatus) { offer in
+                        
+//                    }
                 } label: {
                     Text("Send")
                         .foregroundColor(.white)

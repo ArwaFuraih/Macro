@@ -28,6 +28,7 @@ class custumerOrder : ObservableObject {
         if let user =  AuthViewModel.shared.user{
             if Auth.auth().currentUser != nil  {
                 self.getDate()
+            
              
             }
             
@@ -103,7 +104,6 @@ class custumerOrder : ObservableObject {
     }
     
     func fetchOrderProvider(userIds:[String], completion:@escaping([String:User])->()){
-        print("my id is \(userIds)")
         Firestore.firestore().collection("user").whereField("id", in: userIds).getDocuments { snapshot, _ in
             guard let documents = snapshot?.documents else {
                 return
@@ -115,6 +115,9 @@ class custumerOrder : ObservableObject {
             
             
             completion(allUsers)
+            
+            print("my id is \(userIds) fetchOrderProvider --- userIds")
+
         }
         
     }
@@ -161,7 +164,7 @@ class custumerOrder : ObservableObject {
     }
     
     func fechOrderProvider(withId:String,completion:@escaping(User)->()){
-        print("my id is", withId)
+        print("my id is  withId ", withId)
         Firestore.firestore().collection("user").document(withId).getDocument { snapshot, _ in
             guard let userData = snapshot?.data() else {
                 return
@@ -233,28 +236,32 @@ class custumerOrder : ObservableObject {
 
 
 func showOffers(orderID:String, status: OfferStatus, completion : @escaping([Offers])->()){
-//    offers = []
+    
+        print("showOffers")
+    offers = []
+//    guard case let offers =! nil else{return}
     let db = Firestore.firestore()
-    db.collection("Offers").whereField("orderID", isEqualTo: orderID).whereField("offerStatus", isEqualTo: 1)
+    db.collection("Offers").whereField("orderID", isEqualTo: orderID)
+        .whereField("offerStatus", isEqualTo: 1)
         .getDocuments { snapshot,error in
             guard error == nil else {
                 print("error")
                 return
             }
-            
+
             guard let docs = snapshot?.documents else  {return}
-            
-            let alloffer = docs.map { doc -> Offers in
+
+            let alloffers = docs.map { doc -> Offers in
                 let offer = Offers(dictionary: doc.data(), documentID: doc.documentID)
                 return offer
-                print(offer)
-                
+                self.offers.append(offer)
+                completion([offer])
             }
             //        let offerarr = Offers(dictionary: T##[String : Any])
             //
             //        self.offers.append(contentsOf: T##Sequence)
-            
-            
+
+
         }
 }
 
@@ -430,5 +437,16 @@ func changeOfferStatus(documentID: String, status: OfferStatus){
 
 
 //    }
+    
+    func orders(forfilter filter : OrderCustFilter) ->[OrderForFeed]{
+        switch filter {
+        case .Orders:
+            return orders
+        case .Offers:
+            return orders
+        }
+    }
+    
+    
 
 }

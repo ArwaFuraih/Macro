@@ -82,6 +82,7 @@
 		E04C354B287DCCF400284822 /* imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04C354A287DCCF400284822 /* imagePicker.swift */; };
 		E04C354D287DF93600284822 /* imageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04C354C287DF93600284822 /* imageUploader.swift */; };
 		E04C3550287E2ECA00284822 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E04C354F287E2ECA00284822 /* Kingfisher */; };
+		E04C3552287F13CB00284822 /* orderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04C3551287F13CB00284822 /* orderService.swift */; };
 		E04DE5C6286DC3A20077EBFB /* information .swift in Sources */ = {isa = PBXBuildFile; fileRef = E04DE5C5286DC3A20077EBFB /* information .swift */; };
 		E04DE5C8286DC4500077EBFB /* permitviewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04DE5C7286DC4500077EBFB /* permitviewmodel.swift */; };
 		E04DE5CA286DC4B00077EBFB /* permit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04DE5C9286DC4B00077EBFB /* permit.swift */; };
@@ -212,6 +213,7 @@
 		E04C3547287D947C00284822 /* customText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customText.swift; sourceTree = "<group>"; };
 		E04C354A287DCCF400284822 /* imagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagePicker.swift; sourceTree = "<group>"; };
 		E04C354C287DF93600284822 /* imageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageUploader.swift; sourceTree = "<group>"; };
+		E04C3551287F13CB00284822 /* orderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderService.swift; sourceTree = "<group>"; };
 		E04DE5C5286DC3A20077EBFB /* information .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "information .swift"; sourceTree = "<group>"; };
 		E04DE5C7286DC4500077EBFB /* permitviewmodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = permitviewmodel.swift; sourceTree = "<group>"; };
 		E04DE5C9286DC4B00077EBFB /* permit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = permit.swift; sourceTree = "<group>"; };
@@ -598,6 +600,7 @@
 			isa = PBXGroup;
 			children = (
 				E04DE5E0287170010077EBFB /* OrdersViewModel.swift */,
+				E04C3551287F13CB00284822 /* orderService.swift */,
 				E0792C872874A4C3000A2252 /* custumerOrdr.swift */,
 				E039F2DA2874AE2600A66820 /* OrderCustFilter.swift */,
 			);
@@ -866,6 +869,7 @@
 				E039F3062875B6CF00A66820 /* AdView.swift in Sources */,
 				E0E6063D28659BBF00CB69C6 /* RegistrationViewModel.swift in Sources */,
 				E3E4AECF28619A550069254C /*  Verification.swift in Sources */,
+				E04C3552287F13CB00284822 /* orderService.swift in Sources */,
 				E039F3082875B77D00A66820 /* ReqAPermitBtn.swift in Sources */,
 				E04DE5CC286DC4E50077EBFB /* permitanduser.swift in Sources */,
 				E04DE676287314E60077EBFB /* orderCellC.swift in Sources */,

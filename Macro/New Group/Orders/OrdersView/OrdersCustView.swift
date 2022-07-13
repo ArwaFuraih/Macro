@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct OrdersCustView: View {
+    @StateObject var m: custumerOrder = custumerOrder()
+
     
     @State private var selectedFilter:OrderCustFilter = .Offers
     @Namespace var animation
@@ -72,8 +74,8 @@ extension OrdersCustView{
     var OrdersCusView : some View{
         ScrollView{
             LazyVStack{
-                ForEach(0...9,id:\.self){ _ in
-                    offerCellC().padding(.vertical)
+                ForEach(m.orders(forfilter: self.selectedFilter)){ _ in
+                    offerCellP().padding(.vertical)
 
                 }
             }
