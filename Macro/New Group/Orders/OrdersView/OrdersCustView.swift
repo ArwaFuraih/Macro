@@ -9,22 +9,26 @@ import SwiftUI
 
 struct OrdersCustView: View {
     @StateObject var m: custumerOrder = custumerOrder()
-
-    
     @State private var selectedFilter:OrderCustFilter = .Offers
     @Namespace var animation
     var body: some View {
         ZStack{
             Color.them.myColor1.ignoresSafeArea()
-        VStack{
-            OrdersFilrerBar
-            OrdersCusView
-          
-            Spacer()
-        }
+            VStack{
+                OrdersFilrerBar
+                
+                if selectedFilter == .Orders {
+                    OrdersCusView
+                }else if selectedFilter == .Offers {
+                    OfferCusView
+                }
+                
+                
+                Spacer()
+            }
         }
         
-}
+    }
 }
 
 struct OrdersCustView_Previews: PreviewProvider {
@@ -71,15 +75,27 @@ extension OrdersCustView{
     }
     }
     
-    var OrdersCusView : some View{
+    var OfferCusView : some View{
         ScrollView{
             LazyVStack{
-                ForEach(m.orders(forfilter: self.selectedFilter)){ _ in
-                    offerCellP().padding(.vertical)
+//                ForEach(m.getFeed(forfilter: self.selectedFilter)){ _ in
+                offerCellC(m: m, selectedFilter: self.selectedFilter).padding(.vertical)
+//                    orderCellC()
 
-                }
+//                }
             }
         }
     }
   
+    var OrdersCusView : some View{
+        ScrollView{
+            LazyVStack{
+//                ForEach(m.getFeed(forfilter: self.selectedFilter)){ _ in
+                orderCellC(m: m, selectedFilter: self.selectedFilter).padding(.vertical)
+//                    orderCellC()
+
+//                }
+            }
+        }
+    }
 }

@@ -100,7 +100,10 @@ struct Order: Identifiable{
         
 
     }
-
+    
+//    static let order : Order = Order(dictionary: [Order.id:"123",
+//                                                  Order.
+//                                                 ])
     
     
     static let id = "id"
@@ -130,13 +133,18 @@ struct Order: Identifiable{
         formatter.allowedUnits = [.second, .minute, .hour, .day, .weekOfMonth]
         formatter.maximumUnitCount = 1
         formatter.unitsStyle = .abbreviated
-        return formatter.string(from: timestamp.dateValue(), to: Date()) ?? ""
+        return formatter.string(from: dateAndTime.dateValue(), to: Date()) ?? ""
     }
     
     var detailedTimestampString: String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "h:mm a · MM/dd/yyyy"
-        return formatter.string(from: timestamp.dateValue())
+        formatter.dateFormat = " MM/dd/yyyy"
+        return formatter.string(from: dateAndTime.dateValue())
+    }
+    var detailedTimestampStringTime: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mm a "
+        return formatter.string(from: dateAndTime.dateValue())
     }
 
     

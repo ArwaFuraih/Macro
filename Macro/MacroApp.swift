@@ -23,8 +23,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
   }
 }
 
-
-
 @main
 struct MacroApp: App {
     

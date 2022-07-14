@@ -18,3 +18,11 @@ struct OrderForFeed : Identifiable {
     
     //static let postExample = PostForFeed(post: Post.post, user: User.user)
 }
+
+struct OfferForFeed : Identifiable {
+    let id: String = UUID().uuidString
+    let offer: Offers
+    let user: User
+    let order: Order
+    let offerID:String //documentID in firestore
+}

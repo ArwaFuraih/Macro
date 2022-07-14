@@ -9,10 +9,14 @@ import SwiftUI
 import Kingfisher
 
 struct offerCellP: View {
+//    @State private var selectedFilter:OrderCustFilter = .Offers
+    @StateObject var m: custumerOrder
+    let selectedFilter: OrderCustFilter
 
-    @StateObject var m: custumerOrder = custumerOrder()
+//    @StateObject var m: custumerOrder = custumerOrder()
     //@State var showSheet = false
     @State var order: OrderForFeed? = nil
+    
     
     var imageUrl = URL(string: "https://img.freepik.com/free-photo/young-handsome-man-with-beard-isolated-keeping-arms-crossed-frontal-position_1368-132662.jpg?w=2000")
     var name = "sumayah zaid "
@@ -54,7 +58,8 @@ struct offerCellP: View {
                         Text("Hours:\(item.order.Hours)")
                             .font(.caption).bold()
                             .foregroundColor(.white)
-                        Text("Date:\(item.order.dateAndTime.dateValue())")
+                        
+                        Text("Date: \(item.order.detailedTimestampString)")
                             .font(.caption).bold()
                             .foregroundColor(.white)
                         Text("\(item.order.nameOfServece.rawValue)").padding(.top,2)
@@ -107,7 +112,7 @@ struct offerCellP: View {
 
 struct offerCellP_Previews: PreviewProvider {
     static var previews: some View {
-        offerCellP( )
+        offerCellP(m: custumerOrder(), selectedFilter: .Orders )
     }
 }
                              

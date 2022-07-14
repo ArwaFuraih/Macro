@@ -89,7 +89,7 @@ struct RegistrationProView: View {
                         registrationViewModel.createprovider()
     //                        registrationViewModel.createprovider()
                     } label: {
-                        Text("Sign Up")
+                        Text("")
                             .foregroundColor(.white)
                             .bold()
                             .frame(width: 342, height: 41.31)
@@ -103,12 +103,7 @@ struct RegistrationProView: View {
                     
                 }
             
-            HStack{
-            Text("Already have an account ? ") .foregroundColor(.gray)
-            Button(" Sign In") {
-                showLoginView.toggle()
-            }
-            } .fullScreenCover(isPresented: $showLoginView, content: {loginView()})
+      
             
             
             

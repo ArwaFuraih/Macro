@@ -13,13 +13,19 @@ struct OrdersProvView: View {
     @State private var selectedFilter:OrderCustFilter = .Offers
     @Namespace var animation
     var body: some View {
-        NavigationView{
         ZStack{
             Color.them.myColor1.ignoresSafeArea()
 
             VStack{
                 OrdersFilrerBar
-                OrdersProvView
+                
+                if selectedFilter == .Orders {
+                    OrdersProvView
+                }else if selectedFilter == .Offers {
+                    OrdersProvView
+                }
+                
+                
       
                 Spacer()
                 
@@ -27,7 +33,7 @@ struct OrdersProvView: View {
 
             
         }
-        }
+        
     }
 }
 
@@ -69,19 +75,45 @@ extension OrdersProvView{
     }
     }
     
-    var OrdersProvView : some View{
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    var offerProvView : some View{
         ScrollView{
             LazyVStack{
-                ForEach(m.orders(forfilter: self.selectedFilter)){ _ in
-                    offerCellP().padding(.vertical)
+                #warning("fix it for provider")
+                
+                offerCellP(m:m , selectedFilter: self.selectedFilter).padding(.vertical)
+                
+               
+                
+           
 
                 }
                 
-                
-                //                ForEach(0...9,id:\.self){ _ in
+  
+            }
+        }
+    
+    
 
-                                    
-//                                }
+
+    
+    var OrdersProvView : some View{
+        ScrollView{
+            LazyVStack{
+                #warning("fix it for provider")
+                
+                orderCellP(m:m , selectedFilter:
+                            self.selectedFilter).padding(.vertical)
+                
+        
             }
         }
     }

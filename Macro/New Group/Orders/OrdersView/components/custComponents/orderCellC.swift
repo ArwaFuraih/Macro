@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct orderCellC: View {
+    @StateObject var m: custumerOrder
+    let selectedFilter: OrderCustFilter
+    
+    @State var showSheet = false
+    @State var showSheet1 = false
+    @State var offers: Offers? = nil
     var body: some View {
-       
+        VStack{
+            ForEach(m.getFeed(forfilter: selectedFilter)){index in
             ZStack {
                 RoundedRectangle(cornerRadius: 8)
                     .fill(Color.them.myColor2)
@@ -28,21 +35,21 @@ struct orderCellC: View {
                     }.padding(.trailing, 140)
                     HStack(spacing: 16 ){
                         Image( "clo").foregroundColor(.white)
-                        Text("(index.order.time)")
+                        Text("\(Order.time)")
                             .font(.subheadline).bold()
                             .foregroundColor(.white)
 
                     }
                     HStack(spacing: 16 ){
                         Image("date")
-                        Text("(index.order.date)")
+                        Text("\(Order.date)")
                             .font(.subheadline).bold()
                             .foregroundColor(.white)
                     }
 
                     HStack(spacing: 16 ){
                         Image("location")
-                        Text("(index.order.time)")
+                        Text("\(index.order.city)")
                             .foregroundColor(.white)
                     }
 
@@ -64,7 +71,7 @@ struct orderCellC: View {
 
                             Text("#998999").foregroundColor(.white)
                                 .font(.system(size:12, weight: .regular, design: .rounded))
-                            Text("(order.status)").foregroundColor(.green)
+                            Text("(in)").foregroundColor(.green)
                                 .font(.system(size:12, weight: .regular, design: .rounded))
                         }.padding(.leading,200)
 
@@ -101,13 +108,14 @@ struct orderCellC: View {
                 .cornerRadius(8)
                 .padding()
      
-        
+            }
+        }
     }}
 
 
 
 struct orderCellC_Previews: PreviewProvider {
     static var previews: some View {
-        orderCellC()
+        orderCellC(m: custumerOrder(), selectedFilter: .Orders)
     }
 }

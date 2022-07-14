@@ -52,7 +52,7 @@ struct MyTab: View{
                                Text("AirMap")
                            }.tag(1)
                 
-                if let user =  AuthViewModel.shared.user {
+                if let user = AuthViewModel.shared.user {
                     Group{
                         if user.isprovider {
                             
@@ -108,6 +108,12 @@ struct MyTab: View{
 
             
         }
+        .onAppear(perform: {
+            if AuthViewModel.shared.user == nil {
+                AuthViewModel.shared.fetchUser()
+            }
+        })
+        
         
     }
 

@@ -19,8 +19,8 @@ final class  RegistrationViewModel : ObservableObject{
     
     static let shared = RegistrationViewModel()
     
-    @Published var FullName : String = ""
-    @Published var phone : String = ""
+    @Published var FullName : String = AuthViewModel.shared.user?.fullName ?? ""
+    @Published var phone : String = String(AuthViewModel.shared.user?.phone ?? 0)
     @Published var email : String = ""
     @Published var password : String = ""
     @Published var isShowingImagePicker = false
@@ -150,43 +150,66 @@ final class  RegistrationViewModel : ObservableObject{
 
 
         self.showLoadingView()
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+        
+        guard let uid = Auth.auth().currentUser?.uid else { return  }
+        var userData : [String:Any] = [:]
+        userData[User.fullName] = self.FullName
+        userData[User.email] = self.email
+        userData[User.phone] = self.phone
+        userData[User.DroneNumber] = self.DroneNumber
+        userData[User.FlyingPermit] = self.FlyingPermit
+        userData[User.NationalID] = self.NationalID
+
+        userData[User.id] = uid
+        userData[User.isprovider] = true
+        
+        Firestore.firestore().collection("user").document(uid).setData(userData) { error in
             if let error = error{
                 print("Create Profile Failure\(error)")
-                self.hideLoadingView()
                 return
-            }
-            if let result = result {
-                print("user has beem created \(result.user.uid)")
-                guard let uid = Auth.auth().currentUser?.uid else { return  }
-                var userData : [String:Any] = [:]
-                userData[User.fullName] = self.FullName
-                userData[User.email] = self.email
-                userData[User.phone] = self.phone
-                userData[User.DroneNumber] = self.DroneNumber
-                userData[User.FlyingPermit] = self.FlyingPermit
-                userData[User.NationalID] = self.NationalID
-
-                userData[User.id] = uid
-                userData[User.isprovider] = true
                 
-                Firestore.firestore().collection("user").document(uid).setData(userData) { error in
-                    if let error = error{
-                        print("Create Profile Failure\(error)")
-                        return
-                        
-                    }
-                    AuthViewModel.shared.fetchUser()
+            }
+            AuthViewModel.shared.fetchUser()
 
 //                    AuthViewModel.shared.fetchUser(userId: uid)
-                    print("successfuly store user info")
-                }
-                return
-                
-            }
-            
-    
+            print("successfuly store user info")
         }
+        
+//        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+//            if let error = error{
+//                print("Create Profile Failure\(error)")
+//                self.hideLoadingView()
+//                return
+//            }
+//            if let result = result {
+//                print("user has beem created \(result.user.uid)")
+//                guard let uid = Auth.auth().currentUser?.uid else { return  }
+//                var userData : [String:Any] = [:]
+//                userData[User.fullName] = self.FullName
+//                userData[User.email] = self.email
+//                userData[User.phone] = self.phone
+//                userData[User.DroneNumber] = self.DroneNumber
+//                userData[User.FlyingPermit] = self.FlyingPermit
+//                userData[User.NationalID] = self.NationalID
+//
+//                userData[User.id] = uid
+//                userData[User.isprovider] = true
+//
+//                Firestore.firestore().collection("user").document(uid).setData(userData) { error in
+//                    if let error = error{
+//                        print("Create Profile Failure\(error)")
+//                        return
+//
+//                    }
+//                    AuthViewModel.shared.fetchUser()
+//
+////                    AuthViewModel.shared.fetchUser(userId: uid)
+//                    print("successfuly store user info")
+//                }
+//                return
+//
+//            }
+//        }
     }
 
 
