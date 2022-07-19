@@ -19,6 +19,7 @@ struct offerCellC: View {
     @State var offers: Offers? = nil
     @State var order: OrderForFeed? = nil
     @State var offer: OfferForFeed? = nil
+    @ObservedObject private var viewModel = custumerOrder()
 
   
     
@@ -37,29 +38,38 @@ struct offerCellC: View {
                         .cornerRadius(8)
                     
                     
+                
+                    
+                    
                     VStack(alignment: .leading, spacing: 2){
-                        KFImage(URL(string: User.profileImg))
                         
-                        AsyncImage(url: imageUrl){ image in
+                        
+                        AsyncImage(url:  URL(string:index.user.profilePic)){ image in
                             image.resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: 50, height: 50)
-                                .cornerRadius(50)
+                                .frame(width:70,height: 70)
+                                .clipShape(Circle())
                         }placeholder: {
                             ProgressView()
                         }.padding(.leading,50)
+
+
                         
                         
                         Group{
                             Text("\(index.user.fullName)").foregroundColor(.white)
-                                .font(.system(size: 16, weight: .regular, design: .rounded))
-                            Text("\(index.offer.price )SR")//index.
+                                .font(.system(size: 16, weight: .regular, design: .rounded)).padding(.top,10)
+                            
+                            Text("Hours: \(index.order.Hours )")//index.
                                 .foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
+                            
+                            Text("Price\(index.offer.price ) SR")//index.
+                                .foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded)).padding(.bottom,20)
                             //
                             //                            Text("\(index.user.fullName)").foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
                             
                         }.padding(.leading,30)
-                        
+                            
                         
                         
                         HStack( spacing: 130){
@@ -68,7 +78,8 @@ struct offerCellC: View {
                             
                             
                             Button {
-                                //showSheet.toggle()
+                                offer = index
+                                showSheet.toggle()
                                 let docID = index.offerID
                                 guard !docID.isEmpty else {
                                     print("Could not get offer ID")
@@ -85,9 +96,10 @@ struct offerCellC: View {
                                         Color.them.btnColor
                                             .cornerRadius(8)
                                             .shadow(radius: 8)
-                                    )
-                                //                                .fullScreenCover(isPresented:$showSheet , content: {information()})
-                                
+                                    ).fullScreenCover(item: $offer) { offer in
+                                        paymentOrder(myOffer: offer)
+                                        
+                                    }
                             }
                             
                             
@@ -123,7 +135,7 @@ struct offerCellC: View {
                             
                             
                         }.padding(.leading,30)
-                            .padding(.top, 20)
+                            .padding(.bottom, 20)
                         
                         
                     }.frame( maxWidth: 400, alignment:.leading)

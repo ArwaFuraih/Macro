@@ -42,9 +42,9 @@ struct HomeView: View {
                 AdView()
                 VStack(alignment: .center, spacing: 8){
                     
-                    ReqAPermitBtn()
+                    ReqAPermitBtn(allServies: serviesList[0])
                     BeOwnerBtn()
-                    ServicesBtnVieew()
+                    ServicesBtnVieew(allServies: serviesList[0])
                      }
 
             }

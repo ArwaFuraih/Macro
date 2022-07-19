@@ -21,6 +21,9 @@ final class AuthViewModel:ObservableObject{
 //        return Auth.auth().currentUser != nil
 //    }
     
+    @State var showHome :Bool = false
+
+    
     @Published var userSession : Bool = true
 //    FirebaseAuth.User?
     @Published var isSignin : Bool = false
@@ -73,63 +76,7 @@ print("DEBUD: Login eith email \(email)")
         }
     }
 }
-//
-//    func fetchOrder(){
-//        guard let uid = Auth.auth().currentUser?.uid  else {return}
-//        Firestore.firestore().collection("Order").addSnapshotListener{(querySnapshot ,error) in
-//
-//            guard let data = querySnapshot?.documents else{
-//
-//                return
-//            }
-//
-//            self.order = data.map { (queryDocumentSnapshot) -> Order in
-//                print("hh2")
-//                print(queryDocumentSnapshot.data())
-//                let userID = queryDocumentSnapshot.data()["userID"] as? String ?? ""
-//                self.fetchUser(userId: userID)
-//               /// self.user = User(dictionary: data)
-//                return Order(dictionary: queryDocumentSnapshot.data())
-//
-//            }
-//        }
-//    }
-////    func fetchUser(userId:String){
-//////
-//////        guard let uid = Auth.auth().currentUser?.uid  else {return}
-//////        Firestore.firestore().collection("user").addSnapshotListener{(querySnapshot ,error) in
-//////
-//////            guard let data = querySnapshot?.documents else{
-//////
-//////                return
-//////            }
-//////
-//////            self.user = data.map { (queryDocumentSnapshot) -> User in
-//////                print("hh2")
-//////                print(queryDocumentSnapshot.data())
-//////               /// self.user = User(dictionary: data)
-//////                return User(dictionary: queryDocumentSnapshot.data())
-//////
-//////            }
-//////        }
-//////
-////
-////        Firestore.firestore().collection("user").document(userId).getDocument { snapshot, _ in
-////            guard let data = snapshot?.data() else{
-////
-////                return
-////            }
-////
-////            self.user = User(dictionary: data)
-////
-////            print(self.user?.isprovider,"☘️")
-////            print(self.user?.fullName)
-//////            print(String(repeating: "\n", count: 10), "user is logged in")
-//////            print(self.user)
-////
-////        }
-////    }
-    
+
     
     
     func fetchUser(){
@@ -156,10 +103,12 @@ print("DEBUD: Login eith email \(email)")
     }
 
     func handleSignout(){
+//        RegistrationViewModel.x()
+       
         try? Auth.auth().signOut()
         print("sucsess log out")
         self.isAouthenticatting.toggle()
-//        self.user = nil
+        self.user = nil
 //        userSession = nil
     }
     

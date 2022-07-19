@@ -21,8 +21,9 @@ struct OrdersProvView: View {
                 
                 if selectedFilter == .Orders {
                     OrdersProvView
+                    
                 }else if selectedFilter == .Offers {
-                    OrdersProvView
+                    offerProvView
                 }
                 
                 
@@ -87,7 +88,6 @@ extension OrdersProvView{
     var offerProvView : some View{
         ScrollView{
             LazyVStack{
-                #warning("fix it for provider")
                 
                 offerCellP(m:m , selectedFilter: self.selectedFilter).padding(.vertical)
                 
@@ -108,7 +108,6 @@ extension OrdersProvView{
     var OrdersProvView : some View{
         ScrollView{
             LazyVStack{
-                #warning("fix it for provider")
                 
                 orderCellP(m:m , selectedFilter:
                             self.selectedFilter).padding(.vertical)

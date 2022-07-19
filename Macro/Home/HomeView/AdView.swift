@@ -18,17 +18,15 @@ struct AdView: View {
                 Image(adv)
                 
                     .resizable()
-                    .scaledToFill()
-                    .padding(.bottom,43)
-                    
-                
+                    .scaledToFit()
+                   // .padding(.bottom,43)
             }
         }
             .tabViewStyle(PageTabViewStyle())
             .cornerRadius(8)
             .tabViewStyle(.page)
 //                        .indexViewStyle(.page())
-            .frame(width: 375, height: 150)
+            .frame(width: 375, height: 200)
     }
 }
 

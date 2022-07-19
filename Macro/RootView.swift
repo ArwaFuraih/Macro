@@ -14,24 +14,44 @@ struct RootView: View {
             
         }
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem( placement: .navigationBarLeading){
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "bell.badge")
-                            .font(.subheadline)
-                            .padding(6)
-                            .foregroundColor(.white)
-                    }
+//            .toolbar {
+//                ToolbarItem( placement: .navigationBarLeading){
+//                    Button {
+//
+//                    } label: {
+//                        Image(systemName: "bell.badge")
+//                            .font(.subheadline)
+//                            .padding(6)
+//                            .foregroundColor(.white)
+//                    }
 
-                }
+//                }
                 
     }
 }
-}
+
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
         RootView()
     }
+}
+
+
+
+import Foundation
+class RootViews: ObservableObject {
+    
+    static let shared = RootViews()
+    
+    private init(){}
+    
+    enum RootViewType {
+        case onBoarding
+        case mainTab
+        
+    }
+    
+    
+    @Published var root: RootViewType = .onBoarding
+
 }

@@ -476,8 +476,8 @@ struct NewServOrder: View {
                          .padding()
                         }
                 NavigationLink(isActive: $shouldPresentNextView, destination: {
-                    Detailspermit()
-                    
+                    Detailspermit(mypermit: permitanduser(permit: Permit(dictionary: [:]), user: User(dictionary: [:]), permitid: ""))
+
                 }, label: EmptyView.init)
              }
              .navigationTitle("Request a Permit")

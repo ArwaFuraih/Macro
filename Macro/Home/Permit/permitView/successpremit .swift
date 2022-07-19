@@ -11,12 +11,22 @@ import RiveRuntime
 struct successpremit: View {
     @State private var isShareSheetPresented = false
     @State private var isPresented = false
+    @State var isAnimating: Bool = false
 
     var body: some View {
         NavigationView{
  
             VStack{
             RiveViewModel(fileName: "file2").view()
+                
+                
+   .frame(width: 400, height: 400)
+   .opacity(isAnimating ? 0 : 1)
+   .scaleEffect(isAnimating ? 3 : 1)
+   .animation(.easeInOut(duration: 2.5)
+       .repeatForever(autoreverses: false).speed(1).delay(0.5), value: isAnimating)
+                
+                
                     Text("Success!")
                        .font(.largeTitle)
                        .fontWeight(.heavy)
@@ -37,27 +47,32 @@ struct successpremit: View {
                    NavigationLink {
                        Viewpermit()
                        } label: {
-                        Text("Download your premit")
+                        Text("View your premit")
                         .foregroundColor(.white)
                         .bold()
                         .frame(width: 342, height: 41.31)
                         .cornerRadius(8)
                         .background(Color("btnColor"))
                         .cornerRadius(8)
-
-                    }
+                     }
                     .padding()
 
                     Button(action: {
                                       self.isShareSheetPresented.toggle()
                                   }) {
-                                      Text("Share")
-                                      Image(systemName: "square.and.arrow.up")
+                                        Image(systemName: "square.and.arrow.up")
+                                      Text("Download your premit")
+//                                      Text("Share")
+                                          .bold()
                                   }
+                                  .foregroundColor(.white)
+                                   .frame(width: 342, height: 41.31)
+                                  .cornerRadius(8)
+                                  .background(Color("btnColor"))
+                                  .cornerRadius(8)
 
                   }
     
-
                .padding(.bottom, 139.801)
                .navigationTitle("")
 
@@ -66,7 +81,7 @@ struct successpremit: View {
 
 
     .sheet(isPresented: $isShareSheetPresented) {
-         ShareSheetView(activityItems: ["Hello World"]) }
+         ShareSheetView(activityItems: ["Permit Detiles.pdf"]) }
      
 }
 }

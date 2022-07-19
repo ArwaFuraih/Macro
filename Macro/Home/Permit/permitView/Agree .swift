@@ -101,7 +101,8 @@ struct Agree: View {
                          .background(Color("btnColor"))
                          .cornerRadius(8)
                      }.sheet(isPresented: $showDetails, content: {
-                         Detailspermit()
+                         Detailspermit(mypermit: permitanduser(permit: Permit(dictionary: [:]), user: User(dictionary: [:]), permitid: ""))
+
                      })
 //                     .fullScreenCover(isPresented: $showDetails, content: {
 //                     DetailsOrder()

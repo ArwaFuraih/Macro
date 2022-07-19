@@ -166,7 +166,7 @@ struct settingsView: View {
                                                 .foregroundColor(.white)
         
                                                 .padding()
-                                            Text("Apot us")
+                                            Text("About us")
                                                 .fontWeight(.bold)
                                                 .foregroundColor(.white)
                                                 .font(.system(size: 18))

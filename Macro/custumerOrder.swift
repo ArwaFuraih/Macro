@@ -22,12 +22,13 @@ class custumerOrder : ObservableObject {
     @Published var allorders = [Order]()
     @Published var currentUserOrder = [Order]()
     static let shared = custumerOrder()
-    
+    @Published var user : User?
+
 
     init(){
         if let user =  AuthViewModel.shared.user{
             if Auth.auth().currentUser != nil  {
-                self.getDate()
+                self.getData()
                 self.getOffers()
             
              
@@ -37,16 +38,36 @@ class custumerOrder : ObservableObject {
 
     }
     
+
+    func fetchUserData(){
+        guard let uid = Auth.auth().currentUser?.uid  else {return}
+        Firestore.firestore().collection("user").document(uid).getDocument { snapshot,error in
+            if let error = error{
+                print(error)
+                return
+            }
+            guard let userData = snapshot?.data() else {return}
+
+            self.user = User(dictionary: userData)
+        }
+    }
+    
+    
+    
+    
     
     // Fetch offers userId, OrderId]
     // map userId [ArrayOfIds]
     // fetch userIds in ArrayOfIds
     // map orderId [ArrayOfOrderIds]
     // fetch Orders in ArrayOfOrderIds
+    
     func getOffers(){
         listOffers = []
+      
         let db = Firestore.firestore()
         let ref = db.collection("Offers").whereField("providerID", isNotEqualTo: Auth.auth().currentUser?.uid ?? "")
+
         ref.getDocuments { snapshot, error in
             guard error == nil else {
                 print("error")
@@ -109,7 +130,7 @@ class custumerOrder : ObservableObject {
         }
     }
     
-    func getDate(){
+    func getData(){
         
         //guard uuid
         orders = []
@@ -163,6 +184,9 @@ class custumerOrder : ObservableObject {
     }
     
     func fetchUsers(userIds:[String], completion:@escaping([String:User])->()){
+        
+        guard userIds.count != 0 else {return}
+        
         Firestore.firestore().collection("user").whereField("id", in: userIds).getDocuments { snapshot, _ in
             guard let documents = snapshot?.documents else {
                 return
@@ -189,12 +213,13 @@ class custumerOrder : ObservableObject {
             var allOrders : [String:Order] = [:]
             documents.forEach { doc in
                 allOrders[doc.documentID] = Order(dictionary: doc.data())
+                print("my id is \(allOrders) fetchOrders -  orderIds")
+
             }
             
             
             completion(allOrders)
             
-            print("my id is \(allOrders) fetchOrders --- orderIds")
 
         }
         
@@ -204,7 +229,7 @@ class custumerOrder : ObservableObject {
     
     
     
-    func newOrderS(userID :  String,city:String,CustomerType:String,description:String,Letter:String,pilot:String,morepilot:String,dateAndTime:Date,nameOfServece:NameOfServece,cancelled:Bool){
+    func newOrderS(userID :  String,city:String,CustomerType:String,description:String,Letter:String,pilot:String,morepilot:String,dateAndTime:Date,nameOfServece:NameOfServece,cancelled:Bool,Hours:String){
         //        guard let uid =  AuthViewModel.shared.user else {return}
         let docRef = Firestore.firestore().collection("Order").document()
         var data : [String:Any] = [:]
@@ -218,6 +243,9 @@ class custumerOrder : ObservableObject {
         data[Order.dateAndTime] = dateAndTime
         data[Order.nameOfServece] = nameOfServece.rawValue
         data[Order.cancelled] = cancelled
+        data[Order.Hours] = Hours
+
+        
         
         let ref = Firestore.firestore().collection("Order").document()
         data[Order.id] = ref.documentID
@@ -262,7 +290,7 @@ class custumerOrder : ObservableObject {
         data[Offers.price] = price
         data[Offers.providerID] = providerID
         data[Offers.orderID] = orderID
-        data[Offers.documentID] = documentID        
+        data[Offers.documentID] = documentID
         data[Offers.offerStatus] = offerStatus.rawValue
         
         Firestore.firestore().collection("Offers").addDocument(data: data) { error in

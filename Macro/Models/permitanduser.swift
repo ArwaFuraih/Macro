@@ -8,7 +8,9 @@
  import Foundation
  
 struct permitanduser : Identifiable {
+    let id: String = UUID().uuidString
     let permit: Permit
     let user: User
-    let id: String = UUID().uuidString
+    let permitid:String
 }
+ 

@@ -30,11 +30,12 @@ struct offerCellP: View {
                     HStack(){
                         VStack(){
                             KFImage(URL(string: User.profileImg))
-                            AsyncImage(url: imageUrl){ image in
+                            
+                            AsyncImage(url:  URL(string:item.user.profilePic)){ image in
                                 image.resizable()
                                     .aspectRatio(contentMode: .fill)
-                                    .frame(width: 50, height: 50)
-                                    .cornerRadius(50)
+                                    .frame(width:70,height: 70)
+                                    .clipShape(Circle())
                             }placeholder: {
                                 ProgressView()
                             }

@@ -28,21 +28,21 @@ struct orderCellC: View {
                 VStack(alignment: .leading, spacing: 3 ){
                     HStack(spacing: 16 ){
                         Image( "servtype")
-                        Text("NameOfServece")
+                        Text("\(index.order.nameOfServece.rawValue)")
                             .font(.subheadline).bold()
                             .foregroundColor(.white)
 
                     }.padding(.trailing, 140)
                     HStack(spacing: 16 ){
                         Image( "clo").foregroundColor(.white)
-                        Text("\(Order.time)")
+                        Text("\(index.order.detailedTimestampStringTime)")
                             .font(.subheadline).bold()
                             .foregroundColor(.white)
 
                     }
                     HStack(spacing: 16 ){
                         Image("date")
-                        Text("\(Order.date)")
+                        Text("\(index.order.detailedTimestampString)")
                             .font(.subheadline).bold()
                             .foregroundColor(.white)
                     }
@@ -69,22 +69,23 @@ struct orderCellC: View {
                     VStack(alignment: .leading){
                         Group{
 
-                            Text("#998999").foregroundColor(.white)
-                                .font(.system(size:12, weight: .regular, design: .rounded))
-                            Text("(in)").foregroundColor(.green)
+//                            Text("#998999").foregroundColor(.white)
+//                                .font(.system(size:12, weight: .regular, design: .rounded))
+                            let status = index.offer.offerStatus
+                            Text("\(status.title)").foregroundColor(status.color)
                                 .font(.system(size:12, weight: .regular, design: .rounded))
                         }.padding(.leading,200)
-
-
-                        Button(action: {
-                            //                                                                      showSheet.toggle()
-
-                            print("g")
-                        }, label: {
-                            Image("chevron order.right.2").padding(.leading,260).padding(.top, 10)
-
-
-                        })
+//
+//
+//                        Button(action: {
+//                            //                                                                      showSheet.toggle()
+//
+//                            print("g")
+//                        }, label: {
+//                            Image("chevron order.right.2").padding(.leading,260).padding(.top, 10)
+//
+//
+//                        })
                         //                                                                  .fullScreenCover(isPresented: $showSheet, content: { Viewpermit()
 
                         //                                                                                             })

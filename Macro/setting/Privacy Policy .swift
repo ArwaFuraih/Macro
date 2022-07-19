@@ -10,7 +10,6 @@ import SwiftUI
 struct PrivacyPolicy: View {
    var body: some View {
        
-        NavigationView{
             ScrollView(.vertical){
                 Spacer()
                 ZStack{
@@ -83,12 +82,13 @@ struct PrivacyPolicy: View {
             }
                 .padding()
                 
-                .navigationTitle("Privacy Policy")
-                .navigationBarTitleDisplayMode(.inline)
+                
             }
-            }
+            .navigationTitle("Privacy Policy")
+            .navigationBarTitleDisplayMode(.inline)
+            
    }
-    
+}
 
 struct PrivacyPolicy_Previews: PreviewProvider {
     static var previews: some View {
@@ -98,4 +98,4 @@ struct PrivacyPolicy_Previews: PreviewProvider {
     }
 
        
-}
+

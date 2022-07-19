@@ -7,21 +7,29 @@
 
 import SwiftUI
 import RiveRuntime
-
+ 
 struct success: View {
-    var body: some View {
-        
-        NavigationView{
-        VStack{
+    @State var isAnimating: Bool = false
 
-            RiveViewModel(fileName: "file2").view()
-            
+     var body: some View {
+        
+//        NavigationView{
+        ScrollView{
+         VStack{
+//             RiveViewModel(fileName: "file2").view()
+             RiveViewModel(fileName: "file2").view()
+                              
+                 .frame(width: 400, height: 400)
+                 .opacity(isAnimating ? 0 : 1)
+                 .scaleEffect(isAnimating ? 3 : 1)
+                 .animation(.easeInOut(duration: 2.5)
+                     .repeatForever(autoreverses: false).speed(1).delay(0.5), value: isAnimating)
+             
              Text("Success!")
                 .font(.largeTitle)
                 .fontWeight(.heavy)
                 .foregroundColor(Color.white)
-
-                 .padding(.bottom, 39.801)
+                  .padding(.bottom, 39.801)
 //            Text("Thank you!")
 //                .font(.title)
 //                .fontWeight(.bold)
@@ -31,7 +39,7 @@ struct success: View {
                 .font(.subheadline)
                 .fontWeight(.semibold)
                 .foregroundColor(Color.white)
-                
+     
             NavigationLink {
                 OrdersCustView()
                 } label: {
@@ -45,12 +53,13 @@ struct success: View {
              
              }
              .padding()
-          
-            }
-        .padding(.bottom, 139.801)
-        .navigationTitle("")
-
+            
         }
+        }
+        .padding(.bottom, 139.801)
+//        .navigationTitle("")
+//
+//        }
 //        .padding()
 }
 }

@@ -19,10 +19,6 @@ struct RegistrationProView: View {
     @State var NationalID : String = ""
     @State var DroneNumber : String = ""
     @State var FlyingPermit : String = ""
-
-    
-    
-    
     
     @State var showHome :Bool = false
     @State var  showTerms :Bool = false
@@ -42,19 +38,13 @@ struct RegistrationProView: View {
                     customTextField(placeholder: "ex@gmail.com", title: "Email:", text: $registrationViewModel.email)
                     
                     customTextField(placeholder: "+9664488668 ", title: "Phone Number:", text: $registrationViewModel.phone)
-                    
                     customTextField(placeholder: "11202220", title: "National ID", text: $registrationViewModel.NationalID)
-
                     customTextField(placeholder: "11202220", title: "Flying Permit", text: $registrationViewModel.FlyingPermitAsString)
-                    
                     customTextField(placeholder: "11202220", title: "Drone Number", text: $registrationViewModel.DroneNumberAsString)
-                    
-                 
-                    customTextField(placeholder: "*********", title: "Password:", text: $registrationViewModel.password)
-                    
+//                    customTextField(placeholder: "*********", title: "Password:", text: $registrationViewModel.password,isSecureField:true)
                 
                     
-                    
+                    VStack{
                     
                     HStack{
                     Image(systemName:"checkmark.square").foregroundColor(.gray)
@@ -99,7 +89,7 @@ struct RegistrationProView: View {
                             .padding(.vertical,10)
                             .padding(.top,80)
                     }
-    //                    .fullScreenCover(isPresented: $showHome, content: {MyTab()})
+                        .fullScreenCover(isPresented: $showHome, content: {MyTab()})
                     
                 }
             
@@ -116,7 +106,7 @@ struct RegistrationProView: View {
         
     
 }
-
+}
 struct RegistrationProView_Previews: PreviewProvider {
     static var previews: some View {
         RegistrationProView()

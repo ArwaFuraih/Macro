@@ -15,6 +15,7 @@ struct Them{
     let myColor1 = Color("myColor1")
     let btnColor = Color("btnColor")
     let mygray =   Color("mygray")
+    let serviceColor = Color("ServiceColor")
 
     
 

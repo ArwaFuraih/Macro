@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AboutUs: View {
     var body: some View {
-        NavigationView{
+  //      NavigationView{
             
             
             
@@ -69,12 +69,12 @@ Text("If you want to get your services with ease, you will \n definitely have th
                     Spacer()
              
                
+               
                     
-                    
-        .navigationTitle("About Us")
+       .navigationTitle("About Us")
         .navigationBarTitleDisplayMode(.inline)
     
-}
+//}
     }
 }
 struct Argiculture_Previews: PreviewProvider {

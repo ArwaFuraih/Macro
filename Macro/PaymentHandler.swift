@@ -1,12 +1,13 @@
+////
+////  PaymentHandler.swift
+////  SweaterShopApp
+////
+////  Created by Stephanie Diep on 2022-01-03.
+////
 //
-//  PaymentHandler.swift
-//  SweaterShopApp
+//// Note: The code below was taken from the sample app from https://developer.apple.com/documentation/passkit/apple_pay/offering_apple_pay_in_your_app - shortened and adapted for this application
 //
-//  Created by Stephanie Diep on 2022-01-03.
 //
-
-// Note: The code below was taken from the sample app from https://developer.apple.com/documentation/passkit/apple_pay/offering_apple_pay_in_your_app - shortened and adapted for this application
-
 import Foundation
 import PassKit
 
@@ -14,23 +15,23 @@ import PassKit
 typealias PaymentCompletionHandler = (Bool) -> Void
 
 class PaymentHandler: NSObject {
-
+    
     var paymentController: PKPaymentAuthorizationController?
     var paymentSummaryItems = [PKPaymentSummaryItem]()
     var paymentStatus = PKPaymentAuthorizationStatus.failure
     var completionHandler: PaymentCompletionHandler?
-
+    
     static let supportedNetworks: [PKPaymentNetwork] = [
         .visa,
         .masterCard,
     ]
-
+    
     // This applePayStatus function is not used in this app. Use it to check for the ability to make payments using canMakePayments(), and check for available payment cards using canMakePayments(usingNetworks:). You can also display a custom PaymentButton according to the result. See https://developer.apple.com/documentation/passkit/apple_pay/offering_apple_pay_in_your_app under "Add the Apple Pay Button" section
     class func applePayStatus() -> (canMakePayments: Bool, canSetupCards: Bool) {
         return (PKPaymentAuthorizationController.canMakePayments(),
                 PKPaymentAuthorizationController.canMakePayments(usingNetworks: supportedNetworks))
     }
-
+    
     // Define the shipping methods (this app only offers delivery) and the delivery dates
     func shippingMethodCalculator() -> [PKShippingMethod] {
 
@@ -46,30 +47,30 @@ class PaymentHandler: NSObject {
 
             let shippingDelivery = PKShippingMethod(label: "Delivery", amount: NSDecimalNumber(string: "0.00"))
             shippingDelivery.dateComponentsRange = PKDateComponentsRange(start: startComponents, end: endComponents)
-            shippingDelivery.detail = "Sirvies sent to your address"
+            shippingDelivery.detail = "Servies sent to your address"
             shippingDelivery.identifier = "DELIVERY"
 
             return [shippingDelivery]
         }
         return []
     }
-
-    func startPayment(products: [Order], total: Int, completion: @escaping PaymentCompletionHandler) {
+    
+    func startPayment(servies: [Servies], total: Int, completion: @escaping PaymentCompletionHandler) {
         completionHandler = completion
-
+        
         // Reset the paymentSummaryItems array before adding to it
         paymentSummaryItems = []
-
+        
         // Iterate over the products array, create a PKPaymentSummaryItem for each and append to the paymentSummaryItems array
-//        products.forEach { product in
-//            let item = PKPaymentSummaryItem(label: Order.NameOfServece, amount: NSDecimalNumber(string: "\(product.Price).00"), type: .final)
-//            paymentSummaryItems.append(item)
-//        }
-
+        servies.forEach { allServies in
+            let item = PKPaymentSummaryItem(label: allServies.name , amount: NSDecimalNumber(string: "\(allServies.price).00"), type: .final)
+                    paymentSummaryItems.append(item)
+                }
+        
         // Add a PKPaymentSummaryItem for the total to the paymentSummaryItems array
         let total = PKPaymentSummaryItem(label: "Total", amount: NSDecimalNumber(string: "\(total).00"), type: .final)
-        paymentSummaryItems.append(total)
-
+               paymentSummaryItems.append(total)
+        
         // Create a payment request and add all data to it
         let paymentRequest = PKPaymentRequest()
         paymentRequest.paymentSummaryItems = paymentSummaryItems // Set paymentSummaryItems to the paymentRequest
@@ -81,7 +82,7 @@ class PaymentHandler: NSObject {
         paymentRequest.shippingType = .delivery
         paymentRequest.shippingMethods = shippingMethodCalculator()
         paymentRequest.requiredShippingContactFields = [.name, .postalAddress]
-
+        
         // Display the payment request in a sheet presentation
         paymentController = PKPaymentAuthorizationController(paymentRequest: paymentRequest)
         paymentController?.delegate = self

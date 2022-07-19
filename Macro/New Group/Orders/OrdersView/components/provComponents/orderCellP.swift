@@ -13,6 +13,9 @@ struct orderCellP: View {
     @StateObject var m: custumerOrder
     let selectedFilter: OrderCustFilter
     
+    var phoneNumber = "533-555-5555"
+
+    
 //    @StateObject var m: custumerOrder = custumerOrder()
 
     @State var showSheet = false
@@ -20,6 +23,7 @@ struct orderCellP: View {
     
     var body: some View {
         VStack{
+           
             ForEach(m.getFeed(forfilter: selectedFilter)){item in
 
 //                ForEach(m.orders){ item in
@@ -30,16 +34,16 @@ struct orderCellP: View {
 
             HStack(){
                 VStack(){
-                    AsyncImage(url: imageUrl){ image in
+                    AsyncImage(url:  URL(string:item.user.profilePic)){ image in
                         image.resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 50, height: 50)
-                            .cornerRadius(50)
+                            .frame(width:70,height: 70)
+                            .clipShape(Circle())
                     }placeholder: {
                         ProgressView()
                     }
                     
-                    Text("Nwaf Ali \(item.user.fullName)").foregroundColor(.white)
+                    Text(" \(item.user.fullName)").foregroundColor(.white)
                 }.frame( maxWidth: 300, alignment:.leading)
                
                 
@@ -52,10 +56,10 @@ struct orderCellP: View {
                 
                 HStack() {
                     VStack(alignment: .leading){
-                        Text("Piolt:\(item.order.detailedTimestampStringTime)")
+                        Text("Piolt:\(item.order.pilot)")
                             .font(.subheadline).bold()
                             .foregroundColor(.white)
-                        Text("Hours:3")
+                        Text("Hours:\(item.order.Hours)")
                             .font(.subheadline).bold()
                             .foregroundColor(.white)
                         HStack{
@@ -63,13 +67,13 @@ struct orderCellP: View {
                         Text("Date:")
                                 .font(.subheadline).bold()
                             .foregroundColor(.white)
-                            Text("1-2-2203")
+                            Text("\(item.order.detailedTimestampString)")
                                 .font(.caption).bold()
                                 .foregroundColor(.white)
                             
                         }
                         
-                        Text("photography").padding(.top,2)
+                        Text("\(item.order.nameOfServece.rawValue)").padding(.top,2)
                             .font(.caption)
                             .foregroundColor(.gray)
              
@@ -82,8 +86,13 @@ struct orderCellP: View {
                 HStack {
                    
                     Button(action: {
+                        let phone = "tel://"
+                                       let phoneNumberformatted = phone + phoneNumber
+                                       guard let url = URL(string: phoneNumberformatted) else { return }
+                                       UIApplication.shared.open(url)
                          
                             showSheet.toggle()
+
 
                             print("g")
                                    }, label: {

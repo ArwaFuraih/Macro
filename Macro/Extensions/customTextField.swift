@@ -10,7 +10,8 @@ import SwiftUI
 struct customTextField: View {
     let placeholder:String
     let title :String
-    let isSecureFiled:Bool? = false
+    var isSecureField:Bool? = false
+    
     @Binding var text:String
     
     var body: some View {
@@ -23,7 +24,7 @@ struct customTextField: View {
             HStack{
               
                 
-                if isSecureFiled ?? false{
+                if isSecureField ?? false{
                     SecureField(placeholder,text: $text)
                         .foregroundColor(.gray)
                         .padding()
@@ -48,6 +49,6 @@ struct customTextField: View {
 
 struct customTextField_Previews: PreviewProvider {
     static var previews: some View {
-        customTextField(placeholder: "", title: "", text: .constant(""))
+        customTextField(placeholder: "", title: "", isSecureField: false, text: .constant(""))
     }
 }

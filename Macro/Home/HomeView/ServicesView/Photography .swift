@@ -18,18 +18,16 @@ struct Photography: View {
                
                        Image("Image")
                         .resizable()
-                        .frame(width:350, height: 340)
+                       .frame(width:350, height: 300 , alignment: .center)
                         .cornerRadius(8)
-                .frame(maxWidth:.maximum(80,699),alignment:.center)
-
+               // .frame(maxWidth:.maximum(80,699),alignment:.center)
                         .padding()
                     Section{
         HStack(spacing:10){
         Image(systemName:"checkmark.circle")
                 .font(.system(size: 24))
-                .frame(maxWidth:.maximum(80,-299),alignment:.center)
-
-        Text("Inspired by the dream of flight                    ")
+                .frame(width: 60, alignment:.center)
+        Text("Create video tours of the location")
             
                     }
         .padding()
@@ -40,9 +38,9 @@ struct Photography: View {
             Image(systemName:"checkmark.circle")
                 .font(.system(size: 24))
 
-        .frame(maxWidth:.maximum(80,-299),alignment:.center)
+        .frame(width: 60, alignment:.center)
 
-        Text("professional 4K camera drone                    ")
+        Text("Professional 4K camera drone.")
                 }
         .padding()
                 
@@ -52,16 +50,27 @@ struct Photography: View {
             Image(systemName:"checkmark.circle")
                 .font(.system(size: 24))
 
-        .frame(maxWidth:.maximum(80,-299),alignment:.center)
-
-        Text("sets the standard for professional\n drone photography."    )
+                .frame(width: 60, alignment:.center)
+        Text("Sets the standard for professional\n drone photography." )
                 
         }
         .padding()
                     }
-                    Spacer()
                 
                 VStack{
+                    Button {
+                        showNewReq.toggle()
+                    } label: {
+                        Text("Request")
+                            .foregroundColor(.white)
+                            .bold()
+                            .frame(width: 342, height: 41.31)
+                            .cornerRadius(8)
+                            .background(Color("btnColor"))
+                            .cornerRadius(8)
+                     .frame(maxWidth:.maximum(80,699),alignment:.center)
+                    } .fullScreenCover(isPresented: $showNewReq, content: {NewRequest(myorder: OrderForFeed(order: Order(dictionary: [  :  ]), user: User(dictionary: [  :  ]), orderID: ""), allServies: serviesList[0])})
+                        .environmentObject(CartManager())
                     Button {
                         presentationMode.wrappedValue.dismiss()
                     } label: {
@@ -73,72 +82,22 @@ struct Photography: View {
                             .background(Color("btnColor"))
                             .cornerRadius(8)
                      .frame(maxWidth:.maximum(80,699),alignment:.center)
-//                     .padding(.top,-38)
+
+
+
 
                     }
-                    Button {
-                        showNewReq.toggle()
-                    } label: {
-                        Text("Request")
-                        .foregroundColor(.white)
-                        .bold()
-                        .frame(width: 342, height: 41.31)
-                        .cornerRadius(8)
-                        .background(Color("btnColor"))
-                        .cornerRadius(8)
-                 .frame(maxWidth:.maximum(80,699),alignment:.center)
-                    } .fullScreenCover(isPresented: $showNewReq, content: {NewRequest()})
-
-//                    Button { showNewReq.toggle()} label: {
-//                        ZStack{
-//                        Button(action:{}){
-//                            Text("Request")
-//                            .foregroundColor(.white)
-//                            .bold()
-//                            .frame(width: 342, height: 41.31)
-//                            .cornerRadius(8)
-//                            .background(Color("btnColor"))
-//                            .cornerRadius(8)
-//                     .frame(maxWidth:.maximum(80,699),alignment:.center)
-////                     .padding(.top,-38)
-//
-//                        }
-//                            NavigationLink(isActive: $showNewReq,
-//                                           destination: {
-//                                NewRequest()
-//                            },
-//
-//
-//                            label:
-//                                EmptyView.init)
-//
-//
-//
-//
-//
-//
-//                         }
-//                    }
-                }
-                
-               
-
-                
-                
-//                NavigationLink {
-//                    NewRequest()
-////                    Settings()
-//                } label: { }
+                  
 
               
             }
-            .padding(.top,-70)
-        }  
+          //  .padding(.top,-70)
+        }
         .navigationTitle("Photography")
         .navigationBarTitleDisplayMode(.inline)
     
 }
-    
+    }
 }
 struct Photography_Previews: PreviewProvider {
     static var previews: some View {
@@ -147,3 +106,4 @@ struct Photography_Previews: PreviewProvider {
 
     }
 }
+

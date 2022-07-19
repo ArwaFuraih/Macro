@@ -9,19 +9,17 @@ import SwiftUI
 import FirebaseAuth
 
 struct NewRequest: View {
+    @State var showOffer = false
+
+    let myorder : OrderForFeed
+   @StateObject var viewModel: custumerOrder = custumerOrder()
+ //    @State var order = Order(dictionary: T##[String : Any])
+    @StateObject var cartManager = CartManager()
+
+     var allServies: Servies
     
-//    @StateObject var ordersViewModel = OrdersViewModel()
-//    @State var order = Order(id: UUID().uuidString, customerId: "", providerId: "", isprovider: false, CustomerType: "", city: "", dateAndTime: "", Hours: 0, description: "", Letter: "", pilot: 0, Price: 0.0, timestamp: Timestamp, userType: "", status: .new, NameOfServece: .Photography)
-
-    @State var selection: Status = .new
-    @State var nextPage : Bool = false
-
-
     
-
-
-    @StateObject var viewModel = custumerOrdr()
-
+    
     @State var userID: String = ""
     @State var city: String = ""
     @State var userType: String = ""
@@ -33,10 +31,12 @@ struct NewRequest: View {
     @State var addpilot: String = ""
     @State var lettel: String = ""
     @State var morepilot: String = ""
-
+    @State var pilot: String = ""
+    @State var Hours: String = ""
     @State var filename = ""
     @State var openfile = false
-     
+    
+ 
      
 //    let myTimeStamp = self.datePicker?.date.timeIntervalSince1970
 
@@ -64,7 +64,7 @@ struct NewRequest: View {
    var body: some View {
            ZStack{
             Color.black.ignoresSafeArea()
-//             NavigationView{
+             NavigationView{
                 
                 ScrollView(showsIndicators: false){
                       ZStack{
@@ -240,52 +240,32 @@ struct NewRequest: View {
                    ZStack{
                        
                        Button {
-//                           order.customerId = ordersViewModel.user.id
-//                           ordersViewModel.addOrder(order: order)
-
-                        
-                           nextPage.toggle()
-                           guard let userId = Auth.auth().currentUser?.uid else{
-                               print("user NotLogin")
+                           guard let userId = Auth.auth().currentUser?.uid else {
+                               print("user not logged in, and this whole view shouldn't appear")
                                return
                            }
-//                           viewModel.addOrder(order: order)
-//                           viewModel.addorder(userID: userId, city: city, userType: userType, timestamp: selectedDate1, adddescrption: adddescrption, lettel: lettel, addpilot: addpilot, morepilot: morepilot)
+                           showOffer.toggle()
+                           
+                           viewModel.newOrderS(userID : userId,city: city, CustomerType: userType, description: adddescrption, Letter: lettel, pilot: pilot, morepilot: morepilot, dateAndTime: dateandtime, nameOfServece: .Photography, cancelled: false, Hours:Hours )
+                          
                            
                        } label: {
-                           ZStack{
-                              Text("Send")
-                                  .foregroundColor(.white)
-                                  .bold()
-                                  .frame(width: 342, height: 41.31)
-                                  .cornerRadius(8)
-                                  .background(Color("btnColor"))
-                                  .cornerRadius(8)
-                           }
-                               NavigationLink(isActive: $nextPage,
-                                              destination: {
-                                   loading()
-                               },
-                                  
-
-                               label:
-                                   EmptyView.init)
-                               
-
-                               
-                               
-                               
-                               
-                            }
-                       }
-                       
-                       
-                       
-                       
-                    
-                    
-                    
-                    
+                           Text("Request")
+                               .foregroundColor(.white)
+                              .bold()
+                              .frame(width: 342, height: 41.31)
+                              .cornerRadius(8)
+                              .background(Color("btnColor"))
+                              .cornerRadius(8)
+                       } .fullScreenCover(isPresented: $showOffer, content: { CartView()
+                                
+                               .environmentObject(cartManager)
+                             })
+                        }
+                      .onAppear() {
+                               cartManager.addToCart(allServies: serviesList[1])
+                              }
+    
                 }
                   .padding()
                 }
@@ -293,26 +273,27 @@ struct NewRequest: View {
 //         }
 //    }
                  }
-//             }
              }
+             
                  
     .navigationTitle("Request a Permit")
     .navigationBarTitleDisplayMode(.inline)
 //}
                          }
              }
-
+}
 
 struct NewRequest_Previews: PreviewProvider {
     static var previews: some View {
-        NewRequest()
+        
+        NewRequest(myorder: OrderForFeed(order: Order(dictionary: [:]), user: User(dictionary: [:]), orderID: ""), allServies: serviesList[0])
+                   
+            .environmentObject(CartManager())
  
             .preferredColorScheme(.dark)
      }
 }
-
-
-
+ 
 //  TextField("Covering the Jeddah season using drones  ", text: $stringOfTextField3)
 
 

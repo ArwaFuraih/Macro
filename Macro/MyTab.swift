@@ -91,11 +91,11 @@ struct MyTab: View{
                     Settings()
                     .onTapGesture {
                         self.selectedIndex = 4
-                    }
-                }.navigationTitle("Setting")
-                   
-//                }.navigationBarTitle("Settings", displayMode: .inline)
+                    }.navigationBarTitle("Settings", displayMode: .inline)
 
+                }
+                   
+//                }
 
                  
                 .tabItem {

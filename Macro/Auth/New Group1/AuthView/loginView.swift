@@ -9,10 +9,14 @@ import SwiftUI
 import FirebaseAuth
 import Firebase
 
+
+
 // Auth.auth().currentUser?//.uid
 struct loginView: View {
     @EnvironmentObject var viewModel : AuthViewModel
     @EnvironmentObject var registrationViewModel : RegistrationViewModel
+    private var rootViews = RootViews.shared
+
 
 //    @ObservedObject var viewModel = AuthViewModel()
     @State var email : String = ""
@@ -33,13 +37,6 @@ struct loginView: View {
             VStack{
                     Spacer()
                     VStack(alignment: .leading, spacing: 10){
-                       
-
-    //    Text("Full  Name")
-    //    TextField("Ahmad Ali  ", text: $fullName)
-    //                    .padding()
-    //.overlay(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color.them.mygray, style: StrokeStyle(lineWidth: 1)))
-    //                    .frame(width: 342.15, height: 66.86)
                         
                         Text("Email:") .foregroundColor(.gray)
                         TextField("ex@gmail.com"  , text: $email) .foregroundColor(.gray)
@@ -52,15 +49,9 @@ struct loginView: View {
                     
 
                     VStack(alignment: .leading, spacing: 10){
-    //    Text("Phone Number")
-    //    TextField("+9664488668  ", text:  $phoneNumber)
-    //                    .padding()
-    //                    .overlay(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color.them.mygray, style: StrokeStyle(lineWidth: 1)))
-    //                    .frame(width: 342.15, height: 66.86)
-                        
-                      
+           
                              Text("Password:") .foregroundColor(.gray)
-                        TextField("******* ", text: $password) .foregroundColor(.gray)
+                    SecureField("******* ", text: $password) .foregroundColor(.gray)
                                         .padding()
                                         .overlay(RoundedRectangle(cornerRadius: 8.0).strokeBorder(Color.them.mygray, style: StrokeStyle(lineWidth: 1)))
                                         .frame(width: 342.15, height: 66.86)
@@ -69,36 +60,8 @@ struct loginView: View {
                         
                     }
 
-    //                    ZStack{
-                        HStack{
-                            Image(systemName:"checkmark.square") .foregroundColor(.gray)
-                           Text(" agree with  and Privacy") .foregroundColor(.gray)
-                            .font(.system(size: 16))
-                            
-                            
-        Button {
-        showTerms.toggle()
-        } label: {
-        Text("Terms").underline().foregroundColor(.blue)
-            Text("and") .foregroundColor(.white) .foregroundColor(.gray)
-
-        Text("Privacy").underline().foregroundColor(.blue)
-        }.fullScreenCover(isPresented: $showTerms, content: {
-        PrivacyPolicy()
-        })
-        }
-    //    }
-                   
-    //                    .padding()
+  
                          Spacer()
-    //                ZStack{
-    //Button { AuthManager.createAccountWithPhoneNumber (phoneNumber: phoneNumber) {isSuccess in
-    //    print ("DEBUG: phone \(isSuccess)")
-    //
-    //}
-    //    isShowingHomeView.toggle()
-    //
-    //}
                     
                     
                     
@@ -111,7 +74,8 @@ struct loginView: View {
     //                    viewModel.logInUser(email: email, password: password)
                                          showHome.toggle()
                         viewModel.logInUser(email: email, password: password)
-                        
+                        rootViews.root = .mainTab
+
                     } label: {
                         Text("Sign In")
                             .foregroundColor(.white)
@@ -138,7 +102,11 @@ struct loginView: View {
 
 
                     }
-                
+                .toolbar{
+                    Text("hkjhjksahh").foregroundColor(.white)
+                }
+
+            
 
            Spacer()
             
@@ -148,6 +116,11 @@ struct loginView: View {
     }
     }
 }
+
+
+
+
+
 struct loginView_Previews: PreviewProvider {
     static var previews: some View {
         loginView()

@@ -85,7 +85,14 @@ struct Order: Identifiable{
         
         self.CustomerType = dictionary[Order.CustomerType] as? String ?? ""
         self.city = dictionary[Order.city] as? String ?? ""
-        self.dateAndTime = dictionary[Order.date] as? Timestamp ?? Timestamp(date: Date())
+        
+        
+        self.dateAndTime = dictionary[Order.dateAndTime] as? Timestamp ?? Timestamp(date: Date())
+
+        var date = Date(timeIntervalSince1970: TimeInterval(self.dateAndTime.seconds))
+        print(date)
+        
+        
 //        self.time = dictionary[Order.time] as? String ?? ""
         self.Hours = dictionary[Order.Hours] as? Int ?? 0
         self.description = dictionary[Order.description] as? String ?? ""
@@ -138,7 +145,7 @@ struct Order: Identifiable{
     
     var detailedTimestampString: String {
         let formatter = DateFormatter()
-        formatter.dateFormat = " MM/dd/yyyy"
+        formatter.dateFormat = "MM/dd/yyyy"
         return formatter.string(from: dateAndTime.dateValue())
     }
     var detailedTimestampStringTime: String {

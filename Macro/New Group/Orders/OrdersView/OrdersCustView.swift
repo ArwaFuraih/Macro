@@ -19,8 +19,10 @@ struct OrdersCustView: View {
                 
                 if selectedFilter == .Orders {
                     OrdersCusView
+
                 }else if selectedFilter == .Offers {
                     OfferCusView
+
                 }
                 
                 

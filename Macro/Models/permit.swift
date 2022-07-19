@@ -8,10 +8,13 @@
 import Foundation
 import Firebase
  
- 
+struct PermitDocID : Identifiable{
+    let id = UUID()
+    let docID: String
+}
 struct Permit: Identifiable{
     
-    var id: String
+    var id: String = UUID().uuidString
     let userid : String
     let name: String
     let nationalid: String

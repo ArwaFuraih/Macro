@@ -25,3 +25,12 @@ struct RoundedCorner: Shape {
         return Path(path.cgPath)
     }
 }
+
+
+struct RoundedShape: Shape {
+  var corners : UIRectCorner
+  func path(in rect: CGRect) -> Path {
+    let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners ,cornerRadii: CGSize(width:50, height: 50))
+    return Path(path.cgPath)
+  }
+}

@@ -6,43 +6,39 @@
 //
 
 import SwiftUI
-import Firebase
-
+import FirebaseAuth
 
 struct Detailspermit: View {
-    @StateObject var alldetiles = permitviewModel()
     
-    @State var showSheet: Bool = false
-
-    var body: some View {
-        
-            NavigationView{
-                
-                ScrollView(.vertical){
-
-                    ForEach(alldetiles.permit) { i in
-                        VStack(alignment: .leading) {
-                 ZStack{
+     let mypermit : permitanduser
+    
+   @StateObject var viewModel: permitviewModel = permitviewModel()
+    
+    @State var showpage = false
  
-                     Image("")
-                     .resizable()
-                     .background(Color.them.myColor2)
-                     .cornerRadius(8)
-                    .frame(width: 373, height: 399)
-                        .padding()
+    var body: some View {
+        NavigationView{
+                 ScrollView(.vertical){
+                     VStack{
+                     ZStack {
+                      VStack(alignment: .leading){
+                  ZStack{
             VStack(alignment: .leading, spacing: 8){
                         HStack {
                         Image("date")
-                        .foregroundColor(.white)
+                            Text("\(Permit.startdateandtime)")
+                         .foregroundColor(.white)
                         .font(.system(size: 18))
 
                         }
                  
                         HStack {
                         Image(systemName:"hourglass")
+                            Text("\(Permit.enddateandtime)")
+
                         .foregroundColor(.white)
                             
-                            Text("\(i.user.fullName)")
+//                            Text("\(i.user.fullName)")
 //                        Text("Duration:  4hour ")
                         .font(.system(size: 18))
                         .foregroundColor(.white)
@@ -51,13 +47,14 @@ struct Detailspermit: View {
                      
                  }
                  .padding()
-    .frame(maxWidth:.maximum(10,379),alignment:.leading)
-        .padding(.top,-199)
+                 .frame(maxWidth:.infinity,alignment:.leading)
+                   .padding(.top,-199)
 
                      
-            VStack(alignment: .leading, spacing: 8){
+            VStack(alignment: .leading, spacing: 6){
                         HStack {
                         Image(systemName:"clock")
+                        Text("\(Permit.duration)")
                         .foregroundColor(.white)
 
                             
@@ -70,9 +67,10 @@ struct Detailspermit: View {
                         }
                         HStack {
                         Image("hight")
+                        Text("\(Permit.hight)")
                         .foregroundColor(.white)
 
-                            Text("\(i.permit.hight)")
+//                            Text("\(i.permit.hight)")
                         .font(.system(size: 18))
                         .foregroundColor(.white)
                         .foregroundColor(.white)
@@ -81,75 +79,87 @@ struct Detailspermit: View {
                         }
                         }
             .padding()
-    .frame(maxWidth:.maximum(10,379),alignment:.trailing)
+            .frame(maxWidth:.infinity,alignment:.trailing)
             .padding(.top,-199)
-            VStack(alignment: .leading, spacing: 8){
-                        Text("ID")
+                     
+            VStack(alignment: .leading, spacing: 6){
+                        Text("National ID")
                         .font(.system(size: 16))
                         .fontWeight(.bold)
                         .foregroundColor(.white)
 
-                        Text("12567896332")
-                        .font(.system(size: 12))
+                  Text(Permit.nationalid)
+                        .font(.system(size: 16))
                         .foregroundColor(.white)
                         }
-              .padding()
-    .frame(maxWidth:.maximum(10,381),alignment:.leading)
+            .padding()
+    .frame(maxWidth:.infinity,alignment:.leading)
     .padding(.top,-126)
 
-            VStack(alignment: .leading, spacing: 8){
+            VStack(alignment: .leading, spacing: 6){
                          Text("license number")
                          .font(.system(size: 16))
                          .fontWeight(.bold)
                          .foregroundColor(.white)
 
-                         Text("#778890ijjyg9999")
-                         .font(.system(size: 12))
+                        Text(Permit.licensenumber)
+                         .font(.system(size: 16))
                          .foregroundColor(.white)
                          }
+    .padding()
     .frame(maxWidth:.maximum(10,350),alignment:.leading)
   .padding(.top,-49)
-            VStack(alignment: .leading, spacing: 8){
+                      
+            VStack(alignment: .leading, spacing: 6){
                     Text("Drones permit")
                     .font(.system(size: 16))
                     .fontWeight(.bold)
                     .foregroundColor(.white)
 
-                    Text("1617166")
-                    .font(.system(size: 12))
+                Text(Permit.Dronespermit)
+                    .font(.system(size: 16))
                     .foregroundColor(.white)
                     }
+            .padding()
     .frame(maxWidth:.maximum(10,350),alignment:.leading)
     .padding(.top,56)
-            VStack(alignment: .leading, spacing: 8){
+            VStack(alignment: .leading, spacing: 6){
                     Text("Activity type")
                     .font(.system(size: 16))
                     .fontWeight(.bold)
                     .foregroundColor(.white)
 
-                    Text("commercial")
-                    .font(.system(size: 12))
+                Text(Permit.activitytype)
+                    .font(.system(size: 16))
                     .foregroundColor(.white)
                     }
+            .padding()
 .frame(maxWidth:.maximum(10,350),alignment:.leading)
 .padding(.top,170)
                      
-        VStack(alignment: .leading, spacing: 4){
-                    Text("Flying Description:")
+        VStack(alignment: .leading, spacing: 6){
+            Text("Flying Description:")
                     .font(.system(size: 16))
                     .fontWeight(.bold)
                     .foregroundColor(.white)
 
-Text("Coverage of the opening of the exhibition north of Riyadh ")
-                    .font(.system(size: 12))
+                   Text(Permit.flyingdescription)
+                    .font(.system(size: 16))
                     .foregroundColor(.white)
                     }
-.frame(maxWidth:.maximum(10,350),alignment:.leading)
+            .padding()
+                  .frame(maxWidth:.maximum(10,350),alignment:.leading)
                .padding(.top,286)
                  }
-                        }
-                 .padding(.top,-90)
-
+                  
+                 .padding(.vertical)
+                 .padding()
+                 .background(Color.them.myColor2)
+                .cornerRadius(8)
+               .frame(width: 373, height: 399)
+                   .padding()
+                        
+ 
                     ZStack{
                         Image("")
                         .resizable()
@@ -157,8 +167,7 @@ Text("Coverage of the opening of the exhibition north of Riyadh ")
                         .cornerRadius(8)
                         .frame(width: 373, height: 210)
                         .foregroundColor(.white)
-
-
+ 
             VStack(alignment: .leading, spacing: 8){
     Text("Service value:                                    500")
                     .font(.system(size: 16))
@@ -172,15 +181,14 @@ Text(" Added tax:                                          100")
                     .font(.system(size: 16))
                     .fontWeight(.bold)
 }
-                        
-    .frame(maxWidth:.maximum(10,289),alignment:.leading)
+     .frame(maxWidth:.maximum(10,289),alignment:.leading)
             .padding(.top,-60)
                         Image("line")
                         .foregroundColor(.white)
 
         VStack(alignment: .leading, spacing: 30){
                     ZStack{
-Text("  Total price :                                   700 RS")
+Text("  Total price :                                   600 RS")
             .font(.system(size: 16))
             .fontWeight(.bold)
             .font(Font.custom("Georgia", size: 16))
@@ -190,48 +198,47 @@ Text("  Total price :                                   700 RS")
     .frame(maxWidth:.maximum(10,289),alignment:.leading)
                 .padding(.top,50)
                     }
-                    }
-                    }
-                
-                    VStack{
-                       Button(action:{
-                           
-//                           PaymentButton(action: alldetiles.payPermit)
-                        showSheet.toggle()
-
-                    }){
-                    Image("apple pay 23")
-                    .foregroundColor(.white)
-                    .frame(width: 3020, height: 81.31)
-                    .cornerRadius(8)
-.frame(maxWidth:.maximum(10,136),alignment:.center)
-                    .padding(.top,20)
-                    }.fullScreenCover(isPresented: $showSheet, content: {
-                        success()})
-                         
-                     }
-                    
-
-                }
-                
-                
-}
-            .navigationTitle("Order details")
-            .navigationBarTitleDisplayMode(.inline)
-//            .onAppear(){
-//                self.permitModel.fethchPermit()
-//            }
  
+                       }
+                    .padding()
+ 
+                      }
+                          
+                    .navigationTitle("Request a Permit")
+                   .navigationBarTitleDisplayMode(.inline)
+                 }
+                     }
+                     }
+        
+ }
     }
-    }
+}
  struct DetailsOrder_Previews: PreviewProvider {
     static var previews: some View {
-        Detailspermit()
+ 
+        Detailspermit(mypermit: permitanduser(permit: Permit(dictionary: [:]), user: User(dictionary: [:]), permitid: ""))
             .preferredColorScheme(.dark)
-        
     }
 }
 
 
+//                    VStack{
+//                       Button(action:{
+//
+////                           PaymentButton(action: alldetiles.payPermit)
+//                        showSheet.toggle()
+//
+//                    }){
+//                    Image("apple pay 23")
+//                    .foregroundColor(.white)
+//                    .frame(width: 3020, height: 81.31)
+//                    .cornerRadius(8)
+//.frame(maxWidth:.maximum(10,136),alignment:.center)
+//                    .padding(.top,20)
+//                    }.fullScreenCover(isPresented: $showSheet, content: {
+//                        success()})
+//
+//                     }
 
+ 
 

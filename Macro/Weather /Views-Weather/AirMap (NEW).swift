@@ -19,22 +19,13 @@ struct AirMap: View {
 
     
     var body: some View {
-        
-//        Group{
-//        if locationManager.userLocation == nil{
-//            LocationRequest()
-//        }else if let location = locationManager.userLocation{
-//        Text ("\(location)")
-//            //to print lat and log
-//        }
-//        }
+ 
         
         
         ZStack {
             Color.them.myColor1.ignoresSafeArea()
 
-            MapView()
-                
+            MainPreview.previews
             if !isPresented {
                 VStack {
                     Spacer()
@@ -56,7 +47,7 @@ struct AirMap: View {
                             )
                     })
                     .frame(maxWidth: .infinity, idealHeight: 32, alignment: .center)
-                    .position(x: 350, y: 650)
+                    .position(x: 355, y: 460)
                 }
             } else {
                 EmptyView()

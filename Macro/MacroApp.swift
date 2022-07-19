@@ -30,7 +30,9 @@ struct MacroApp: App {
 
     @StateObject var viewModle = AuthViewModel()
     @StateObject var customerOrder = custumerOrder()
-   // @StateObject var registrationViewModel = RegistrationViewModel()
+    @StateObject private var rootViews = RootViews.shared
+
+    // @StateObject var registrationViewModel = RegistrationViewModel()
 
 //    init(){FirebaseApp.configure()}
 //     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
@@ -38,8 +40,17 @@ struct MacroApp: App {
         WindowGroup {
             NavigationView {
                 
+                switch rootViews.root{
+                case .onBoarding:
+                    OnBoardingView()
+                case .mainTab:
+                    MyTab()
+                    
+//                    RootView()
+
+                }
+                
 //                test()
-                RootView()
 //                let mviewModel = AuthViewModel()
 //                MyTab()
 //                environment(mviewModel)

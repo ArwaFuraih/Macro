@@ -6,12 +6,39 @@
 //
 
 import Foundation
+import Lottie
+import UIKit
+import SwiftUI
 
 enum OfferStatus: Int , CaseIterable {
     case new = 1
     case accepted = 2
     case rejected = 3
+    
+    var title: String {
+        switch self {
+        case .new:
+            return "New"
+        case .accepted:
+            return "Accepted"
+        case .rejected:
+            return "Rejected"
+        }
+    }
+    
+    var color: SwiftUI.Color {
+        switch self {
+        case .new:
+            return .white
+        case .accepted:
+            return .green
+        case .rejected:
+            return .red
+        }
+    }
 }
+
+
 
 
 struct Offers: Identifiable{
