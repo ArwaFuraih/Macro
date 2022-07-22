@@ -9,8 +9,12 @@ import SwiftUI
 
 struct ProductCard: View {
     @EnvironmentObject var cartManager: CartManager
-    var allServies: Servies
+    @StateObject var viewModel: custumerOrder = custumerOrder()
+
     
+    var allServies: Servies
+    var price: OfferForFeed
+
     var body: some View {
         ZStack(alignment: .topTrailing) {
             ZStack(alignment: .bottom) {
@@ -24,7 +28,7 @@ struct ProductCard: View {
                     Text(allServies.name)
                         .bold()
                     
-                    Text("\(allServies.price)$")
+                    Text("\(allServies.priceoffer.price)$")
                         .font(.caption)
                 }
                 .padding()
@@ -54,7 +58,7 @@ struct ProductCard: View {
 
 struct ProductCard_Previews: PreviewProvider {
     static var previews: some View {
-        ProductCard(allServies: serviesList[0])
+        ProductCard(allServies: serviesList[0], price: OfferForFeed(offer: Offers(dictionary: [:], documentID: ""), user: User(dictionary: [:]), order: Order(dictionary: [:]), offerID: ""))
             .environmentObject(CartManager())
     }
 }

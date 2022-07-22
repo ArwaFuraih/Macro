@@ -22,93 +22,101 @@ struct offerCellP: View {
     var name = "sumayah zaid "
     
     var body: some View {
-        VStack{
-            ForEach(m.orders){ item in
-            HStack(spacing:10){
-               
+        
+        
+        ZStack{
+            Color.them.myColor1.ignoresSafeArea()
+            VStack{
+                ForEach(m.orders){ item in
+                HStack(spacing:10){
+                   
+                        
+                        HStack(){
+                            VStack(){
+    //                            KFImage(URL(string: User.profileImg))
+                                
+                                AsyncImage(url:  URL(string:item.user.profilePic)){ image in
+                                    image.resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width:70,height: 70)
+                                        .clipShape(Circle())
+                                }placeholder: {
+                                    ProgressView()
+                                }
+                                
+                                Text("\(item.user.fullName)").foregroundColor(.white)
+                            }.frame( maxWidth: .infinity, alignment:.leading)
+                            
+                            
+                            
+                            
+                            
+                            
+                        }.padding().cornerRadius(8)
                     
-                    HStack(){
-                        VStack(){
-                            KFImage(URL(string: User.profileImg))
+                    
+                    HStack() {
+                        VStack(alignment: .leading){
+                            Text("Piolt:\(item.order.pilot)")
+                                .font(.caption).bold()
+                                .foregroundColor(.white)
+                            Text("Hours:\(item.order.Hours)")
+                                .font(.caption).bold()
+                                .foregroundColor(.white)
                             
-                            AsyncImage(url:  URL(string:item.user.profilePic)){ image in
-                                image.resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width:70,height: 70)
-                                    .clipShape(Circle())
-                            }placeholder: {
-                                ProgressView()
-                            }
+                            Text("Date: \(item.order.detailedTimestampString)")
+                                .font(.caption).bold()
+                                .foregroundColor(.white)
+                            Text("\(item.order.nameOfServece.rawValue)").padding(.top,2)
+                                .font(.caption)
+                                .foregroundColor(.gray)
                             
-                            Text("\(item.user.fullName)").foregroundColor(.white)
-                        }.frame( maxWidth: .infinity, alignment:.leading)
+                        }
+                        Spacer()
                         
                         
-                        
-                        
-                        
-                        
-                    }.padding().cornerRadius(8)
-                
-                
-                HStack() {
-                    VStack(alignment: .leading){
-                        Text("Piolt:\(item.order.pilot)")
-                            .font(.caption).bold()
-                            .foregroundColor(.white)
-                        Text("Hours:\(item.order.Hours)")
-                            .font(.caption).bold()
-                            .foregroundColor(.white)
-                        
-                        Text("Date: \(item.order.detailedTimestampString)")
-                            .font(.caption).bold()
-                            .foregroundColor(.white)
-                        Text("\(item.order.nameOfServece.rawValue)").padding(.top,2)
-                            .font(.caption)
-                            .foregroundColor(.gray)
                         
                     }
-                    Spacer()
                     
-                    
-                    
-                }
-                
-                HStack {
-                    
-                    Button(action: {
-                        order = item
+                    HStack {
+                        
+                        Button(action: {
+                            order = item
 
-                        //showSheet.toggle()
-                   
-                   
-                   print("g")
-               }, label: {
-                   Image("chevron order.right.2")
-               })
-               .padding(.top,70)
-               .fullScreenCover(item: $order) { order in
-                   orderdetailsowner(myOrder: order)
-               }
+                            //showSheet.toggle()
+                       
+                       
+                       print("g")
+                   }, label: {
+                       Image("chevron order.right.2")
+                   })
+                   .padding(.top,70)
+                   .fullScreenCover(item: $order) { order in
+                       orderdetailsowner(myOrder: order)
+                   }
+                        
+                   .padding()
+                   .background(Color.them.myColor2)
+                   .cornerRadius(8)
+                   .padding()
+                        
+                    }
                     
-               .padding()
-               .background(Color.them.myColor2)
-               .cornerRadius(8)
-               .padding()
+                    
+                    
+                }.background(Color.them.myColor2)
+                        .cornerRadius(8)
+                        .padding()
+                    
                     
                 }
-                
-                
-                
-            }.background(Color.them.myColor2)
-                    .cornerRadius(8)
-                    .padding()
                 
                 
             }
             
             
         }
+       
     }}
 
 struct offerCellP_Previews: PreviewProvider {

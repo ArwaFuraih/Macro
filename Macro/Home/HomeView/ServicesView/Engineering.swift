@@ -16,6 +16,8 @@ struct Engineering: View {
     
     var body: some View {
         NavigationView{
+            ZStack{
+                Color.them.myColor1.ignoresSafeArea()
             VStack(alignment: .leading, spacing: 10){
                        Image("engi")
                     .resizable()
@@ -25,33 +27,33 @@ struct Engineering: View {
                     .padding()
                     Section{
         HStack(spacing:10){
-            Image(systemName:"checkmark.circle")
+            Image(systemName:"checkmark.circle").foregroundColor(.white)
                 .font(.system(size: 24))
 
                 .frame(width: 60, alignment:.center)
-        Text("Production and Refinery Management")
+        Text("Production and Refinery Management").foregroundColor(.white)
                     }
         .padding()
                 
         }
                     Section{
         HStack(spacing:10){
-            Image(systemName:"checkmark.circle")
+            Image(systemName:"checkmark.circle").foregroundColor(.white)
                 .font(.system(size: 24))
 
                 .frame(width: 60, alignment:.center)
-        Text("Pipeline Integrity Management")
+        Text("Pipeline Integrity Management").foregroundColor(.white)
                 }
         .padding()
                 
         }
                     Section{
         HStack(spacing:10){
-            Image(systemName:"checkmark.circle")
+            Image(systemName:"checkmark.circle").foregroundColor(.white)
                 .font(.system(size: 24))
 
                 .frame(width: 60, alignment:.center)
-        Text("Safer And Faster Inspections")
+        Text("Safer And Faster Inspections").foregroundColor(.white)
         }
         .padding()
                     }
@@ -96,7 +98,7 @@ struct Engineering: View {
         .navigationTitle("Engineering")
         .navigationBarTitleDisplayMode(.inline)
     
-}
+            }}
     }
 }
 struct  Mining_Previews: PreviewProvider {

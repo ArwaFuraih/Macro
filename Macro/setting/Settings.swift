@@ -20,6 +20,8 @@ struct  Settings: View {
     @ObservedObject var authViewModel = AuthViewModel()
     @ObservedObject var reg = RegistrationViewModel()
     
+    @State var showprofile = false
+
     @State var showmytab = false
     @State var showingAlert = false
     @State private var isShareSheetPresented = false
@@ -38,13 +40,16 @@ struct  Settings: View {
         ZStack{
             Color.them.myColor1.ignoresSafeArea()
             ScrollView{
-            VStack{
+            VStack( spacing: -5){
               
-                    HStack{
+                    HStack( spacing: 5){
                         
-                        NavigationLink {
-                            //                                ProviderProfileView()
-                            ProfileView()
+                        Button {
+                            guard let userId = Auth.auth().currentUser?.uid else {
+                                print("user not logged in, and this whole view shouldn't appear")
+                                return
+                             }
+                            showprofile.toggle()
                             
                         } label: {
                             ZStack{
@@ -71,7 +76,43 @@ struct  Settings: View {
                             }
                             .padding()
                             
+                        }.fullScreenCover(isPresented: $showprofile) {
+                            ProfileView()
                         }
+                        
+
+                        
+//                        NavigationLink {
+//
+//                            //                                ProviderProfileView()
+//                            ProfileView()
+//
+//                        } label: {
+//                            ZStack{
+//                                Image("")
+//                                    .resizable()
+//                                //            .padding()
+//                                    .background(Color.them.myColor2)
+//                                    .cornerRadius(8)
+//                                    .frame(width: 153, height: 148)
+//                                //                        .padding()
+//
+//                                VStack{
+//                                    Image("profile33")
+//                                        .font(.system(size: 35))
+//                                        .padding()
+//
+//                                    Text("Profile")
+//                                        .fontWeight(.bold)
+//                                        .foregroundColor(.white)
+//                                        .font(.system(size: 18))
+//
+//                                }
+//
+//                            }
+//                            .padding()
+//
+//                        }
                         
                         ZStack{
                             Image("")
@@ -221,7 +262,7 @@ struct  Settings: View {
                             ShareSheetView(activityItems:[URL(string: "https://testflight.apple.com/v1/invite/ff8dfc19507f49aba97c2084d9ce91173c41d4a4ff6e48909dbb1d56dd8a70f26172a8e2?ct=FT758GL74V&advp=10000&platform=ios")!
                                                          ]) }
                     }
-                }
+                
                 //                            }            .fullScreenCover(isPresented: $isShareSheetPresented, content: {
                 //                                Settings()})
                 
@@ -322,7 +363,7 @@ struct  Settings: View {
                     }
                     
                     
-                    
+                }
                     //  Spacer()
                 }
             }
@@ -338,8 +379,9 @@ struct   Settings_Previews: PreviewProvider {
     static var previews: some View {
         Settings()
         
-        //            .preferredColorScheme(.light)
-        
+            .preferredColorScheme(.dark)
+
+
     }
 }
 

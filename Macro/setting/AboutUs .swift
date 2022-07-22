@@ -11,71 +11,87 @@ struct AboutUs: View {
     var body: some View {
   //      NavigationView{
             
-            
-            
-            VStack(alignment: .leading, spacing: 15){
-                Spacer()
-                VStack{
-        Text("We got the permit, and you got the fly!")
-                    .fontWeight(.bold)
-                    .font(.system(size: 24))
+        ZStack{
+            Color.them.myColor1.ignoresSafeArea()
+            VStack{
+                VStack(alignment: .leading, spacing: 15){
+                    Spacer()
+                    VStack{
+            Text("We got the permit, and you got the fly!")
+                            .foregroundColor(.white)
+                        .fontWeight(.bold)
+                        .font(.system(size: 18))
 
-                }
-                .padding()
-                    Section{
-        HStack(spacing:10){
-        Image("About1")
-        Text("All needs                                          ")
-                .font(.system(size: 24))
-        }
-                        
-                        VStack{
-Text("If you want to get your services with ease, you will \n definitely have the Puter application,which collects\n the drone services that both the owner and user of\n the drones need.")
-                                .font(.system(size: 14))
                     }
-        .padding()
-                
-        }
-                    Section{
-        HStack(spacing:10){
-        Image("About2")
+                    .padding()
+                        Section{
+            HStack(spacing:10){
+            Image("About1")                            .foregroundColor(.white)
 
-        Text("Privacy")
-                .font(.system(size: 24))
-                }
-                        
-    Text("With high quality, satisfactory price and high \nguarantee, in cooperation with the competent \nauthorities for the Drones.")
-        .font(.system(size: 14))
+            Text("All needs                                          ")
+                    .font(.system(size: 24))
+            }
+            .foregroundColor(.white)
 
-                        
-                        
-                        
-        .padding()
-                
-        }
-               
-                Section{
-        HStack(spacing:10){
-        Image("About3")
+                            
+                            VStack{
+    Text("If you want to get your services with ease, you will \n definitely have the Puter application,which collects\n the drone services that both the owner and user of\n the drones need.")                            .foregroundColor(.white)
 
-        Text("  Customers service")
-                .font(.system(size: 24))
-        }
-    Text("We are always ready to serve you in different ways\n and at any time.")
+                                    .font(.system(size: 14))
+                        }
+            .padding()
+                    
+            }
+                        Section{
+            HStack(spacing:10){
+            Image("About2")
+                    .foregroundColor(.white)
+
+            Text("Privacy")                            .foregroundColor(.white)
+
+                    .font(.system(size: 24))
+                    }
+                            
+        Text("With high quality, satisfactory price and high \nguarantee, in cooperation with the competent \nauthorities for the Drones.")                            .foregroundColor(.white)
+
             .font(.system(size: 14))
 
-        .padding()
-                    }
-                    Spacer()
-             
-               
-               
+                            
+                            
+                            
+            .padding()
                     
-       .navigationTitle("About Us")
-        .navigationBarTitleDisplayMode(.inline)
-    
-//}
-    }
+            }
+                   
+                    Section{
+            HStack(spacing:10){
+            Image("About3")                            .foregroundColor(.white)
+
+
+            Text("  Customers service")                            .foregroundColor(.white)
+
+                    .font(.system(size: 24))
+            }
+        Text("We are always ready to serve you in different ways\n and at any time.")                            .foregroundColor(.white)
+
+                .font(.system(size: 14))
+
+            .padding()
+                        }
+                        Spacer()
+                 
+                   
+                   
+                        
+           .navigationTitle("About Us")                            .foregroundColor(.white)
+
+            .navigationBarTitleDisplayMode(.inline)
+        
+    //}
+        }
+            }}
+            
+           
 }
 struct Argiculture_Previews: PreviewProvider {
     static var previews: some View {

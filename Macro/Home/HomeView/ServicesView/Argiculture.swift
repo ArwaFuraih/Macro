@@ -14,6 +14,8 @@ struct Argiculture: View {
     
     var body: some View {
         NavigationView{
+            ZStack{
+                Color.them.myColor1.ignoresSafeArea()
             VStack(alignment: .leading, spacing: 10){
                        Image("droneArgiculture")
                     .resizable()
@@ -22,33 +24,33 @@ struct Argiculture: View {
                         .padding()
                     Section{
         HStack(spacing:10){
-            Image(systemName:"checkmark.circle")
+            Image(systemName:"checkmark.circle").foregroundColor(.white)
                 .font(.system(size: 24))
 
                 .frame(width: 60, alignment:.center)
-            Text("Safer Way To Spray Crops")
+            Text("Safer Way To Spray Crops").foregroundColor(.white)
                     }
         .padding()
                 
         }
                     Section{
         HStack(spacing:10){
-            Image(systemName:"checkmark.circle")
+            Image(systemName:"checkmark.circle").foregroundColor(.white)
                 .font(.system(size: 24))
 
                 .frame(width: 60, alignment:.center)
-        Text("Fast Data Acquisition For Accurate Farm Analysis")
+        Text("Fast Data Acquisition For Accurate Farm Analysis").foregroundColor(.white)
                 }
         .padding()
                 
         }
                     Section{
         HStack(spacing:10){
-            Image(systemName:"checkmark.circle")
+            Image(systemName:"checkmark.circle").foregroundColor(.white)
                 .font(.system(size: 24))
 
                 .frame(width: 60, alignment:.center)
-            Text("Allow Farmers To Obtain Crop Data Fast And Frequently"    )
+            Text("Allow Farmers To Obtain Crop Data Fast And Frequently"    ).foregroundColor(.white)
                 
         }
         .padding()
@@ -96,7 +98,7 @@ struct Argiculture: View {
  
                 Spacer()
 }
-    }
+            }}
 }
 struct Argiculture_Previews: PreviewProvider {
     static var previews: some View {

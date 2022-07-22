@@ -2,6 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>LLDOT2__.TTF</string>
+		<string>Markus_Schroeppels_FontLicense.rtf
+
+Markus_Schroeppels_FontLicense.rtf
+
+Markus_Schroeppels_FontLicense.rtf
+
+</string>
+		<string>dotness.ttf
+
+dotness.ttf
+
+</string>
+	</array>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>

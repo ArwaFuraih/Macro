@@ -14,12 +14,13 @@ struct RegistrationCusView: View {
     
     
     
-    
+    @State private var checkbox1: Bool = false
+
     @State var fullName : String = ""
     @State var email : String = ""
     @State var password : String = ""
     @State var phone : String = ""
-    @State   var checkbox1: Bool = false
+    @State   var checkbox3: Bool = false
     
     
     
@@ -52,33 +53,38 @@ struct RegistrationCusView: View {
                 //                customTextField(placeholder: "*********", title: "Password:", text: $password)
                 customTextField(placeholder: "*********", title: "Password:", isSecureField:true, text: $registrationViewModel.password)
                 
+                
+                VStack{
+                
                 HStack{
-                    VStack{
-//                        Toggle(isOn: $checkbox1) {
-//                            Text("first condtion")
-//                        }
-//                        .toggleStyle(CheckBoxToggleStyle(isreversed: true))
-//                        Text(" agree with  and Privacy")
-//                            .foregroundColor(.gray)
-//                            .font(.system(size: 12))
+                    
+                    HStack{
+                   
+                        HStack{
+                                    Toggle(isOn: $checkbox1) {
+                                      
+                                    }
+                                    .toggleStyle(CheckBoxToggleStyle(isreversed: true))
+                                 }
                         
                         
                         Button {
                             showTerms.toggle()
                         } label: {
                             HStack(alignment: .center){
-                                
+                                Text("I agree with") .foregroundColor(.gray)
+
                                 Text("Terms").underline().foregroundColor(.blue)
                                 Text("and") .foregroundColor(.gray)
                                 Text("Privacy").underline().foregroundColor(.blue)
                             }
-                            
+                        
                         }.fullScreenCover(isPresented: $showTerms, content: {
                             PrivacyPolicy()
                         }).padding(.vertical,10)
                     }
                     
-                    
+                }
                     
                     Spacer()
                     

@@ -9,83 +9,101 @@
 import SwiftUI
 struct PrivacyPolicy: View {
    var body: some View {
-       
-            ScrollView(.vertical){
-                Spacer()
-                ZStack{
-                    VStack(alignment: .leading, spacing: 2){
-                VStack{
-                        VStack{
-                Text("1.Types of data we collect")
-                        
-                .fontWeight(.bold)
-                .font(.system(size: 20))
-                }
+       ZStack{
+           Color.them.myColor1.ignoresSafeArea()
+           VStack{
+               ScrollView(.vertical){
+                   Spacer()
+                   ZStack{
+                       VStack(alignment: .leading, spacing: 2){
+                   VStack{
+                           VStack{
+                   Text("1.Types of data we collect")                            .foregroundColor(.white)
 
-}
-                        Section{
-    Text("Do you like to guarantee daily orders for the owners of the company?")
+                           
+                   .fontWeight(.bold)
+                   .font(.system(size: 20))
+                   }
 
-                        .font(.system(size: 16))
-                        .fontWeight(.bold)
-    Text("You can register with us their activity skills and see the details")
-                               
-                        }
-                    .padding()
-                        VStack(spacing:10){
-                    Section{
-                Text("2.Use of your personal data")
-                    .fontWeight(.bold)
-                    .font(.system(size: 20))
+   }
+                           Section{
+       Text("Do you like to guarantee daily orders for the owners of the company?")                            .foregroundColor(.white)
 
-                    }
-                        }
-                    Section{
 
-    Text("And you like to guarantee daily orders for the owners of the company?")
-                        .fontWeight(.bold)
-                        .font(.system(size: 16))
-    Text("You can register with us their activity skills and see the details")
-                        
-    Text("And you like to guarantee daily orders for the owners of the company?")
-                            .fontWeight(.bold)
-                        .font(.system(size: 16))
-    Text("You can register with us their activity skills and see the details")
-                        
-                        
-                    }
-                                    .padding()
+                           .font(.system(size: 16))
+                           .fontWeight(.bold)
+       Text("You can register with us their activity skills and see the details")                            .foregroundColor(.white)
 
-            VStack(spacing:10){
-            Section{
-        Text("3. Disclosure of your personal data")
-                    .fontWeight(.bold)
-                    .font(.system(size: 20))
+                                  
+                           }
+                       .padding()
+                           VStack(spacing:10){
+                       Section{
+                   Text("2.Use of your personal data")                            .foregroundColor(.white)
+
+                       .fontWeight(.bold)
+                       .font(.system(size: 20))
+
+                       }
+                           }
+                       Section{
+
+       Text("And you like to guarantee daily orders for the owners of the company?")                            .foregroundColor(.white)
+
+                           .fontWeight(.bold)
+                           .font(.system(size: 16))
+       Text("You can register with us their activity skills and see the details")                            .foregroundColor(.white)
+
+                           
+       Text("And you like to guarantee daily orders for the owners of the company?")                            .foregroundColor(.white)
+
+                               .fontWeight(.bold)
+                           .font(.system(size: 16))
+       Text("You can register with us their activity skills and see the details")                            .foregroundColor(.white)
+
+                           
+                           
+                       }
+                                       .padding()
+
+               VStack(spacing:10){
+               Section{
+           Text("3. Disclosure of your personal data")                            .foregroundColor(.white)
+
+                       .fontWeight(.bold)
+                       .font(.system(size: 20))
+                      
+                       }
+                           }
+                           Section{
+       Text("And you like to guarantee daily orders for the owners of the company?")                            .foregroundColor(.white)
+
+                               .fontWeight(.bold)
+                           .font(.system(size: 16))
+       Text("You can register with us their activity skills and see the details")
+                                   .foregroundColor(.white)
+
+       Text("And you like to guarantee daily orders for the owners of the company?")                            .foregroundColor(.white)
+
+                       .fontWeight(.bold)
+                       .font(.system(size: 16))
+           
+       Text("You can register with us their activity skills and see the details")                            .foregroundColor(.white)
+
+                           }
+                               .padding()
+                   }
+                      
+               }
+                   .padding()
                    
-                    }
-                        }
-                        Section{
-    Text("And you like to guarantee daily orders for the owners of the company?")
-                            .fontWeight(.bold)
-                        .font(.system(size: 16))
-    Text("You can register with us their activity skills and see the details")
-                        
-    Text("And you like to guarantee daily orders for the owners of the company?")
-                    .fontWeight(.bold)
-                    .font(.system(size: 16))
+                   
+               }
+               .navigationTitle("Privacy Policy")
+               .navigationBarTitleDisplayMode(.inline)
+           }}
+               
         
-    Text("You can register with us their activity skills and see the details")
-                        }
-                            .padding()
-                }
-                   
-            }
-                .padding()
-                
-                
-            }
-            .navigationTitle("Privacy Policy")
-            .navigationBarTitleDisplayMode(.inline)
             
    }
 }

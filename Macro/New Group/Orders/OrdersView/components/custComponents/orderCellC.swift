@@ -68,7 +68,7 @@ struct orderCellC: View {
 
                     VStack(alignment: .leading){
                         Group{
-
+//
 //                            Text("#998999").foregroundColor(.white)
 //                                .font(.system(size:12, weight: .regular, design: .rounded))
                             let status = index.offer.offerStatus

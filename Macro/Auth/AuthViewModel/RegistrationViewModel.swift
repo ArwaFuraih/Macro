@@ -11,7 +11,7 @@ final class  RegistrationViewModel : ObservableObject{
     static let shared = RegistrationViewModel()
     
     @Published var FullName : String = AuthViewModel.shared.user?.fullName ?? ""
-    @Published var phone : String = String(AuthViewModel.shared.user?.phone ?? 0)
+    @Published var phone : String = AuthViewModel.shared.user?.phone ?? ""
     @Published var email : String =  AuthViewModel.shared.user?.email ?? ""
     @Published var password : String = ""
     @Published var isShowingImagePicker = false

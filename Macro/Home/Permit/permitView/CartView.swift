@@ -9,11 +9,15 @@ import SwiftUI
 
 struct CartView: View {
     @EnvironmentObject var cartManager: CartManager
+    @State var offer: OfferForFeed? = nil
+
     
     var permitID : String = ""
     //information view
     //#1 get permit Data
     //#2 get user data
+    
+//    Detailspermit
     
     var offerID : String = ""
     //accept button
@@ -21,12 +25,27 @@ struct CartView: View {
     //#2 get order data
     //#3 get provider data
     
+//    paymentOrder
+    
     var body: some View {
         ScrollView {
             VStack{
- 
-          Detailspermit(mypermit:permitanduser(permit: Permit(dictionary: [:]), user: User(dictionary: [:]), permitid: ""))
                 
+//                if offerID ==
+                //order detiles done
+//                detailsforpayment(myOrder: OrderForFeed(order: Order(dictionary: [:]), user: User(dictionary: [:]), orderID: ""))
+                
+
+                //not workig
+                
+                paymentOrder(myOffer: OfferForFeed(offer: Offers(dictionary: [:], documentID: ""), user: User(dictionary: [:]), order: Order(dictionary: [:]), offerID: ""), allserves: serviesList[0])
+                
+                
+                
+                
+                //permit detiles done
+//                Detailspermit(mypermit:permitanduser(permit: Permit(dictionary: [:]), user: User(dictionary: [:]), permitid: ""))
+//
  
 //                permitdetiles(mypermit: permitanduser(permit: Permit(dictionary: [:]), user: User(dictionary: [:]), permitid: ""))
                     .frame(maxWidth:.maximum(10,350),alignment:.leading)
@@ -40,7 +59,7 @@ struct CartView: View {
              else {
                 if cartManager.servies.count > 0 {
                     ForEach(cartManager.servies, id: \.id) { allservies in
-                        ProductRow(allServies: allservies)
+                        ProductRow(allServies: allservies, price: OfferForFeed(offer: Offers(dictionary: [:], documentID: ""), user: User(dictionary: [:]), order: Order(dictionary: [:]), offerID: ""))
                     }
                     
                     HStack {

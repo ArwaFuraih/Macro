@@ -13,7 +13,8 @@ import Kingfisher
 struct offerCellC: View {
     @StateObject var m: custumerOrder
     let selectedFilter: OrderCustFilter
-    
+    var allServies: Servies
+    @StateObject var cartManager = CartManager()
     @State var showSheet = false
     @State var showSheet1 = false
     @State var offers: Offers? = nil
@@ -42,29 +43,56 @@ struct offerCellC: View {
                     
                     
                     VStack(alignment: .leading, spacing: 2){
+                        HStack{
+                            AsyncImage(url:  URL(string:index.user.profilePic)){ image in
+                                image.resizable()
+                                    .padding(.trailing,100)
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width:70,height: 70)
+                                    .clipShape(Circle())
+                            }placeholder: {
+                                ProgressView()
+                            }
+                            
+                            
+                            Text("\(index.user.fullName)").foregroundColor(.white)
+//                                .padding(.trailing,10)
+                                .font(.system(size: 16, weight: .bold, design: .rounded)).padding(.top,10)
+                                
+                            
+                            
+                            
+                        }.padding(.leading,30)
                         
-                        
-                        AsyncImage(url:  URL(string:index.user.profilePic)){ image in
-                            image.resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width:70,height: 70)
-                                .clipShape(Circle())
-                        }placeholder: {
-                            ProgressView()
-                        }.padding(.leading,50)
+                       
 
 
                         
                         
                         Group{
-                            Text("\(index.user.fullName)").foregroundColor(.white)
-                                .font(.system(size: 16, weight: .regular, design: .rounded)).padding(.top,10)
+                        
                             
-                            Text("Hours: \(index.order.Hours )")//index.
+                         
+                            HStack{
+                            Text("Hours: ")//index.
+                                .foregroundColor(.white).font(.system(size: 12, weight: .bold, design: .rounded))
+                            
+                            
+                            Text("\(index.order.Hours )")//index.
                                 .foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
+                            }
+                            HStack{
+                            Text("Price: ")//index.
+                                .foregroundColor(.white).font(.system(size: 12, weight: .bold, design: .rounded))
                             
-                            Text("Price\(index.offer.price ) SR")//index.
-                                .foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded)).padding(.bottom,20)
+                            Text("\(index.offer.price ) ")//index.
+                                .foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
+                                //.padding(.bottom,20)
+                            
+                            
+                            Text("SR")//index.
+                                .foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
+                            }.padding(.bottom,10)
                             //
                             //                            Text("\(index.user.fullName)").foregroundColor(.white).font(.system(size: 12, weight: .regular, design: .rounded))
                             
@@ -97,10 +125,14 @@ struct offerCellC: View {
                                             .cornerRadius(8)
                                             .shadow(radius: 8)
                                     ).fullScreenCover(item: $offer) { offer in
-                                        paymentOrder(myOffer: offer)
+                                        paymentOrder(myOffer: offer, allserves: serviesList[0])
+                                        CartView(offerID:index.offerID)
+                                            .environmentObject(cartManager)
                                         
                                     }
-                            }
+                            }.onAppear() {
+                                cartManager.addToCart(allServies: serviesList[1])
+                              }
                             
                             
                             
@@ -139,6 +171,7 @@ struct offerCellC: View {
                         
                         
                     }.frame( maxWidth: 400, alignment:.leading)
+                        .padding(.top,10)
                     
                     
                     
@@ -151,30 +184,15 @@ struct offerCellC: View {
                 
             }
             
-            //    }
-            //        .onAppear{
-            //                if let user =  Auth.auth().currentUser?.uid{
-            //                    m.showOffers(orderID:Offers.orderID, status: Offers.offerStatus) { offer in
-            //
-            //                    } }
-            //
-            //        }
-            //
+          
             
         }
-//        .onAppear {
-//            guard let docID = offers?.documentID, !docID.isEmpty else {
-//                print("Could not get offer ID")
-//                return
-//            }
-//            m.showOffers(documentID: docID, status: .accepted) { offer in
-//                offer.self
-//            }
-//        }
+
     }
 }
 struct offerCellC_Previews: PreviewProvider {
     static var previews: some View {
-        offerCellC(m: custumerOrder(), selectedFilter: .Offers)
+        offerCellC(m: custumerOrder(), selectedFilter: .Offers, allServies: serviesList[0])
+            .environmentObject(CartManager())
     }
 }

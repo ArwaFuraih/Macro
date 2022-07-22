@@ -17,7 +17,10 @@ struct Detailspermit: View {
     @State var showpage = false
  
     var body: some View {
-        NavigationView{
+//        NavigationView{
+        ZStack{
+            Color.them.myColor1.ignoresSafeArea()
+        VStack(alignment: .leading, spacing: 10){
                  ScrollView(.vertical){
                      VStack{
                      ZStack {
@@ -26,7 +29,7 @@ struct Detailspermit: View {
             VStack(alignment: .leading, spacing: 8){
                         HStack {
                         Image("date")
-                            Text("\(Permit.startdateandtime)")
+                            Text("\(mypermit.permit.detailedTimestampString)")
                          .foregroundColor(.white)
                         .font(.system(size: 18))
 
@@ -34,7 +37,7 @@ struct Detailspermit: View {
                  
                         HStack {
                         Image(systemName:"hourglass")
-                            Text("\(Permit.enddateandtime)")
+                            Text("\(mypermit.permit.detailedTimestampString2)")
 
                         .foregroundColor(.white)
                             
@@ -54,7 +57,7 @@ struct Detailspermit: View {
             VStack(alignment: .leading, spacing: 6){
                         HStack {
                         Image(systemName:"clock")
-                        Text("\(Permit.duration)")
+                            Text("\(mypermit.permit.duration)")
                         .foregroundColor(.white)
 
                             
@@ -67,7 +70,7 @@ struct Detailspermit: View {
                         }
                         HStack {
                         Image("hight")
-                        Text("\(Permit.hight)")
+                            Text("\(mypermit.permit.hight)")
                         .foregroundColor(.white)
 
 //                            Text("\(i.permit.hight)")
@@ -88,7 +91,7 @@ struct Detailspermit: View {
                         .fontWeight(.bold)
                         .foregroundColor(.white)
 
-                  Text(Permit.nationalid)
+                Text(mypermit.user.NationalID)
                         .font(.system(size: 16))
                         .foregroundColor(.white)
                         }
@@ -102,7 +105,7 @@ struct Detailspermit: View {
                          .fontWeight(.bold)
                          .foregroundColor(.white)
 
-                        Text(Permit.licensenumber)
+                Text(mypermit.permit.licensenumber)
                          .font(.system(size: 16))
                          .foregroundColor(.white)
                          }
@@ -116,7 +119,7 @@ struct Detailspermit: View {
                     .fontWeight(.bold)
                     .foregroundColor(.white)
 
-                Text(Permit.Dronespermit)
+                Text(mypermit.permit.Dronespermit)
                     .font(.system(size: 16))
                     .foregroundColor(.white)
                     }
@@ -129,7 +132,7 @@ struct Detailspermit: View {
                     .fontWeight(.bold)
                     .foregroundColor(.white)
 
-                Text(Permit.activitytype)
+                Text(mypermit.permit.activitytype)
                     .font(.system(size: 16))
                     .foregroundColor(.white)
                     }
@@ -143,7 +146,7 @@ struct Detailspermit: View {
                     .fontWeight(.bold)
                     .foregroundColor(.white)
 
-                   Text(Permit.flyingdescription)
+            Text(mypermit.permit.flyingdescription)
                     .font(.system(size: 16))
                     .foregroundColor(.white)
                     }
@@ -204,13 +207,13 @@ Text("  Total price :                                   600 RS")
  
                       }
                           
-                    .navigationTitle("Request a Permit")
+                      .navigationTitle("Request a Permit").foregroundColor(.white)
                    .navigationBarTitleDisplayMode(.inline)
                  }
                      }
                      }
-        
- }
+        }}
+
     }
 }
  struct DetailsOrder_Previews: PreviewProvider {

@@ -126,8 +126,8 @@
             filePath = "Macro/custumerOrder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "newOrderS(userID:city:CustomerType:description:Letter:pilot:morepilot:dateAndTime:nameOfServece:cancelled:Hours:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "Macro/custumerOrder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
             landmarkName = "newOrderS(userID:city:CustomerType:description:Letter:pilot:morepilot:dateAndTime:nameOfServece:cancelled:Hours:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -223,6 +223,22 @@
             endingLineNumber = "90"
             landmarkName = "init(dictionary:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D795069-B09D-4A0B-A20E-0A662D66F7B0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Macro/New Group/Orders/OrdersView/paymentOrder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

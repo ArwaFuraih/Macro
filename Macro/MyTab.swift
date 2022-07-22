@@ -36,7 +36,7 @@ struct MyTab: View{
                         self.selectedIndex = 0
                     }
                     .tabItem {
-                                   Image("categcolor")
+                        Image("qw").foregroundColor(.gray)
                                    Text("Catogries")
                                }.tag(0)
                 
@@ -64,13 +64,13 @@ struct MyTab: View{
                                 Image(systemName: "list.bullet.rectangle.portrait")
                                    Text("orders")
                                }.tag(2)
-                        }else{ NavigationView{
+                        }else{
 //                            orderCust()
                             OrdersCustView()
                                 .onTapGesture {
                                     self.selectedIndex = 3
                                 }
-                        }.tabItem {
+                        .tabItem {
                             Image(systemName: "list.bullet.rectangle.portrait")
                                Text("orders")
                         }.tag(3)

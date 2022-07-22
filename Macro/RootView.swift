@@ -33,6 +33,7 @@ struct RootView: View {
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
         RootView()
+   
     }
 }
 
@@ -48,6 +49,7 @@ class RootViews: ObservableObject {
     enum RootViewType {
         case onBoarding
         case mainTab
+        
         
     }
     

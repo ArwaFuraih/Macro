@@ -71,3 +71,6 @@ struct Offers: Identifiable{
     static let documentID = "documentID"
 
 }
+
+
+

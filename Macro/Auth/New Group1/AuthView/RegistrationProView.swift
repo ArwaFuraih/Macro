@@ -10,8 +10,12 @@ import SwiftUI
 struct RegistrationProView: View {
     @Environment(\.presentationMode) var presentationMode
     
+    
     @StateObject var registrationViewModel: RegistrationViewModel = RegistrationViewModel()
     
+    
+    @State private var checkbox1: Bool = false
+
     @State var fullName : String = ""
     @State var email : String = ""
     @State var password : String = ""
@@ -26,8 +30,9 @@ struct RegistrationProView: View {
     
     
     var body: some View {
-        ZStack{
-            Color.them.myColor1.ignoresSafeArea()
+        NavigationView{
+            ZStack{
+                Color.them.myColor1.ignoresSafeArea()
         ScrollView{
             
            
@@ -45,18 +50,29 @@ struct RegistrationProView: View {
                 
                     
                     VStack{
+                        
+                   
+                        
+                        
+                        
+                        
                     
                     HStack{
-                    Image(systemName:"checkmark.square").foregroundColor(.gray)
-                       Text(" agree with  and Privacy")
-                            .foregroundColor(.gray)
-                        .font(.system(size: 12))
+                   
+                        HStack{
+                                    Toggle(isOn: $checkbox1) {
+                                      
+                                    }
+                                    .toggleStyle(CheckBoxToggleStyle(isreversed: true))
+                                 }
                         
                         
                         Button {
                             showTerms.toggle()
                         } label: {
                             HStack(alignment: .center){
+                                Text("I agree with") .foregroundColor(.gray)
+
                                 Text("Terms").underline().foregroundColor(.blue)
                                 Text("and") .foregroundColor(.gray)
                                 Text("Privacy").underline().foregroundColor(.blue)
@@ -70,6 +86,8 @@ struct RegistrationProView: View {
                       
            
                     Spacer()
+                        
+                        
                     
                     
                     Button {
@@ -79,19 +97,34 @@ struct RegistrationProView: View {
                         registrationViewModel.createprovider()
     //                        registrationViewModel.createprovider()
                     } label: {
-                        Text("")
+                        Text("Become a Drone Owner")
+                        
                             .foregroundColor(.white)
-                            .bold()
-                            .frame(width: 342, height: 41.31)
-                            .cornerRadius(8)
-                            .background(Color("btnColor"))
-                            .cornerRadius(8)
-                            .padding(.vertical,10)
-                            .padding(.top,80)
+                           .bold()
+                           .frame(width: 342, height: 41.31)
+                           .cornerRadius(8)
+                           .background(Color("btnColor"))
+                           .cornerRadius(8)
                     }
                         .fullScreenCover(isPresented: $showHome, content: {MyTab()})
+                        
+                        
+                        
+                        
+                        Button {
+                            presentationMode.wrappedValue.dismiss()
+                        } label: {
+                            Text("Cancel")
+                                .foregroundColor(.white)
+                                .bold()
+                                .frame(width: 342, height: 41.31)
+                                .cornerRadius(8)
+                                .background(Color("btnColor"))
+                                .cornerRadius(8)
+                         .frame(maxWidth:.maximum(80,699),alignment:.center)
+
                     
-                }
+                        }}
             
       
             
@@ -103,7 +136,9 @@ struct RegistrationProView: View {
         }
        
         }
-        
+            .navigationTitle("Become a Drone Owner")
+           .navigationBarTitleDisplayMode(.inline)
+        }
     
 }
 }

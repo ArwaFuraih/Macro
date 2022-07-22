@@ -13,7 +13,7 @@ struct User: Identifiable {
     let id : String
     let fullName : String
     let email : String
-    let phone:Int
+    let phone: String
     var isprovider : Bool
     let profilePic : String
     let profileDesc: String
@@ -29,7 +29,7 @@ struct User: Identifiable {
     init(dictionary:[String:Any]){
         self.id = dictionary[User.id]  as? String ??  ""
         self.fullName = dictionary[User.fullName]  as? String ?? ""
-        self.phone = dictionary[User.phone]  as? Int ?? 0
+        self.phone = dictionary[User.phone]   as? String ?? "N/A"
         self.email = dictionary[User.email]  as? String ?? "N/A"
         self.isprovider = dictionary[User.isprovider]  as? Bool ?? true
         self.profileImg = dictionary[User.profileImg]  as? [String] ?? []

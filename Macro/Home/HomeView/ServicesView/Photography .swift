@@ -10,10 +10,16 @@ import SwiftUI
 struct Photography: View {
     @Environment(\.presentationMode) var presentationMode
 
+    
+
  
     @State var showNewReq : Bool = false
     var body: some View {
+        
+        
         NavigationView{
+            ZStack{
+                Color.them.myColor1.ignoresSafeArea()
             VStack(alignment: .leading, spacing: 10){
                
                        Image("Image")
@@ -24,10 +30,10 @@ struct Photography: View {
                         .padding()
                     Section{
         HStack(spacing:10){
-        Image(systemName:"checkmark.circle")
+            Image(systemName:"checkmark.circle").foregroundColor(.white)
                 .font(.system(size: 24))
                 .frame(width: 60, alignment:.center)
-        Text("Create video tours of the location")
+        Text("Create video tours of the location").foregroundColor(.white)
             
                     }
         .padding()
@@ -35,23 +41,23 @@ struct Photography: View {
         }
                     Section{
         HStack(spacing:10){
-            Image(systemName:"checkmark.circle")
+            Image(systemName:"checkmark.circle").foregroundColor(.white)
                 .font(.system(size: 24))
 
         .frame(width: 60, alignment:.center)
 
-        Text("Professional 4K camera drone.")
+        Text("Professional 4K camera drone.").foregroundColor(.white)
                 }
         .padding()
                 
         }
                     Section{
         HStack(spacing:10){
-            Image(systemName:"checkmark.circle")
+            Image(systemName:"checkmark.circle").foregroundColor(.white)
                 .font(.system(size: 24))
 
                 .frame(width: 60, alignment:.center)
-        Text("Sets the standard for professional\n drone photography." )
+        Text("Sets the standard for professional\n drone photography." ).foregroundColor(.white)
                 
         }
         .padding()
@@ -71,6 +77,8 @@ struct Photography: View {
                      .frame(maxWidth:.maximum(80,699),alignment:.center)
                     } .fullScreenCover(isPresented: $showNewReq, content: {NewRequest(myorder: OrderForFeed(order: Order(dictionary: [  :  ]), user: User(dictionary: [  :  ]), orderID: ""), allServies: serviesList[0])})
                         .environmentObject(CartManager())
+                    
+                    
                     Button {
                         presentationMode.wrappedValue.dismiss()
                     } label: {
@@ -83,20 +91,16 @@ struct Photography: View {
                             .cornerRadius(8)
                      .frame(maxWidth:.maximum(80,699),alignment:.center)
 
-
-
-
+ 
                     }
-                  
-
-              
-            }
+              }
           //  .padding(.top,-70)
         }
         .navigationTitle("Photography")
         .navigationBarTitleDisplayMode(.inline)
     
 }
+    }
     }
 }
 struct Photography_Previews: PreviewProvider {

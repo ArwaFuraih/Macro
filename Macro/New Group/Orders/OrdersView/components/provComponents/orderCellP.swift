@@ -15,7 +15,8 @@ struct orderCellP: View {
     
     var phoneNumber = "533-555-5555"
 
-    
+    @State var order: OrderForFeed? = nil
+
 //    @StateObject var m: custumerOrder = custumerOrder()
 
     @State var showSheet = false
@@ -24,9 +25,9 @@ struct orderCellP: View {
     var body: some View {
         VStack{
            
-            ForEach(m.getFeed(forfilter: selectedFilter)){item in
+//            ForEach(m.getFeed(forfilter: selectedFilter)){item in
 
-//                ForEach(m.orders){ item in
+                ForEach(m.orders){ item in
 
             HStack(spacing:10){
                     
@@ -87,7 +88,7 @@ struct orderCellP: View {
                    
                     Button(action: {
                         let phone = "tel://"
-                                       let phoneNumberformatted = phone + phoneNumber
+                        let phoneNumberformatted = phone + item.user.phone
                                        guard let url = URL(string: phoneNumberformatted) else { return }
                                        UIApplication.shared.open(url)
                          

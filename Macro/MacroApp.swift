@@ -39,12 +39,19 @@ struct MacroApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                
+                 
                 switch rootViews.root{
                 case .onBoarding:
+//                    splashscreen()
+//                    splashscreen().preferredColorScheme(.dark)
                     OnBoardingView()
+//                    paymentOrder(myOffer: OrderForFeed(order: Order(dictionary: [:]), user: User(dictionary: [:]), orderID: ""))
                 case .mainTab:
-                    MyTab()
+
+
+                    MyTab().preferredColorScheme(.dark)
+                    
+
                     
 //                    RootView()
 

@@ -9,7 +9,12 @@ import SwiftUI
 
 struct ProductRow: View {
     @EnvironmentObject var cartManager: CartManager
+    @EnvironmentObject var custumerOrder: custumerOrder
+
+//    @StateObject var m: custumerOrder = custumerOrder()
     var allServies: Servies
+    var price: OfferForFeed
+
     
     var body: some View {
         HStack(spacing: 20) {
@@ -22,7 +27,9 @@ struct ProductRow: View {
             VStack(alignment: .leading, spacing: 10) {
                 Text(allServies.name)
                     .bold()
-                 Text("$\(allServies.price)")
+                Text("$\(allServies.priceoffer.price)")
+//                Text("$\(m.)")
+                
             }
             Spacer()
 
@@ -33,7 +40,9 @@ struct ProductRow: View {
                  .onTapGesture {
                     cartManager.removeFromCart(allServies: allServies)
                 }
-        }
+        }.onAppear(perform: {
+            custumerOrder.getOffers()
+        })
         .padding(.horizontal)
          .frame(maxWidth:.maximum(10,289),alignment:.center)
 
@@ -43,7 +52,7 @@ struct ProductRow: View {
 
 struct ProductRow_Previews: PreviewProvider {
     static var previews: some View {
-        ProductRow(allServies: serviesList[2])
+        ProductRow(allServies: serviesList[2], price: OfferForFeed(offer: Offers(dictionary: [:], documentID: ""), user: User(dictionary: [:]), order: Order(dictionary: [:]), offerID: ""))
             .environmentObject(CartManager())
     }
 }

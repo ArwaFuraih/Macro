@@ -16,9 +16,12 @@ struct faq: View {
     //
     
     var body: some View {
-        
-      
+        ZStack{
+            Color.them.myColor1.ignoresSafeArea()
+        VStack{
             ScrollView(showsIndicators: false) {
+                ZStack{
+                    Color.them.myColor1
                 ZStack{
                     VStack{
                         VStack(alignment: .leading, spacing: 10) {
@@ -208,12 +211,19 @@ struct faq: View {
                     .padding(.top,-10).padding(.trailing,10).padding(.leading,10)
                     Spacer()
                  }
-            }
+            } .navigationTitle("FAQ")
+                .navigationBarTitleDisplayMode(.inline)
+        }
+
+            
+        }
+        }
+     
+           
             
             
             
-            .navigationTitle("FAQ")
-            .navigationBarTitleDisplayMode(.inline)
+           
       
     }
 }

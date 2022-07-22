@@ -45,7 +45,9 @@ struct HomeView: View {
                     ReqAPermitBtn(allServies: serviesList[0])
                     BeOwnerBtn()
                     ServicesBtnVieew(allServies: serviesList[0])
-                     }
+                    Spacer()
+
+                }.padding(.bottom,80)
 
             }
         }

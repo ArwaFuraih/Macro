@@ -62,16 +62,18 @@ struct NewRequest: View {
     
     
    var body: some View {
-           ZStack{
-            Color.black.ignoresSafeArea()
+         
              NavigationView{
-                
+                 ZStack{
+                  Color.black.ignoresSafeArea()
                 ScrollView(showsIndicators: false){
                       ZStack{
                          VStack{
                              Group {
                                 VStack(alignment: .leading, spacing: 10) {
+                                    
                                     Text("Location Details")
+                                        .foregroundColor(.gray)
                                      TextField("City,Street and Neighborhood",text: $city)
 
                                         .padding()
@@ -83,6 +85,8 @@ struct NewRequest: View {
  
                             VStack(alignment: .leading, spacing: 10) {
                                 Text("Customer type")
+                                   
+                                    .foregroundColor(.gray)
                                 Menu {
                                     ForEach(dropDownListcustmortype, id: \.self){ i in
                                         Button(i) {
@@ -115,6 +119,8 @@ struct NewRequest: View {
  
                             VStack(alignment: .leading, spacing: 10) {
                                 Text("Start Date and Time")
+                                  
+                                    .foregroundColor(.gray)
                                 
                                 DatePicker("", selection: $dateandtime)
 //                                myTimeStamp
@@ -130,19 +136,14 @@ struct NewRequest: View {
                                 .frame(width: 342.15, height: 66.86)
                               }
                             .padding(.bottom)
-
-                            VStack(alignment: .leading, spacing: 10) {
-                                Text("Add Descriotion")
-                                TextEditor(text: $adddescrption)
-                                    .padding()
-                                    .overlay(RoundedRectangle(cornerRadius: 8.0)
-                                        .strokeBorder(Color.gray, style: StrokeStyle(lineWidth: 1)))
-                                    .frame(width: 342.15, height: 66.86)
-                            }
-                            .padding(.bottom)
+                                 
+                            customTextField(placeholder: "", title: "Add Descriotion",  text: $adddescrption)
+                    
 
                                 VStack(alignment: .leading, spacing: 10) {
                                     Text("Upload the letter, if available")
+                                       
+                                        .foregroundColor(.gray)
      
     //                                   Text(filename)
     //                                    .fontWeight(.bold)
@@ -193,6 +194,8 @@ struct NewRequest: View {
                             Group{
                             VStack(alignment: .leading, spacing: 10) {
                                 Text("Pilot Numbers")
+                                 
+                                    .foregroundColor(.gray)
                                 Menu {
                                     ForEach(dropDownListpolit, id: \.self){ i in
                                         Button(i) {
@@ -257,9 +260,12 @@ struct NewRequest: View {
                               .cornerRadius(8)
                               .background(Color("btnColor"))
                               .cornerRadius(8)
-                       } .fullScreenCover(isPresented: $showOffer, content: { CartView()
-                                
-                               .environmentObject(cartManager)
+                       } .fullScreenCover(isPresented: $showOffer, content: {
+                           OrdersCustView()
+                           
+                           
+//                           CartView()
+//                               .environmentObject(cartManager)
                              })
                         }
                       .onAppear() {
@@ -276,7 +282,7 @@ struct NewRequest: View {
              }
              
                  
-    .navigationTitle("Request a Permit")
+    .navigationTitle("New Request")
     .navigationBarTitleDisplayMode(.inline)
 //}
                          }
